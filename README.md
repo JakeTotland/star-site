@@ -2,23 +2,17 @@
 
 Official website of the Space Technology Association of Rutgers. Assembled by Jason Scot.
 
-# Version Control
+## Version Control
 
-Version control for this project is managed with git, and stored remotely using BitBucket on the repo
-```
-[https://bitbucket.org/jasonscot/star/src/](https://bitbucket.org/jasonscot/star/src/)
-```
+Version control for this project is managed with git, and stored remotely using BitBucket on the repo [https://bitbucket.org/jasonscot/star/src/](https://bitbucket.org/jasonscot/star/src/)
 
-# Uploading and Distribution
+## Uploading and Distribution
 
-It is intended for the entire contents of the repository to be uploaded to the hosting server
-```
-**tpn23@physsun.rutgers.edu**
-```
+It is intended for the entire contents of the repository to be uploaded to the hosting server **tpn23@physsun.rutgers.edu**
 
 However, the contents of the public folder *alone* to be made readable publically, and the rest not accessible by users.
 
-# NPM & Dependencies
+## NPM & Dependencies
 
 Editing the project's HTML and adding new documents/directories can be done easily. However, editing this project's existing JavaScript or SCSS will necessitate installing the appropriate npm dependencies (recorded within the project). The simplest way to do this is to install npm on your machine, then in the project's main directory run the command
 ```
@@ -30,5 +24,5 @@ npm run watch
 ```
 which will compile code from **src/sass/** and **/src/scripts** into **public/css/** and **public/js/**, respectively, in real time.
 
-*Note: Please follow these steps to change this project's JavaScript code, and especially CSS/SCSS, as the CSS is compiled down from SCSS.*
+Note: *Please* follow these steps to change this project's JavaScript code, and especially CSS/SCSS, as the CSS is compiled down from SCSS.
 
