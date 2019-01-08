@@ -1,0 +1,33 @@
+{
+  "name": "star",
+  "version": "1.0.0",
+  "description": "Official website of the Space Technology Association of Rutgers",
+  "main": "index.htm",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jasonscot@bitbucket.org/jasonscot/star.git"
+  },
+  "author": "Jason Scot",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jasonscot/star#readme",
+  "devDependencies": {
+    "cross-env": "^5.1",
+    "laravel-mix": "^2.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.3.1",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.7",
+    "node-sass": "^4.10.0",
+    "normalize.css": "^8.0.1",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-pxtorem": "^4.0.1"
+  }
+}
