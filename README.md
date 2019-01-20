@@ -10,7 +10,7 @@ Version control for this project is managed with git, and stored remotely using 
 
 It is intended for the entire contents of the repository to be uploaded to the hosting server **tpn23@physsun.rutgers.edu**
 
-On this server, *only* the **public** folder and its contents/subdirectories must be made publically readable. All other files and directories must *not* be accessible by users.
+On the server, *only* the **public** folder and its contents/subdirectories must be made publically readable. All other files and directories must *not* be accessible by users.
 
 ## NPM & Dependencies
 
@@ -18,11 +18,11 @@ Editing the project's HTML and adding new documents/directories can be done easi
 ```
 npm install
 ```
-The framework is set up such that the only thing to do next is run in the main directory the command
+The framework is set up such that, next, the only thing to do to initialize the JavaScript and SCSS watcher any time you edit the **src** files is run the command
 ```
 npm run watch
 ```
-which will compile code from **src/sass/** and **/src/scripts** into **public/css/** and **public/js/**, respectively, in real time.
+in the project's main directory. This will compile code from **src/sass/** and **/src/scripts** into **public/css/** and **public/js/**, respectively, in real time.
 
 Note: *Please* follow these steps to change this project's JavaScript code, and especially CSS/SCSS, as the CSS is compiled down from SCSS.
 
