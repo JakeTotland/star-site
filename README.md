@@ -9,6 +9,7 @@ Version control for this project is managed with git, and stored remotely using 
 ## Uploading and Distribution
 
 It is intended for the entire contents of the repository to be uploaded to the hosting server **tpn23@physsun.rutgers.edu**
+
 On this server, *only* the **public** folder and its contents/subdirectories must be made publically readable. All other files and directories must *not* be accessible by users.
 
 ## NPM & Dependencies
