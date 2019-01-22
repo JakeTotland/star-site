@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Space Technology Association of Rutgers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+            <div class="navbar-logo">
+                <a class="navbar-main navbar-logo" href="#myPage"><img class="logo" alt="Star Logo" src="images/logo-notext.png"></a>
+                <div class="navbar-logo-div">&nbsp;Star</div>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right navbar-main">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="projects.htm">Projects</a></li>
+                <li><a href="spotlight.htm">Spotlight</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Connect
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="members.htm">Members & Social Media</a></li>
+                        <li><a href="alumni.htm">Alumni</a></li>
+                        <li><a href="partners.htm">Partners</a></li> 
+                    </ul>
+                </li>
+                <li><a data-toggle="modal" data-target="#myModal" href="#getinvolved"><span class="glyphicon glyphicon-envelope"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Bar pushing the top of the carousel photos down the screen -->
+<div class="topbar"></div>
+
+<!-- Carousel (photos populate on page load with JavaScript) -->
+<noscript>
+    <br><br><br><br>
+    <div class="container text-center warning">
+        <h3>Warning</h3>
+        <p><em>JavaScript is required to enjoy this site to the fullest. Please allow JavaScript usage for <span class="upper">Star</span> in your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
+    </div>
+</noscript>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container text-center">
+    <h3>Space Technology Association of Rutgers</h3>
+    <p><em><span class="upper">Star</span> is the first democratic colegiate space organization. Our primary goal... xyz... and uphold the following three tenets:</em></p>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Accessibility</strong></p>
+            <img src="images/sun.png" class="img-circle tenet" alt="Random Name" width="255" height="255">
+            <div id="demo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Innovation</strong></p>
+            <img src="images/earth.png" class="img-circle tenet" alt="Random Name" width="255" height="255">
+            <div id="demo2">
+                <p>The basic unit of <span class="upper">Star</span> membership is the project team: a sub-group of <span class="upper">Star</span> members dedicated to innovating toward a common mission. Our project teams have launched weather balloons, hosted prestigious guest speakers, conducted construction of research satellites, and much more. A complete record of innovation by our past and present project teams is chronicled on our site's <a href="projects.htm" target="_blank">Projects page</a>.</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Democracy</strong></p>
+            <img src="images/moon.png" class="img-circle tenet" alt="Random Name" width="255" height="255">
+            <div id="demo3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saved toggleable execs section copy
+    <div class="row">
+        <div class="col-sm-4 person-container">
+            <a href="#demo" data-toggle="collapse">
+                <p class="text-center"><strong>Accessibility</strong></p>
+                <img src="images/sun.png" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo" class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+        <div class="col-sm-4 person-container">
+            <a href="#demo2" data-toggle="collapse">
+                <p class="text-center"><strong>Innovation</strong></p>
+                <img src="images/earth.png" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo2" class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+        <div class="col-sm-4 person-container">
+            <a href="#demo3" data-toggle="collapse">
+                <p class="text-center"><strong>Democracy</strong></p>
+                <img src="images/moon.png" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo3" class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+    </div>
+    -->
+</div>
+
+<!-- Container (Get Involved Section) -->
+<div id="getinvolved" class="bg-1">
+    <div class="container">
+        <h3 class="text-center">Get Involved</h3>
+        <p class="text-center">There are many ways to get involved with <span class="upper">Star</span>, from attending our free university-wide events as an interested student to inviting us to visit your school or organization as a proud <span class="upper">Star</span> partner. Just choose the option below that's right for you, depending on whether you're a...</p>
+        <br>
+        <div class="row text-center">
+            <div class="col-sm-4">
+                <a href="members.htm" class="card-link">
+                    <div class="thumbnail card">
+                        <span class="glyphicon glyphicon-user card-glyph"></span>
+                        <p><strong>Student</strong></p>
+                        <p>A Rutgers student interested in joining <span class="upper">Star</span>, or a current member searching for relevant information</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="partners.htm" class="card-link">
+                    <div class="thumbnail card">
+                        <span class="glyphicon glyphicon-globe card-glyph"></span>
+                        <p><strong>Partner or Donor</strong></p>
+                        <p>A prospective or current partner or donor wishing to see the results and details of our partnerships</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="alumni.htm" class="card-link">
+                    <div class="thumbnail card">
+                        <span class="glyphicon glyphicon-education card-glyph"></span>
+                        <p><strong>Alumnus</strong></p>
+                        <p>A <span class="upper">Star</span> member who has since graduated from the university but who still wishes to stay connected</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                    <div class="form-group">
+                        <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
+                        <input type="number" class="form-control" id="psw" placeholder="How many?">
+                    </div>
+                    <div class="form-group">
+                        <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
+                        <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                    </div>
+                        <button type="submit" class="btn btn-block">Pay 
+                        <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>Need <a href="#">help?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container (Meetings) -->
+<div id="meetings" class="container text-center">
+    <h3>Meetings</h3>
+    <p><em><span class="upper">Star</span> meetings take two forms: general and project team. Prospective members and interested parties are encouraged to <a href="members.htm">contact us</a> regarding meeting details and drop in to either type. See the map below or <a href="https://www.google.com/maps?saddr&amp;daddr=40.522724,+-74.462830" target="_blank">click here</a> for directions to <span class="upper">Serc</span>, our unofficial HQ. Note that parking on Busch is only allowed by way of a registered university permit or prior arrangement.</em></p>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <p class="text-center"><strong>General</strong></p>
+            <img src="images/sun.png" class="img-circle mission-icon" alt="Random Name" width="255" height="255">
+            <div id="demo">
+                <p>General meetings are for all members, as well as unaffiliated students interested in <span class="upper">Star</span>, and are held at scheduled intervals in the Science and Engineering Resource Center (<span class="upper">Serc</span>) on Rutgers University's Busch Campus. They usually feature skill-building workshops and important club updates.</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <p class="text-center"><strong>Project Team</strong></p>
+            <img src="images/earth.png" class="img-circle mission-icon" alt="Random Name" width="255" height="255">
+            <div id="demo2">
+                <p>Project team meetings are for the members of a given project team. They take place at agreed-upon locations around the schedules of their members. These meetings are held to conduct project work, distribute tasks, and collect updates regarding the project at hand.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
+<!-- Container (Contact Section) >
+<div id="contact" class="container">
+    <h3 class="text-center">Contact</h3>
+    <p class="text-center"><em>We love our fans!</em></p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>Fan? Drop a note.</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+            <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+            </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+            <br>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <button class="btn pull-right" type="submit">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h3 class="text-center">From The Blog</h3>  
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Mike</a></li>
+        <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
+        <li><a data-toggle="tab" href="#menu2">Peter</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h2>Mike Ross, Manager</h2>
+            <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h2>Chandler Bing, Guitarist</h2>
+            <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h2>Peter Griffin, Bass player</h2>
+            <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+        </div>
+    </div>
+</div-->
+
+<!-- Google Maps -->
+<div id="googleMap" style="height:550px;width:100%;"></div>
+<script>
+    function myMap() {
+        var myCenter = new google.maps.LatLng(40.522724, -74.462830);
+        var mapProp = {center:myCenter, zoom:16, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker = new google.maps.Marker({position:myCenter});
+        marker.setMap(map);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMiYF3bMNvy0DHwuUJpvhh8LUVc_E3cKY&callback=myMap"></script>
+
+
+<!-- Footer -->
+<footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="Jump to Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>Space Technology Association of Rutgers. A Rutgers University Student Organization</p> 
+</footer>
+</body>
+</html>

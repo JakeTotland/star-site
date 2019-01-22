@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Rutgers Day",
+      "desc": "An executive board member operates the booth on Rutgers Day",
+      "img": "rutgersday.png"
+    },
+    {
+      "name": "Antenna Trip",
+      "desc": "Members survey cloud cover during a field expedition",
+      "img": "antennatrip.png"
+    },
+    {
+      "name": "Weather Balloon",
+      "desc": "The weather balloon team launches its first payload",
+      "img": "balloonday.png"
+    },
+    {
+      "name": "Antenna Presentation",
+      "desc": "Members conduct a presentation on using our satellite telemetry antenna",
+      "img": "antennapresentation.png"
+    },
+    {
+        "name": "Atmospheric Probe",
+        "desc": "Members prepare the second field experiment of their atmospheric probe",
+        "img": "launch.png"
+    }
+]
