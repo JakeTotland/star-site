@@ -1,5 +1,13 @@
 @import url('normalize.css/normalize.css');
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 
-$size-tablet: (min-width: 768px);
-$size-phablet: (min-width: 640px);
-$size-mobile: (min-width: 480px);
+//smallest sizes within each range
+$size-tablet: 768px;
+$size-phablet: 640px;
+$size-mobile: 480px;
+
+$tablet-and-up: (min-width: $size-tablet);
+$below-tablet: (max-width: ($size-tablet - 1px));
+
+$phablet-and-up: (min-width: $size-phablet);
+$mobile-and-up: (min-width: $size-mobile);

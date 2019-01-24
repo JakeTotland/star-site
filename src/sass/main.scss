@@ -16,11 +16,11 @@ h3, h4 {
 .container {
     padding: 50px 20px;
 
-    @media ($size-mobile) {
+    @media ($mobile-and-up) {
         padding: 60px 80px;
     }
 
-    @media ($size-tablet) {
+    @media ($tablet-and-up) {
         padding: 80px 100px;
     }
 
@@ -58,7 +58,7 @@ h3, h4 {
     background-color: white;
     margin-bottom: 60px;
 
-    @media ($size-tablet) {
+    @media ($tablet-and-up) {
         margin-bottom: 0px;
     }
 
@@ -73,9 +73,9 @@ h3, h4 {
     }
 
     &:hover {
-        @media ($size-tablet) {
+        //TODO detect not touchscreen @media ($size-tablet) {
             top: -20px;
-        }
+        //}
     
         border-color: #ff4b4b;
     }
@@ -114,6 +114,13 @@ h3, h4 {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+.smaller-than-tablet {
+    display: none;
+
+    @media ($below-tablet) {
+        display: inline;
+    }
+}
 .tenet {
     border: 10px solid transparent;
     margin-bottom: 25px;
@@ -126,7 +133,7 @@ h3, h4 {
     min-height: 50px;
     max-height: 50px;
 
-    @media ($size-tablet) {
+    @media ($tablet-and-up) {
         display: none;
     }
 }
@@ -143,6 +150,16 @@ h3, h4 {
     color: #f1f1f1;
     border-radius: 25px;
     transition: .2s;
+
+    &-mail {
+        padding-top: 20px;
+        border: 1px solid #777;
+        font-size: 15px;
+
+        span {
+            font-size: 50px;
+        }
+    }
 }
 .btn:hover, .btn:focus {
     border: 1px solid #333;
@@ -164,12 +181,12 @@ h3, h4 {
         transform: rotate(360deg);
     }
 
-    @media($size-tablet) {
+    //TODO detect not touchscreen @media($size-tablet) {
         &:hover {
             -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
         }
-    }
+    //}
 }
 .mission-icon {
     border: 10px solid transparent;
@@ -177,6 +194,11 @@ h3, h4 {
     width: 50%;
     height: 50%;
     opacity: 0.9;
+}
+.mobile-only {
+    @media ($phablet-and-up) {
+        display: none;
+    }
 }
 .modal-header, h4, .close {
     background-color: #333;
@@ -219,7 +241,7 @@ h3, h4 {
             margin-top: 9px;
             margin-left: 25px;
 
-            @media ($size-tablet) {
+            @media ($tablet-and-up) {
                 margin-left: none;
             }
         }
@@ -245,9 +267,21 @@ h3, h4 {
 .navbar-default .navbar-toggle {
     border-color: transparent;
 }
+.no-decoration {
+    &:hover {
+        text-decoration: none;
+    }
+}
 .open .dropdown-toggle {
     color: #fff;
     background-color: #555 !important;
+}
+.phablet-and-up {
+    display: none;
+
+    @media ($phablet-and-up) {
+        display: inline;
+    }
 }
 .upper {
     text-transform: uppercase;

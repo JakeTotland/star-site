@@ -14,6 +14,7 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
+<!-- Navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -42,7 +43,7 @@
                         <li><a href="partners.htm">Partners</a></li> 
                     </ul>
                 </li>
-                <li><a data-toggle="modal" data-target="#myModal" href="#getinvolved"><span class="glyphicon glyphicon-envelope"></span></a></li>
+                <li><a data-toggle="modal" data-target="#mailModal" href="#getinvolved"><span class="smaller-than-tablet">Mailing List </span><span class="glyphicon glyphicon-envelope"></span></a></li>
             </ul>
         </div>
     </div>
@@ -51,7 +52,38 @@
 <!-- Bar pushing the top of the carousel photos down the screen -->
 <div class="topbar"></div>
 
-<!-- Carousel (photos populate on page load with JavaScript) -->
+<!-- Mailing List Modal -->
+<div class="modal fade" id="mailModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4><span class="glyphicon glyphicon-envelope"></span> Stay Informed </h4>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="https://my.physics.rutgers.edu/apps/star/doregister.php" href="#home" role="form">
+                    <div class="form-group">
+                        <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
+                        <input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Subscribe
+                    </button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </button>
+                <p class="mobile-only">Join our&nbsp;&nbsp;<a href="slack.htm" target="_blank"><i class="fab fa-slack" aria-hidden="true"></i>&nbsp;channel</a></p>
+                <p class="phablet-and-up">Just arrived? <a href="slack.htm" target="_blank">Find out how</a> to join our <a href="https://ruspacetech.slack.com/" target="_blank">Slack&nbsp;&nbsp;<i class="fab fa-slack" aria-hidden="true"></i></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Noscript standard warning/error message -->
 <noscript>
     <br><br><br><br>
     <div class="container text-center warning">
@@ -59,6 +91,10 @@
         <p><em>JavaScript is required to enjoy this site to the fullest. Please allow JavaScript usage for <span class="upper">Star</span> in your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
     </div>
 </noscript>
+
+<!-- Fully-page-unique Elements Start -->
+
+<!-- Carousel (photos populate on page load with JavaScript) -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 </div>
 
@@ -144,8 +180,8 @@
                 <a href="partners.htm" class="card-link">
                     <div class="thumbnail card">
                         <span class="glyphicon glyphicon-globe card-glyph"></span>
-                        <p><strong>Partner or Donor</strong></p>
-                        <p>A prospective or current partner or donor wishing to see the results and details of our partnerships</p>
+                        <p><strong>Partner</strong></p>
+                        <p>A prospective or current partner or donor wishing to see the details and results of our partnerships</p>
                     </div>
                 </a>
             </div>
@@ -159,40 +195,23 @@
                 </a>
             </div>
         </div>
-    </div>
+        <br>
+        <p class="text-center">
+            And no matter who you are, you can click below if you'd like to sign up for our official mailing list.
+        </p>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
-                </div>
-                <div class="modal-body">
-                    <form role="form">
-                    <div class="form-group">
-                        <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
-                        <input type="number" class="form-control" id="psw" placeholder="How many?">
-                    </div>
-                    <div class="form-group">
-                        <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
-                        <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-                    </div>
-                        <button type="submit" class="btn btn-block">Pay 
-                        <span class="glyphicon glyphicon-ok"></span>
-                        </button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-                        <span class="glyphicon glyphicon-remove"></span> Cancel
+        <div class="row text-center">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <a class="no-decoration" data-toggle="modal" data-target="#mailModal" href="#getinvolved">
+                    <button type="submit" class="btn btn-block btn-mail">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                        <br>
+                        <p><strong>Subscribe</strong></p>
                     </button>
-                    <p>Need <a href="#">help?</a></p>
-                </div>
+                </a>
             </div>
+            <div class="col-sm-4"></div>
         </div>
     </div>
 </div>
@@ -221,60 +240,6 @@
     <br>
 </div>
 
-<!-- Container (Contact Section) >
-<div id="contact" class="container">
-    <h3 class="text-center">Contact</h3>
-    <p class="text-center"><em>We love our fans!</em></p>
-
-    <div class="row">
-        <div class="col-md-4">
-            <p>Fan? Drop a note.</p>
-            <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
-            <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-            <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
-        </div>
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                </div>
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                </div>
-            </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-            <br>
-            <div class="row">
-                <div class="col-md-12 form-group">
-                    <button class="btn pull-right" type="submit">Send</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <h3 class="text-center">From The Blog</h3>  
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#home">Mike</a></li>
-        <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
-        <li><a data-toggle="tab" href="#menu2">Peter</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
-            <h2>Mike Ross, Manager</h2>
-            <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
-        </div>
-        <div id="menu1" class="tab-pane fade">
-            <h2>Chandler Bing, Guitarist</h2>
-            <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-        </div>
-        <div id="menu2" class="tab-pane fade">
-            <h2>Peter Griffin, Bass player</h2>
-            <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
-        </div>
-    </div>
-</div-->
-
 <!-- Google Maps -->
 <div id="googleMap" style="height:550px;width:100%;"></div>
 <script>
@@ -288,6 +253,9 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMiYF3bMNvy0DHwuUJpvhh8LUVc_E3cKY&callback=myMap"></script>
 
+
+
+<!-- End of Fully-page-unique Elements -->
 
 <!-- Footer -->
 <footer class="text-center">
