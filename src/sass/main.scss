@@ -127,6 +127,10 @@ h3, h4 {
     width: 80%;
     height: 80%;
     opacity: 0.9;
+
+    &-col {
+        margin-bottom: 30px;
+    }
 }
 .topbar {
     background: #2e323c;
