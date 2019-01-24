@@ -1,13 +1,13 @@
 [
     {
-      "name": "Rutgers Day",
-      "desc": "An executive board member operates the booth on Rutgers Day",
-      "img": "rutgersday.png"
-    },
-    {
       "name": "Antenna Trip",
       "desc": "Members survey cloud cover during a field expedition",
       "img": "antennatrip.png"
+    },
+    {
+      "name": "Rutgers Day",
+      "desc": "An executive board member operates the booth on Rutgers Day",
+      "img": "rutgersday.png"
     },
     {
       "name": "Weather Balloon",
