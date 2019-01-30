@@ -1,7 +1,6 @@
 OVERALL
 1. set .htaccess or overwrite to make links not end in .htm
+2. set the favicon (transparent, circle, or rounded bg?)
 
 HOMEPAGE
 1. detect the device type before applying the hover css animations
-2. make picture square and centered on smaller screens
-3. make real pictures, not planets, for the 5 things

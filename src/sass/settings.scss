@@ -1,13 +1,76 @@
-@import url('normalize.css/normalize.css');
+@import url('normalize.css');
 @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+//
+// Browser Sizes
+//
+$global-browser-min-size: 320px;
+$global-browser-max-size: 1440px;
+
+//
+// System wide media queries
+//
+
+$mq-list: (
+   'xs': 480px,  // extra small
+   'sm': 640px,  // small
+   'md': 768px,  // medium
+   'wd': 992px,  // wide
+   'xw': 1024px, // extra wide
+   'lg': 1280px, // large
+   'xl': 1366px // extra large
+);
+
+$_mq: (
+   'xs-and-up': "min-width: 0px",
+   'sm-and-up': "min-width: #{map-get($mq-list, 'sm')}",
+   'md-and-up': "min-width: #{map-get($mq-list, 'md')}",
+   'wd-and-up': "min-width: #{map-get($mq-list, 'wd')}",
+   'xw-and-up': "min-width: #{map-get($mq-list, 'xw')}",
+   'lg-and-up': "min-width: #{map-get($mq-list, 'lg')}",
+   'xl-and-up': "min-width: #{map-get($mq-list, 'xl')}",
+);
+
+//
+// Mobile First
+//
+$xs-and-up: map-get($_mq, 'xs-and-up');
+$sm-and-up: map-get($_mq, 'sm-and-up');
+$md-and-up: map-get($_mq, 'md-and-up');
+$wd-and-up: map-get($_mq, 'wd-and-up');
+$xw-and-up: map-get($_mq, 'xw-and-up');
+$lg-and-up: map-get($_mq, 'lg-and-up');
+$xl-and-up: map-get($_mq, 'xl-and-up');
+
+$tee-sizes: (
+   'xxl',
+   'xl',
+   'lg',
+   'md',
+   'base',
+   'sm',
+   'xs',
+   'xxs'
+);
+
+
+//
+// Constants
+//
 
 //smallest sizes within each range
 $size-tablet: 768px;
 $size-phablet: 640px;
 $size-mobile: 480px;
 
-$tablet-and-up: (min-width: $size-tablet);
+$tablet-and-up: $md-and-up;
 $below-tablet: (max-width: ($size-tablet - 1px));
 
-$phablet-and-up: (min-width: $size-phablet);
-$mobile-and-up: (min-width: $size-mobile);
+$phablet-and-up: $sm-and-up;
+$mobile-and-up: $xs-and-up;
+
+$color-text-gray: #777;
+$color-bg-darkgray: #2D2D30;
+
+$border-radius-card: 25px;
+$margin-bottom-infocol: 35px;

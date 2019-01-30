@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Weather Balloon",
+      "desc": "The weather balloon team prepares to launch its first payload",
+      "img": "balloonday.png"
+    },
+    {
+      "name": "SpaceVision 2018",
+      "desc": "Our SpaceVision 2018 envoys pose for a photo amid the conference",
+      "img": "redcarpet.png"
+    },
+    {
+      "name": "Antenna Trip",
+      "desc": "Members survey cloud cover during a field expedition",
+      "img": "antennatrip.png"
+    },
+    {
+      "name": "Atmospheric Probe",
+      "desc": "Members prepare the second field experiment of their atmospheric probe",
+      "img": "launch.png"
+    },
+    {
+      "name": "Rutgers Day",
+      "desc": "An executive board member operates the booth on Rutgers Day",
+      "img": "rutgersday.png"
+    }
+]

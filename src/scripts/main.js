@@ -1,13 +1,13 @@
 // "Main"
 $(document).ready(function () {
     // Loads all modules on the page
-    let path_photo_base = "images/";
     let path_file_base = "modules/";
 
     // Loads the homepage modules
     let path_file_appended = path_file_base + "home/";
 
     // Loads the carousel module
+    path_file_appended += "carousel/";
     let carousel = document.getElementById('myCarousel');
     if (carousel != null) {
         let appendage = "";
@@ -26,7 +26,8 @@ $(document).ready(function () {
                 } else {
                     appendage += '<div class="item">';
                 }
-                appendage += '<img src="' + path_photo_base + elements[i].img + '" alt="' + elements[i].name + '" width="1200" height="700"><div class="carousel-caption"><p>' + elements[i].desc + '</p></div></div>';
+                appendage += '<div class="carousel-slide-holder"><div class="carousel-slide" style="background-image: url(' + path_file_appended + elements[i].img + ');"></div><div class="carousel-caption"><p>' + elements[i].desc + '</p></div></div></div>';
+                //appendage += '<img src="' + path_file_appended + elements[i].img + '" alt="' + elements[i].name + '" width="1200" height="700"><div class="carousel-caption"><p>' + elements[i].desc + '</p></div></div>';
             }
             appendage += '</div>';
             appendage += '<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';

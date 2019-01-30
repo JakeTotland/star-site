@@ -5,11 +5,11 @@ html {
 }
 body {
     font: 400 15px/1.8 Lato, sans-serif;
-    color: #777;
+    color: $color-text-gray;
 }
 h3, h4 {
     margin: 10px 0 30px 0;
-    letter-spacing: 5px;      
+    letter-spacing: 5px;
     font-size: 20px;
     color: #111;
 }
@@ -17,7 +17,11 @@ h3, h4 {
     padding: 50px 20px;
 
     @media ($mobile-and-up) {
-        padding: 60px 80px;
+        padding: 60px 40px;
+    }
+
+    @media ($phablet-and-up) {
+        padding: 80px 80px;
     }
 
     @media ($tablet-and-up) {
@@ -54,7 +58,7 @@ h3, h4 {
     top: 0;
     transition: top ease 0.5s;
     border: 2px solid transparent;
-    border-radius: 25px;
+    border-radius: $border-radius-card;
     background-color: white;
     margin-bottom: 60px;
 
@@ -77,12 +81,47 @@ h3, h4 {
             top: -20px;
         //}
     
-        border-color: #ff4b4b;
+        border-color: red;
     }
 
     &-link {
         &:hover {
             text-decoration: none;
+        }
+    }
+}
+.carousel-slide {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    &-holder {
+        // these three lines allow the height of the element to be equal to 100% of the width (via padding-top) of the element
+        position: relative;
+        width: 100%;
+        //box-sizing: border-box;
+
+        &:before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+
+            @media ($phablet-and-up) {
+                // and down here it causes the height of the element to be equal to 58.3333% of the height of the element (since the photo aspect ratio is 1200 x 700)
+                padding-top: 58.3333%;
+            }
         }
     }
 }
@@ -114,13 +153,6 @@ h3, h4 {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
-.smaller-than-tablet {
-    display: none;
-
-    @media ($below-tablet) {
-        display: inline;
-    }
-}
 .tenet {
     border: 10px solid transparent;
     margin-bottom: 25px;
@@ -129,16 +161,23 @@ h3, h4 {
     opacity: 0.9;
 
     &-col {
-        margin-bottom: 30px;
+        margin-bottom: $margin-bottom-infocol;
+
+        i {
+            font-size: 115px;
+            margin-top: 25px;
+            margin-bottom: 35px;
+            color: $color-bg-darkgray;
+        }
     }
 }
 .topbar {
-    background: #2e323c;
+    background: $color-bg-darkgray;
     min-height: 50px;
     max-height: 50px;
 
     @media ($tablet-and-up) {
-        display: none;
+        display: none !important;
     }
 }
 .thumbnail {
@@ -157,7 +196,7 @@ h3, h4 {
 
     &-mail {
         padding-top: 20px;
-        border: 1px solid #777;
+        border: 1px solid $color-text-gray;
         font-size: 15px;
 
         span {
@@ -192,12 +231,23 @@ h3, h4 {
         }
     //}
 }
-.mission-icon {
-    border: 10px solid transparent;
-    margin-bottom: 25px;
-    width: 50%;
-    height: 50%;
-    opacity: 0.9;
+.meetings {
+    &-col {
+        margin-bottom: $margin-bottom-infocol;
+    }
+
+    &-icon {
+        border: 2px solid $color-text-gray;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        height: 50%;
+        opacity: 0.9;
+        width: 90%;
+
+        @media ($sm-and-up) {
+            width: 65%;
+        }
+    }
 }
 .mobile-only {
     @media ($phablet-and-up) {
@@ -214,7 +264,14 @@ h3, h4 {
     padding: 40px 50px;
 }
 .nav-tabs li a {
-    color: #777;
+    color: $color-text-gray;
+}
+.vanish-on-tablet {
+    display: inline;
+
+    @media ($tablet-and-up) {
+        display: none;
+    }
 }
 #googleMap {
     width: 100%;
@@ -225,7 +282,7 @@ h3, h4 {
 .navbar {
     font-family: Montserrat, sans-serif;
     margin-bottom: 0;
-    background-color: #2d2d30;
+    background-color: $color-bg-darkgray;
     border: 0;
     font-size: 11px !important;
     letter-spacing: 4px;
@@ -306,7 +363,7 @@ h3, h4 {
     }
 }
 footer {
-    background-color: #2d2d30;
+    background-color: $color-bg-darkgray;
     color: #f5f5f5;
     padding: 32px;
 
@@ -318,7 +375,7 @@ footer a {
     color: #f5f5f5;
 }
 footer a:hover {
-    color: #777;
+    color: $color-text-gray;
     text-decoration: none;
 }  
 .form-control {
