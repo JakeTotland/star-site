@@ -80,3 +80,18 @@ function useJSON(file, callback) {
     });
 }
 */
+
+function wait(milliseconds, callback) {
+    //console.log("Waiting with " + milliseconds + " milliseconds");
+    window.setTimeout(function () {
+        callback();
+    }, milliseconds);
+}
+
+function waitToLink(link) {
+    //console.log("Waiting!")
+    wait(500, function () {
+        //console.log("really done");
+        window.location.href = link;
+    });
+}
