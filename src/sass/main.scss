@@ -14,22 +14,27 @@ h3, h4 {
     color: #111;
 }
 .container {
-    padding: 50px 20px;
 
-    @media ($mobile-and-up) {
-        padding: 60px 40px;
-    }
+    padding: 40px 40px;
 
     @media ($phablet-and-up) {
-        padding: 80px 80px;
+        padding: 45px 80px;
     }
 
     @media ($tablet-and-up) {
-        padding: 80px 100px;
+        padding: 50px 100px;
     }
 
     h3 {
         text-transform: uppercase;
+    }
+
+    &.first {
+        margin-top: 55px;
+    }
+
+    &.last {
+        padding-bottom: 75px;
     }
 }
 .person {
@@ -77,6 +82,7 @@ h3, h4 {
     }
 
     &:hover {
+        cursor: pointer;
         top: -30px;
         border-color: red;
     }
@@ -136,12 +142,26 @@ h3, h4 {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }
 }
+.center-on-mobile {
+    text-align: center;
+
+    @media ($tablet-and-up) {
+        text-align: left;
+    }
+}
 .bg-1 {
     background: #2d2d30;
     color: #bdbdbd;
 }
 .bg-1 h3 {color: #fff;}
 .bg-1 p {font-style: italic;}
+.media {
+    margin-bottom: 40px;
+
+    @media ($tablet-and-up) {
+        margin-bottom: 15px;
+    }
+}
 .list-group-item:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -191,12 +211,12 @@ h3, h4 {
     border-radius: 25px;
     transition: .2s;
 
-    &-mail {
+    &-media {
         padding-top: 20px;
         border: 1px solid $color-text-gray;
         font-size: 15px;
 
-        span {
+        span, i {
             font-size: 50px;
         }
     }
@@ -339,6 +359,59 @@ h3, h4 {
 
     @media ($phablet-and-up) {
         display: inline;
+    }
+}
+.section {
+    padding: 50px 20px;
+
+    @media ($mobile-and-up) {
+        padding: 60px 40px;
+    }
+
+    @media ($phablet-and-up) {
+        padding: 80px 80px;
+    }
+
+    @media ($tablet-and-up) {
+        padding: 80px 100px;
+    }
+}
+.nonsection {
+    padding: 20px 20px;
+
+    @media ($mobile-and-up) {
+        padding: 20px 40px;
+    }
+
+    @media ($phablet-and-up) {
+        padding: 30px 80px;
+    }
+
+    @media ($tablet-and-up) {
+        padding: 40px 100px;
+    }
+}
+.slack {
+    &-logo {
+        margin-top: 25px; 
+        width: 150px;
+
+        @media ($phablet-and-up) {
+            margin-top: 35px;
+            width: 200px;
+        }
+
+        @media ($tablet-and-up) {
+            margin-top: 75px;
+            width: 350px;
+        }
+    }
+
+    &-subheader {
+        font-size: 18px;
+        text-align: left;
+        font-weight: bold;
+        letter-spacing: 1px;
     }
 }
 .upper {

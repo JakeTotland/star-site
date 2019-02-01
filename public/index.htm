@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
     <title>Space Technology Association of Rutgers</title>
-    
-    <!-- Favicon Links -->
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#d61919">
-    <meta name="theme-color" content="#ffffff">
-    
+
+    <!-- Favicon Settings -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+	<link rel="apple-touch-icon" href="/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/favicon-144.png">
+	<meta name="msapplication-config" content="/browserconfig.xml">
 
     <!-- Stylesheets and Fonts -->
     <meta charset="utf-8">
@@ -51,18 +62,24 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="members.htm">Members & Social Media</a></li>
+                        <li><a href="members.htm">Members & Officers</a></li>
                         <li><a href="alumni.htm">Alumni</a></li>
-                        <li><a href="partners.htm">Partners</a></li> 
+                        <li><a href="partners.htm">Partners</a></li>
+                        <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
                     </ul>
                 </li>
-                <li><a data-toggle="modal" data-target="#mailModal" href="#getinvolved"><span class="vanish-on-tablet">Mailing List </span><span class="glyphicon glyphicon-envelope"></span></a></li>
+                <li>
+                    <a data-toggle="modal" data-target="#mailModal" href="#getinvolved"><span class="glyphicon glyphicon-envelope"></span><span class="vanish-on-tablet"> Mailing List</span></a>
+                </li>
+                <li>
+                    <a href="slack.htm"><i class="fab fa-slack" aria-hidden="true"></i><span class="vanish-on-tablet"> Slack for Star</span></a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Bar pushing the top of the carousel photos down the screen -->
+<!-- Bar pushing the top of the carousel photos down the screen (when on mobile) -->
 <div class="topbar"></div>
 
 <!-- Mailing List Modal -->
@@ -89,8 +106,7 @@
                 <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
                     <span class="glyphicon glyphicon-remove"></span> Cancel
                 </button>
-                <p class="mobile-only">Join our <a href="slack.htm" target="_blank"><i class="fab fa-slack" aria-hidden="true"></i> channel</a></p>
-                <p class="phablet-and-up">Just arrived? <a href="slack.htm" target="_blank">Find out how</a> to join our <a href="https://ruspacetech.slack.com/" target="_blank">Slack <i class="fab fa-slack" aria-hidden="true"></i></a></p>
+                <p>Or shoot us an email at at <a href="mailto:ruspacetech@gmail.com">ruspacetech@gmail.com</a></p>
             </div>
         </div>
     </div>
@@ -99,7 +115,7 @@
 <!-- Noscript standard warning/error message -->
 <noscript>
     <br><br><br><br>
-    <div class="container text-center warning">
+    <div class="container section text-center warning">
         <h3>Warning</h3>
         <p><em>JavaScript is required to enjoy this site to the fullest. Please allow <span class="upper">Star</span> permission to run scripts via your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
     </div>
@@ -112,7 +128,7 @@
 </div>
 
 <!-- Container (About/Tenets Section) -->
-<div id="about" class="container text-center">
+<div id="about" class="container section text-center">
     <h3>Space Technology Association of Rutgers</h3>
     <p><em><span class="upper">Star</span> is the first democratic collegiate space organization. Our primary goal is to make the research, study, and experience of space accessible to students, while upholding these three core tenets:</em></p>
     <br>
@@ -137,7 +153,7 @@
 
 <!-- Container (Get Involved Section) -->
 <div id="getinvolved" class="bg-1">
-    <div class="container">
+    <div class="container section">
         <h3 class="text-center">Get Involved</h3>
         <p class="text-center">There are many ways to get involved with <span class="upper">Star</span>, from attending our free university-wide events as an interested student to inviting us to visit your school or organization as a proud <span class="upper">Star</span> partner. Just choose the option below that's right for you, depending on whether you're a...</p>
         <br>
@@ -179,7 +195,7 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <a class="no-decoration" data-toggle="modal" data-target="#mailModal" href="#getinvolved">
-                    <button type="submit" class="btn btn-block btn-mail">
+                    <button type="submit" class="btn btn-block btn-media">
                         <span class="glyphicon glyphicon-envelope"></span>
                         <br>
                         <p><strong>Subscribe</strong></p>
@@ -192,7 +208,7 @@
 </div>
 
 <!-- Container (Meetings Section) -->
-<div id="meetings" class="container text-center">
+<div id="meetings" class="container section text-center">
     <h3>Meetings</h3>
     <p><em><span class="upper">Star</span> meetings take two forms: general and project team. Prospective members and interested parties are encouraged to <a href="members.htm">contact us</a> regarding meeting details and drop in to either type. See the map below or <a href="https://www.google.com/maps?saddr&amp;daddr=40.522724,+-74.462830" target="_blank">click here</a> for directions to <span class="upper">Serc</span>, our unofficial HQ. Note that parking on Busch is only allowed by way of a registered university permit or prior arrangement.</em></p>
     <br>
@@ -211,17 +227,8 @@
     <br>
 </div>
 
-<!-- Google Maps -->
+<!-- Google Map -->
 <div id="googleMap" style="height:550px;width:100%;"></div>
-<script>
-    function myMap() {
-        var myCenter = new google.maps.LatLng(40.522724, -74.462830);
-        var mapProp = {center:myCenter, zoom:16, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
-        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        var marker = new google.maps.Marker({position:myCenter});
-        marker.setMap(map);
-    }
-</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMiYF3bMNvy0DHwuUJpvhh8LUVc_E3cKY&callback=myMap"></script>
 
 
@@ -229,12 +236,12 @@
 
 <!-- Footer -->
 <footer class="text-center">
-    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="Jump to Top">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="Return to Top">
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a><br><br>
     <p>
         Content on this site, except where indicated otherwise, is the property of the Space Technology Association of Rutgers, a Rutgers University student organization.<br>© <span class="upper">Star</span> 2019
-        <!-- This page was built by STAR and uses elements from a free, any-use theme from www.w3schools.com. The content under STAR Copyright only includes items that are not part of this theme, especially images and text, and items that are not indicated to be from other sources (such as the Google Maps view). STAR does not claim ownership over any non-photo icons on the site (except the STAR logo), such as fontawesome icons and Bootstrap glyphicons, which are free to use. -->
+        <!-- The pages on this site were built by STAR and uses elements from a free, any-use theme from www.w3schools.com. The content under STAR Copyright only includes items that are not part of this theme, especially images and text, and items that are not indicated to be from other sources (such as the Google Maps view). The code on this site--even that written by STAR--is not claimed under our Copyright, however, STAR does not claim any responsibility or liability for its use beyond this site. STAR also does not claim ownership over any non-photo icons on the site (except the STAR logo), such as fontawesome icons, Bootstrap glyphicons, and external brand logos (Facebook, Slack, etc.) which are free to use. The favicons for this site and the code to set them properly on several broswers was made possible by the free tool faviconit.com, however the icon (STAR logo) itself is the property of STAR. -->
     </p> 
 </footer>
 </body>

@@ -1,3 +1,7 @@
+
+let tablet_width = 768; //px
+let small_desktop_width = 992; //px
+
 // "Main"
 $(document).ready(function () {
     // Loads all modules on the page
@@ -39,8 +43,8 @@ $(document).ready(function () {
     // Initialize Tooltip
     $('[data-toggle="tooltip"]').tooltip();
 
-    // Add smooth scrolling to all links in navbar + footer link
-    $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+    // Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
+    $(".navbar a, footer a[href='#myPage'], li a").on('click', function (event) {
 
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -88,10 +92,22 @@ function wait(milliseconds, callback) {
     }, milliseconds);
 }
 
+// Waits for 500 milliseconds to open a link, if the screen is smaller than a small desktop sreen
 function waitToLink(link) {
-    //console.log("Waiting!")
-    wait(500, function() {
-        //console.log("really done");
+    if (document.body.clientWidth < small_desktop_width) {
+        wait(500, function() {
+            window.location.href=link;
+        });
+    } else {
         window.location.href=link;
-    });
+    }
+}
+
+// Google Maps widget
+function myMap() {
+    var myCenter = new google.maps.LatLng(40.522724, -74.462830);
+    var mapProp = {center:myCenter, zoom:16, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker = new google.maps.Marker({position:myCenter});
+    marker.setMap(map);
 }

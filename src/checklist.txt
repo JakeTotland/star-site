@@ -1,6 +1,3 @@
 OVERALL
 1. set .htaccess or overwrite to make links not end in .htm
-2. set the favicon (transparent, circle, or rounded bg?)
-
-HOMEPAGE
-1. detect the device type before applying the hover css animations
+2. set the favicon to actually working
