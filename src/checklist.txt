@@ -1,3 +1,13 @@
 OVERALL
 1. set .htaccess or overwrite to make links not end in .htm
 2. set the favicon to actually working
+
+HOME
+1. make landing photo carousel swipeable too (not just click left and right)
+
+MEMBERS
+0. decide what to put in the "current members" section
+1. make the meetings list PDF
+2. update the two side pictures
+3. make meeting details banner a module
+4. complete the eboard.json file

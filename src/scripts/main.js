@@ -4,16 +4,16 @@ let small_desktop_width = 992; //px
 
 // "Main"
 $(document).ready(function () {
+    
     // Loads all modules on the page
     let path_file_base = "modules/";
 
-    // Loads the homepage modules
-    let path_file_appended = path_file_base + "home/";
-
-    // Loads the carousel module
-    path_file_appended += "carousel/";
+    // Loads the homepage carousel module
     let carousel = document.getElementById('myCarousel');
     if (carousel != null) {
+        let path_file_appended = path_file_base + "home/";
+        path_file_appended += "carousel/";
+
         let appendage = "";
         let path_file = path_file_appended + "carousel.json";
         retrieveJSON(path_file, function(elements) {
@@ -40,11 +40,79 @@ $(document).ready(function () {
         });
     }
 
-    // Initialize Tooltip
+    // Loads the members page eboard module
+    let eboard = document.getElementById('eboard');
+    if (eboard != null) {
+        let path_file_appended = path_file_base + "members/";
+        path_file_appended += "eboard/";
+        let appendage = "";
+        let path_file = path_file_appended + "eboard.json";
+
+        retrieveJSON(path_file, function(elements) {
+
+            if (elements.length % 2 != 0 ) {
+                // there is an odd number of board members; this sets the first one in its own row
+
+                item = elements.shift();
+                appendage += '<div class="row"><div class="col-sm-4"></div>';
+                id = "boardmemberX";
+                pic = item.img;
+                if (pic == "") {
+                    pic = path_file_appended + "logo.png";
+                }
+
+                // begin this element
+                appendage += '<div class="col-sm-4 person-container">'
+                appendage += eboard_append(item.position, item.name, item.classyear, item.major, item.desc, pic, id);
+                // end this element
+                appendage += '</div>';
+                appendage += '<div class="col-sm-4"></div></div>';
+            }
+            
+
+            for (i = 0; i < elements.length; i++) {
+                pic = elements[i].img;
+                if (pic == "") {
+                    pic = path_file_appended + "logo.png";
+                }
+
+                // start a new row when needed
+                if ((i == 0) || ((elements.length % 4 == 0) && (i % 4 == 0)) || ((elements.length % 4 != 0) && ((i + 2) % 4 == 0))) {
+                    appendage += '<div class="row">';
+                }
+
+                // left-pad the first (and only) row of two, if necessary
+                if (elements.length % 4 != 0 && i == 0) {
+                    appendage += '<div class="col-sm-3"></div>';
+                }
+
+                // set items within the row
+                // begin this element
+                appendage += '<div class="col-sm-3 person-container">'
+                appendage += eboard_append(elements[i].position, elements[i].name, elements[i].classyear, elements[i].major, elements[i].desc, pic, ("boardmember" + i));
+                // end this element
+                appendage += '</div>';
+
+                // right-pad the first (and only) row of two, if necessary
+                if (elements.length % 4 != 0 && i == 1) {
+                    appendage += '<div class="col-sm-3"></div>';
+                }
+
+                // end the current row when it's filled
+                if (((elements.length % 4 == 0) && ((i + 1) % 4 == 0)) || ((elements.length % 4 != 0) && ((i == 1) || ((i + 3) % 4 == 0)))) {
+                    appendage += '</div>';
+                }
+            }
+
+            eboard.innerHTML += appendage;
+        });
+    }
+
+    // Initializes Tooltip
     $('[data-toggle="tooltip"]').tooltip();
 
     // Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
-    $(".navbar a, footer a[href='#myPage'], li a").on('click', function (event) {
+    $(".navbar a, footer a[href='#top'], li a").on('click', function (event) {
 
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -110,4 +178,24 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
     var marker = new google.maps.Marker({position:myCenter});
     marker.setMap(map);
+}
+
+// Function to append the eboard 
+function eboard_append(position, name, year, major, desc, pic, id) {
+    let appendage = "";
+    appendage += '<a href="#' + id + '" data-toggle="collapse"><p class="text-center"><strong>' + position + '</strong><br>' + name + '</p>';
+    appendage += '<img src="' + pic + '" class="img-circle person" alt="' + position + ': ' + name + '" width="255" height="255">';
+    //appendage += '<div class="eboard-person" style="background-image: url(' + pic + ');"></div>';
+    appendage += '</a><div id="' + id + '" class="collapse"><div class="details-eboard">';
+    if (major != "") {
+        appendage += '<p>' + major + '</p>';
+    }
+    if (year != "") {
+        appendage += '<p><em>Class of ' + year + '</em></p>';
+    }
+    if (desc != "") {
+        appendage += '<p>' + desc + '</p>';
+    }
+    appendage += '</div></div>';
+    return appendage;
 }

@@ -1,0 +1,66 @@
+[
+    {
+      "position": "President",
+      "name": "Timothy Nuber",
+      "classyear": "2020",
+      "major": "Aerospace Engineering",
+      "desc": "wop",
+      "img": ""
+    },
+    {
+        "position": "Vice President",
+        "name": "Lara Hirsch",
+        "classyear": "2020",
+        "major": "Aerospace Engineering",
+        "desc": "",
+        "img": ""
+    },
+    {
+        "position": "Treasurer",
+        "name": "Arynn Rizick",
+        "classyear": "2020",
+        "major": "Supply Chain Management",
+        "desc": "",
+        "img": ""
+    },
+    {
+        "position": "Webmaster",
+        "name": "Jason Scot",
+        "classyear": "2019",
+        "major": "Computer Science",
+        "desc": "",
+        "img": ""
+    },
+    {
+        "position": "Public Relations",
+        "name": "Elizabeth F. Krim",
+        "classyear": "2020",
+        "major": "Aerospace Engineering",
+        "desc": "",
+        "img": ""
+    },
+    {
+        "position": "Acquisitions Head",
+        "name": "Tony Le",
+        "classyear": "2020",
+        "major": "Accounting",
+        "desc": "",
+        "img": ""
+    },
+    {
+        "position": "Representative",
+        "name": "Drew Sternweis",
+        "classyear": "2020",
+        "major": "Aerospace Engineering",
+        "desc": "",
+        "img": ""
+    },
+    {
+        "position": "Representative",
+        "name": "Drew Sternweis",
+        "classyear": "2020",
+        "major": "Aerospace Engineering",
+        "desc": "",
+        "img": ""
+    }
+]

@@ -1,5 +1,6 @@
 @import url('normalize.css');
 @import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css');
 
 //
 // Browser Sizes
@@ -63,9 +64,8 @@ $size-tablet: 768px;
 $size-phablet: 640px;
 $size-mobile: 480px;
 
+$smallpc-and-up: $wd-and-up;
 $tablet-and-up: $md-and-up;
-$below-tablet: (max-width: ($size-tablet - 1px));
-
 $phablet-and-up: $sm-and-up;
 $mobile-and-up: $xs-and-up;
 
@@ -74,3 +74,5 @@ $color-bg-darkgray: #2D2D30;
 
 $border-radius-card: 25px;
 $margin-bottom-infocol: 35px;
+
+$topbar_shift: 50px;

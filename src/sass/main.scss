@@ -30,11 +30,27 @@ h3, h4 {
     }
 
     &.first {
-        margin-top: 55px;
+        $shift_value: 0px;
+
+        @media ($tablet-and-up) {
+            $shift_value: 80px;
+        }
+
+        margin-top: $shift_value;
+        padding-top: 0px;
+
+        &-pad {
+            margin-top: 0px;
+            padding-top: $shift_value;
+        }
     }
 
     &.last {
         padding-bottom: 75px;
+
+        &-xl {
+            padding-bottom: 125px;
+        }
     }
 }
 .person {
@@ -57,6 +73,13 @@ h3, h4 {
             -webkit-tap-highlight-color: rgb(211, 211, 211);
         }
     }
+}
+.banner {
+    margin-top: 35px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border: 2px solid $color-bg-darkgray;
+    border-radius: $border-radius-card;
 }
 .card {
     position: relative;
@@ -94,7 +117,6 @@ h3, h4 {
     }
 }
 .carousel-slide {
-    
     position: absolute;
     top: 0;
     left: 0;
@@ -142,6 +164,15 @@ h3, h4 {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }
 }
+.center-vertical {
+
+    &-tablet {
+        @media ($tablet-and-up) {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
 .center-on-mobile {
     text-align: center;
 
@@ -162,6 +193,20 @@ h3, h4 {
         margin-bottom: 15px;
     }
 }
+.details {
+    &-eboard {
+        margin-bottom: 60px;
+    }
+}
+.even {
+    &-table {
+        width: 100%;
+
+        td {
+            width:25%;
+        }
+    }
+}
 .list-group-item:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -169,6 +214,20 @@ h3, h4 {
 .list-group-item:last-child {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+}
+.smaller {
+    font-size: 12px;
+}
+.space {
+    &-down {
+        &-mobile {
+            margin-bottom: 45px;
+
+            @media ($tablet-and-up) {
+                margin-bottom: 0px;
+            }
+        }
+    }
 }
 .tenet {
     border: 10px solid transparent;
@@ -188,10 +247,41 @@ h3, h4 {
         }
     }
 }
+.text {
+    &-left-tablet {
+        text-align: center;
+
+        ol, ul {
+            text-align: left;
+        }
+
+        @media ($tablet-and-up) {
+            text-align: left;
+        }
+    }
+
+    &-right-tablet {
+        text-align: center;
+
+        ol, ul {
+            text-align: left;
+        }
+
+        @media ($tablet-and-up) {
+            text-align: right;
+
+            ol, ul {
+                margin-left: 40%;
+                text-align: left;
+            }
+        }
+    }
+}
 .topbar {
     background: $color-bg-darkgray;
-    min-height: 50px;
-    max-height: 50px;
+    min-height: $topbar_shift !important;
+    height: $topbar_shift !important;
+    max-height: $topbar_shift !important;
 
     @media ($tablet-and-up) {
         display: none !important;
@@ -225,6 +315,13 @@ h3, h4 {
     border: 1px solid #333;
     background-color: #fff;
     color: #000;
+}
+.img {
+    &-screenside {
+        @media ($tablet-and-up) {
+            width: 100%;
+        }
+    }
 }
 .logo {
     max-width: 30px;
@@ -295,7 +392,7 @@ h3, h4 {
     height: 400px;
     //-webkit-filter: grayscale(100%);
     //filter: grayscale(100%);
-}  
+}
 .navbar {
     font-family: Montserrat, sans-serif;
     margin-bottom: 0;
@@ -313,6 +410,10 @@ h3, h4 {
         color: #d5d5d5 !important;
         font-size: 16px;
 
+        a {
+            color: #d5d5d5 !important;
+        }
+
         img {
             display: float;
             float: left;
@@ -325,6 +426,7 @@ h3, h4 {
         }
 
         &-div {
+            margin-left: 20px;
             text-transform: uppercase;
             display: float;
             float: left;
@@ -361,6 +463,11 @@ h3, h4 {
         display: inline;
     }
 }
+.pointer {
+    &:hover{
+        cursor: pointer;
+    }
+}
 .section {
     padding: 50px 20px;
 
@@ -393,17 +500,23 @@ h3, h4 {
 }
 .slack {
     &-logo {
-        margin-top: 25px; 
-        width: 150px;
+        border: 1px solid $color-bg-darkgray;
+        border-radius: $border-radius-card;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        padding-top: 0px;
+        width: 80%;
 
         @media ($phablet-and-up) {
-            margin-top: 35px;
-            width: 200px;
+            width: 400px;
         }
 
         @media ($tablet-and-up) {
-            margin-top: 75px;
-            width: 350px;
+            width: 450px;
+        }
+
+        @media ($smallpc-and-up) {
+            width: 500px;
         }
     }
 
@@ -419,6 +532,7 @@ h3, h4 {
 }
 .warning {
     border: 2px solid red;
+    border-radius: $border-radius-card;
 }
 .dropdown-menu {
     
