@@ -1,6 +1,7 @@
 OVERALL
 1. set .htaccess or overwrite to make links not end in .htm
 2. set the favicon to actually working
+3. make navbar page titles get highlighted or something when on the page they link to
 
 HOME
 1. make landing photo carousel swipeable too (not just click left and right)

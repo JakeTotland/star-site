@@ -4,7 +4,7 @@
       "name": "Timothy Nuber",
       "classyear": "2020",
       "major": "Aerospace Engineering",
-      "desc": "wop",
+      "desc": "",
       "img": ""
     },
     {
@@ -49,10 +49,10 @@
     },
     {
         "position": "Representative",
-        "name": "Drew Sternweis",
+        "name": "Hossain Ahmad",
         "classyear": "2020",
         "major": "Aerospace Engineering",
-        "desc": "",
+        "desc": "Representative to SEDS (Students for the Exploration and Development of Space)",
         "img": ""
     },
     {
@@ -60,7 +60,7 @@
         "name": "Drew Sternweis",
         "classyear": "2020",
         "major": "Aerospace Engineering",
-        "desc": "",
+        "desc": "Representative to the Engineering Governing Council at Rutgers University",
         "img": ""
     }
 ]
