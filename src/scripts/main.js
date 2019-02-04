@@ -40,72 +40,89 @@ $(document).ready(function () {
         });
     }
 
-    // Loads the members page eboard module
-    let eboard = document.getElementById('eboard');
-    if (eboard != null) {
-        let path_file_appended = path_file_base + "members/";
-        path_file_appended += "eboard/";
-        let appendage = "";
-        let path_file = path_file_appended + "eboard.json";
+    // Loads the members page modules
+    let members = document.getElementById('meetings');
+    if (members != null) {
+        let path_file_appended_base = path_file_base + "members/";
+        let path_file_appended = path_file_appended_base + "meetings/";
+        let appendage_members = "";
+        path_file = path_file_appended + "meetings.json";
 
+        // Loads the members module
         retrieveJSON(path_file, function(elements) {
+            let element = elements[0];
 
-            if (elements.length % 2 != 0 ) {
-                // there is an odd number of board members; this sets the first one in its own row
+            appendage_members += '<div class="row"><div class="col-sm-1"></div><div class="col-sm-10 banner"><h2>Meeting Details: ' + element.season + ' ' + element.year + '</h2><hr><br><div class="row"><div class="col-sm-1"></div><div class="col-sm-4"><em>Time</em><br><h3>' + element.time + ' ' + element.ampm + '</h3></div><div class="col-sm-2"><i class="fas fa-meteor space-down-mobile" style="font-size: 60px;"></i></div><div class="col-sm-4"><em>Place</em><br><h3><a href="' + element.bldglink + '" target="_blank">' + element.bldgabbreviation + '</a>  ' + element.room + '</h3></div><div class="col-sm-1"></div></div><div class="row"><div class="col-sm-1"></div><div class="col-sm-10"><em>' + element.pattern + '</em><br><h3><a href="' + element.pdflink + '" target="_blank">List of Dates</a></h3></div><div class="col-sm-1"></div></div><br><div class="row smaller"><div class="col-sm-1"></div><div class="col-sm-10"><p><em>For the most up-to-date meeting information, including topics, room changes, and cancellations, make sure you are on our mailing list.</em></p><p>Send all meeting-related inquiries to <a href="mailto:' + element.contactemail + '">' + element.contactemail + '</a></p></div><div class="col-sm-1"></div></div></div><div class="col-sm-1"></div></div>';
 
-                item = elements.shift();
-                appendage += '<div class="row"><div class="col-sm-4"></div>';
-                id = "boardmemberX";
-                pic = item.img;
-                if (pic == "") {
-                    pic = path_file_appended + "logo.png";
-                }
-
-                // begin this element
-                appendage += '<div class="col-sm-4 person-container">'
-                appendage += eboard_append(item.position, item.name, item.classyear, item.major, item.desc, pic, id);
-                // end this element
-                appendage += '</div>';
-                appendage += '<div class="col-sm-4"></div></div>';
-            }
-            
-
-            for (i = 0; i < elements.length; i++) {
-                pic = elements[i].img;
-                if (pic == "") {
-                    pic = path_file_appended + "logo.png";
-                }
-
-                // start a new row when needed
-                if ((i == 0) || ((elements.length % 4 == 0) && (i % 4 == 0)) || ((elements.length % 4 != 0) && ((i + 2) % 4 == 0))) {
-                    appendage += '<div class="row">';
-                }
-
-                // left-pad the first (and only) row of two, if necessary
-                if (elements.length % 4 != 0 && i == 0) {
-                    appendage += '<div class="col-sm-3"></div>';
-                }
-
-                // set items within the row
-                // begin this element
-                appendage += '<div class="col-sm-3 person-container">'
-                appendage += eboard_append(elements[i].position, elements[i].name, elements[i].classyear, elements[i].major, elements[i].desc, pic, ("boardmember" + i));
-                // end this element
-                appendage += '</div>';
-
-                // right-pad the first (and only) row of two, if necessary
-                if (elements.length % 4 != 0 && i == 1) {
-                    appendage += '<div class="col-sm-3"></div>';
-                }
-
-                // end the current row when it's filled
-                if (((elements.length % 4 == 0) && ((i + 1) % 4 == 0)) || ((elements.length % 4 != 0) && ((i == 1) || ((i + 3) % 4 == 0)))) {
-                    appendage += '</div>';
-                }
-            }
-
-            eboard.innerHTML += appendage;
+            members.innerHTML += appendage_members;
         });
+
+        // Loads the eboard module
+        let eboard = document.getElementById('eboard');
+        if (eboard != null) {
+            path_file_appended = path_file_appended_base + "eboard/";
+            let appendage = "";
+            path_file = path_file_appended + "eboard.json";
+
+            retrieveJSON(path_file, function(elements) {
+
+                if (elements.length % 2 != 0 ) {
+                    // there is an odd number of board members; this sets the first one in its own row
+
+                    item = elements.shift();
+                    appendage += '<div class="row"><div class="col-sm-4"></div>';
+                    id = "boardmemberX";
+                    pic = item.img;
+                    if (pic == "") {
+                        pic = path_file_appended + "logo.png";
+                    }
+
+                    // begin this element
+                    appendage += '<div class="col-sm-4 person-container">'
+                    appendage += eboard_append(item.position, item.name, item.classyear, item.major, item.desc, pic, id);
+                    // end this element
+                    appendage += '</div>';
+                    appendage += '<div class="col-sm-4"></div></div>';
+                }
+                
+
+                for (i = 0; i < elements.length; i++) {
+                    pic = elements[i].img;
+                    if (pic == "") {
+                        pic = path_file_appended + "logo.png";
+                    }
+
+                    // start a new row when needed
+                    if ((i == 0) || ((elements.length % 4 == 0) && (i % 4 == 0)) || ((elements.length % 4 != 0) && ((i + 2) % 4 == 0))) {
+                        appendage += '<div class="row">';
+                    }
+
+                    // left-pad the first (and only) row of two, if necessary
+                    if (elements.length % 4 != 0 && i == 0) {
+                        appendage += '<div class="col-sm-3"></div>';
+                    }
+
+                    // set items within the row
+                    // begin this element
+                    appendage += '<div class="col-sm-3 person-container">'
+                    appendage += eboard_append(elements[i].position, elements[i].name, elements[i].classyear, elements[i].major, elements[i].desc, pic, ("boardmember" + i));
+                    // end this element
+                    appendage += '</div>';
+
+                    // right-pad the first (and only) row of two, if necessary
+                    if (elements.length % 4 != 0 && i == 1) {
+                        appendage += '<div class="col-sm-3"></div>';
+                    }
+
+                    // end the current row when it's filled
+                    if (((elements.length % 4 == 0) && ((i + 1) % 4 == 0)) || ((elements.length % 4 != 0) && ((i == 1) || ((i + 3) % 4 == 0)))) {
+                        appendage += '</div>';
+                    }
+                }
+
+                eboard.innerHTML += appendage;
+            });
+        }
     }
 
     // Initializes Tooltip
