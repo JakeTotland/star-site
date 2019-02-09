@@ -34,9 +34,45 @@ $(document).ready(function () {
                 //appendage += '<img src="' + path_file_appended + elements[i].img + '" alt="' + elements[i].name + '" width="1200" height="700"><div class="carousel-caption"><p>' + elements[i].desc + '</p></div></div>';
             }
             appendage += '</div>';
-            appendage += '<a class="left carousel-control" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
+            appendage += '<a id="carousel-control-prev" class="left carousel-control carousel-controls-reactive" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control carousel-controls-reactive" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
 
             carousel.innerHTML += appendage;
+        });
+    }
+
+    // Loads the partners page carousel module
+    var partnerslides = document.getElementById('partners-module');
+    if (partnerslides != null) {
+        var _path_file_appended = path_file_base + "partners/";
+        _path_file_appended += "partnerslides/";
+
+        var _appendage = "";
+        var _path_file2 = _path_file_appended + "partnerslides.json";
+
+        retrieveJSON(_path_file2, function (elements) {
+            _appendage += '<div class="row text-center margins"><div id="partners-carousel" class="carousel slide text-center" data-ride="carousel"><div class="carousel-inner" role="listbox">';
+            for (i = 0; i < elements.length; i++) {
+                var link = elements[i].link;
+                var sq = "'";
+                if (link == "") {
+                    link = "index.htm";
+                }
+
+                if (i == 0) {
+                    _appendage += '<div class="item active">';
+                } else {
+                    _appendage += '<div class="item">';
+                }
+                _appendage += '<div class="row"><div class="col-sm-3"></div><div class="col-sm-6"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-3"></div></div></div>';
+            }
+            _appendage += '</div>';
+            _appendage += '<div class="carousel-controls-reactive"><a id="carousel-control-prev" class="left carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
+            _appendage += '</div></div>';
+            _appendage += '<p class="text-center"><em>';
+            _appendage += "These are some of our partner organizations. Click one to jump to its web page.";
+            _appendage += '</em></p>';
+
+            partnerslides.innerHTML += _appendage;
         });
     }
 
@@ -44,9 +80,9 @@ $(document).ready(function () {
     var members = document.getElementById('meetings-module');
     if (members != null) {
         var path_file_appended_base = path_file_base + "members/";
-        var _path_file_appended = path_file_appended_base + "meetings/";
+        var _path_file_appended2 = path_file_appended_base + "meetings/";
         var appendage_members = "";
-        path_file = _path_file_appended + "meetings.json";
+        path_file = _path_file_appended2 + "meetings.json";
 
         // Loads the members module
         retrieveJSON(path_file, function (elements) {
@@ -60,9 +96,9 @@ $(document).ready(function () {
         // Loads the eboard module
         var eboard = document.getElementById('eboard-module');
         if (eboard != null) {
-            _path_file_appended = path_file_appended_base + "eboard/";
-            var _appendage = "";
-            path_file = _path_file_appended + "eboard.json";
+            _path_file_appended2 = path_file_appended_base + "eboard/";
+            var _appendage2 = "";
+            path_file = _path_file_appended2 + "eboard.json";
 
             retrieveJSON(path_file, function (elements) {
 
@@ -70,56 +106,56 @@ $(document).ready(function () {
                     // there is an odd number of board members; this sets the first one in its own row
 
                     item = elements.shift();
-                    _appendage += '<div class="row"><div class="col-sm-4"></div>';
+                    _appendage2 += '<div class="row"><div class="col-sm-4"></div>';
                     id = "boardmemberX";
                     pic = item.img;
                     if (pic == "") {
-                        pic = _path_file_appended + "logo.png";
+                        pic = _path_file_appended2 + "logo.png";
                     }
 
                     // begin this element
-                    _appendage += '<div class="col-sm-4 person-container">';
-                    _appendage += eboard_append(item.position, item.name, item.classyear, item.major, item.desc, pic, id);
+                    _appendage2 += '<div class="col-sm-4 person-container">';
+                    _appendage2 += eboard_append(item.position, item.name, item.classyear, item.major, item.desc, pic, id);
                     // end this element
-                    _appendage += '</div>';
-                    _appendage += '<div class="col-sm-4"></div></div>';
+                    _appendage2 += '</div>';
+                    _appendage2 += '<div class="col-sm-4"></div></div>';
                 }
 
                 for (i = 0; i < elements.length; i++) {
                     pic = elements[i].img;
                     if (pic == "") {
-                        pic = _path_file_appended + "logo.png";
+                        pic = _path_file_appended2 + "logo.png";
                     }
 
                     // start a new row when needed
                     if (i == 0 || elements.length % 4 == 0 && i % 4 == 0 || elements.length % 4 != 0 && (i + 2) % 4 == 0) {
-                        _appendage += '<div class="row">';
+                        _appendage2 += '<div class="row">';
                     }
 
                     // left-pad the first (and only) row of two, if necessary
                     if (elements.length % 4 != 0 && i == 0) {
-                        _appendage += '<div class="col-sm-3"></div>';
+                        _appendage2 += '<div class="col-sm-3"></div>';
                     }
 
                     // set items within the row
                     // begin this element
-                    _appendage += '<div class="col-sm-3 person-container">';
-                    _appendage += eboard_append(elements[i].position, elements[i].name, elements[i].classyear, elements[i].major, elements[i].desc, pic, "boardmember" + i);
+                    _appendage2 += '<div class="col-sm-3 person-container">';
+                    _appendage2 += eboard_append(elements[i].position, elements[i].name, elements[i].classyear, elements[i].major, elements[i].desc, pic, "boardmember" + i);
                     // end this element
-                    _appendage += '</div>';
+                    _appendage2 += '</div>';
 
                     // right-pad the first (and only) row of two, if necessary
                     if (elements.length % 4 != 0 && i == 1) {
-                        _appendage += '<div class="col-sm-3"></div>';
+                        _appendage2 += '<div class="col-sm-3"></div>';
                     }
 
                     // end the current row when it's filled
                     if (elements.length % 4 == 0 && (i + 1) % 4 == 0 || elements.length % 4 != 0 && (i == 1 || (i + 3) % 4 == 0)) {
-                        _appendage += '</div>';
+                        _appendage2 += '</div>';
                     }
                 }
 
-                eboard.innerHTML += _appendage;
+                eboard.innerHTML += _appendage2;
             });
         }
     }
@@ -150,6 +186,27 @@ $(document).ready(function () {
             });
         } // End if
     });
+
+    // Initializes carousels that need to be dragged
+    var direction = 0; // negative for dragging left, positive for dragging right, 0 for not dragging
+    var startingX = 0;
+    var threshold = 50;
+    $('.draggable-carousel').bind('mousedown', function (pos) {
+        direction = 0;
+        startingX = pos.pageX;
+    }).bind('touchstart', function (pos) {
+        startingX = pos.originalEvent.touches[0].pageX;
+    }).bind('mousemove', function (pos) {
+        direction = pos.pageX - startingX;
+    }).bind('touchmove', function (pos) {
+        direction = pos.originalEvent.touches[0].pageX - startingX;
+    }).bind('touchend mouseup', function () {
+        if (direction < -threshold) {
+            document.getElementById('carousel-control-next').click();
+        } else if (direction > threshold) {
+            document.getElementById('carousel-control-prev').click();
+        } else {}
+    });
 });
 
 function retrieveJSON(file, callback) {
@@ -176,14 +233,25 @@ function wait(milliseconds, callback) {
     }, milliseconds);
 }
 
-// Waits for 500 milliseconds to open a link, if the screen is smaller than a small desktop sreen
-function waitToLink(link) {
-    if (document.body.clientWidth < small_desktop_width) {
-        wait(500, function () {
-            window.location.href = link;
-        });
+// Opens the given link; if blank == true, then opens the link in a new tab
+function openLink(link, blank) {
+    if (blank) {
+        var tab = window.open(link, '_blank');
+        tab.focus();
     } else {
         window.location.href = link;
+    }
+}
+
+// Waits for a delay to open a link using openLink; only waits if the screen is smaller than a small desktop sreen
+function waitToLink(link, blank) {
+    var delay = 500; // delay parameter, in ms
+    if (document.body.clientWidth < small_desktop_width) {
+        wait(delay, function () {
+            openLink(link, blank);
+        });
+    } else {
+        openLink(link, blank);
     }
 }
 

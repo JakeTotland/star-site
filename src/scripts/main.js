@@ -34,11 +34,47 @@ $(document).ready(function () {
                 //appendage += '<img src="' + path_file_appended + elements[i].img + '" alt="' + elements[i].name + '" width="1200" height="700"><div class="carousel-caption"><p>' + elements[i].desc + '</p></div></div>';
             }
             appendage += '</div>';
-            appendage += '<a class="left carousel-control" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
+            appendage += '<a id="carousel-control-prev" class="left carousel-control carousel-controls-reactive" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control carousel-controls-reactive" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
 
             carousel.innerHTML += appendage;
         });
     }
+
+    // Loads the partners page carousel module
+    let partnerslides = document.getElementById('partners-module');
+    if (partnerslides != null) {
+        let path_file_appended = path_file_base + "partners/";
+        path_file_appended += "partnerslides/";
+
+        let appendage = "";
+        let path_file = path_file_appended + "partnerslides.json";
+
+        retrieveJSON(path_file, function(elements) {
+            appendage += '<div class="row text-center margins"><div id="partners-carousel" class="carousel slide text-center" data-ride="carousel"><div class="carousel-inner" role="listbox">';
+            for (i = 0; i < elements.length; i++) {
+                let link = elements[i].link;
+                let sq = "'";
+                if (link == "") {
+                    link = "index.htm";
+                }
+
+                if (i == 0) {
+                    appendage += '<div class="item active">';
+                } else {
+                    appendage += '<div class="item">';
+                }
+                appendage += '<div class="row"><div class="col-sm-3"></div><div class="col-sm-6"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-3"></div></div></div>';
+            }
+            appendage += '</div>';
+            appendage += '<div class="carousel-controls-reactive"><a id="carousel-control-prev" class="left carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
+            appendage += '</div></div>';
+            appendage += '<p class="text-center"><em>';
+            appendage += "These are some of our partner organizations. Click one to jump to its web page.";
+            appendage += '</em></p>';
+
+            partnerslides.innerHTML += appendage;
+        });
+    }        
 
     // Loads the members page modules
     let members = document.getElementById('meetings-module');
@@ -151,6 +187,33 @@ $(document).ready(function () {
             });
         } // End if
     });
+    
+    // Initializes carousels that need to be dragged
+    var direction = 0; // negative for dragging left, positive for dragging right, 0 for not dragging
+    var startingX = 0;
+    let threshold = 50;
+    $('.draggable-carousel')
+    .bind('mousedown', function (pos) {
+        direction = 0;
+        startingX = pos.pageX;
+    })
+    .bind('touchstart', function (pos) {
+        startingX = pos.originalEvent.touches[0].pageX;
+    })
+    .bind('mousemove', function (pos) {
+        direction = pos.pageX - startingX;
+    })
+    .bind('touchmove', function (pos) {
+        direction = pos.originalEvent.touches[0].pageX - startingX;
+    })
+    .bind('touchend mouseup', function () {
+        if (direction < -threshold) {
+            document.getElementById('carousel-control-next').click();
+        } else if (direction > threshold) {
+            document.getElementById('carousel-control-prev').click();
+        } else {
+        }
+    });
 });
 
 function retrieveJSON(file, callback) {
@@ -177,15 +240,26 @@ function wait(milliseconds, callback) {
     }, milliseconds);
 }
 
-// Waits for 500 milliseconds to open a link, if the screen is smaller than a small desktop sreen
-function waitToLink(link) {
-    if (document.body.clientWidth < small_desktop_width) {
-        wait(500, function() {
-            window.location.href=link;
-        });
+// Opens the given link; if blank == true, then opens the link in a new tab
+function openLink(link, blank) {
+    if (blank) {
+        let tab = window.open(link, '_blank');
+        tab.focus();
     } else {
         window.location.href=link;
     }
+}
+
+// Waits for a delay to open a link using openLink; only waits if the screen is smaller than a small desktop sreen
+function waitToLink(link, blank) {
+    let delay = 500; // delay parameter, in ms
+    if (document.body.clientWidth < small_desktop_width) {
+        wait(delay, function() {
+            openLink(link, blank);
+        });
+    } else {
+        openLink(link, blank);
+    }   
 }
 
 // Google Maps widget

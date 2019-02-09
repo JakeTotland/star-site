@@ -25,12 +25,10 @@
 	<meta name="msapplication-TileImage" content="/favicon-144.png">
 	<meta name="msapplication-config" content="/browserconfig.xml">
 
-    <!-- Stylesheets and Fonts -->
+    <!-- Stylesheet and Scripts -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
@@ -121,7 +119,7 @@
 </noscript>
 
 <!-- Carousel (photos populate on page load with JavaScript) -->
-<div id="carousel-module" class="carousel slide" data-ride="carousel">
+<div id="carousel-module" class="carousel slide draggable-carousel" data-ride="carousel">
 </div>
 
 <!-- Container (About/Tenets Section) -->
@@ -156,7 +154,7 @@
         <br>
         <div class="row text-center">
             <div class="col-sm-4">
-                <a onclick="waitToLink('members.htm')" class="card-link">
+                <a onclick="waitToLink('members.htm', false)" class="card-link">
                     <div class="card pushup">
                         <span class="glyphicon glyphicon-user card-glyph"></span>
                         <p><strong>Student</strong></p>
@@ -165,7 +163,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a onclick="waitToLink('partners.htm')" class="card-link">
+                <a onclick="waitToLink('partners.htm', false)" class="card-link">
                     <div class="card pushup">
                         <span class="glyphicon glyphicon-globe card-glyph"></span>
                         <p><strong>Partner</strong></p>
@@ -174,7 +172,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a onclick="waitToLink('alumni.htm')" class="card-link">
+                <a onclick="waitToLink('alumni.htm', false)" class="card-link">
                     <div class="card pushup">
                         <span class="glyphicon glyphicon-education card-glyph"></span>
                         <p><strong>Alumnus</strong></p>

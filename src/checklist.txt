@@ -3,9 +3,6 @@ OVERALL
 2. set the favicon to actually working
 3. make navbar page titles get highlighted or something when on the page they link to
 
-HOME
-1. make landing photo carousel swipeable too (not just click left and right)
-
 MEMBERS
 1. make the meetings list PDF
 2. update the two side pictures
