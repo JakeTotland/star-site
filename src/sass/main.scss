@@ -14,7 +14,6 @@ h3, h4 {
     color: #111;
 }
 .container {
-
     padding: 40px 40px;
 
     @media ($phablet-and-up) {
@@ -50,6 +49,18 @@ h3, h4 {
 
         &-xl {
             padding-bottom: 125px;
+        }
+    }
+
+    &-vertical {
+        h3 {
+            text-transform: uppercase;
+        }
+
+        padding: 0px 0px;
+
+        @media ($smallpc-and-up) {
+            padding: 0px 100px;
         }
     }
 }
@@ -296,15 +307,29 @@ h3, h4 {
     }
 }
 .text {
-    &-left-tablet {
-        text-align: center;
+    &-left {
+        &-tablet {
+            text-align: center;
 
-        ol, ul {
-            text-align: left;
+            ol, ul {
+                text-align: left;
+            }
+
+            @media ($tablet-and-up) {
+                text-align: left;
+            }
         }
 
-        @media ($tablet-and-up) {
-            text-align: left;
+        &-smallpc {
+            text-align: center;
+
+            ol, ul {
+                text-align: left;
+            }
+
+            @media ($smallpc-and-up) {
+                text-align: left;
+            }
         }
     }
 
@@ -519,6 +544,24 @@ h3, h4 {
 .open .dropdown-toggle {
     color: #fff;
     background-color: #555 !important;
+}
+.padding {
+    $amount: 50px;
+    &-right {
+        &-on-smallpc {
+            @media ($smallpc-and-up) {
+                padding-right: $amount;
+            }
+        }
+    }
+
+    &-left {
+        &-on-smallpc {
+            @media ($smallpc-and-up) {
+                padding-left: $amount;
+            }
+        }
+    }
 }
 .phablet-and-up {
     display: none;
