@@ -386,15 +386,24 @@ h3, h4 {
     &-screenside {
 
         border: 2px solid $color-text-gray;
-        border-radius: 20px;
+        border-radius: 20%;
         opacity: 0.9;
-        width: 90%;
-
-        @media ($sm-and-up) {
-            width: 65%;
-        }
+        width: 75%;
+        
         @media ($tablet-and-up) {
-            width: 100%;
+            width: 90%;
+
+            &.left {
+                text-align: left;
+                float: left;
+                clear: both;
+            }
+    
+            &.right {
+                text-align: right;
+                float: right;
+                clear: both;
+            }
         }
     }
 }
@@ -443,11 +452,20 @@ h3, h4 {
         display: none;
     }
 }
-.modal-header, h4, .close {
+.modal-header, .close {
     background-color: #333;
     color: #fff !important;
     text-align: center;
     font-size: 30px;
+
+    h4 {
+        background-color: #333;
+        color: #fff !important;
+        text-align: center;
+        font-family: Montserrat, sans-serif;
+        font-size: 25px;
+        text-transform: uppercase;
+    }
 }
 .modal-header, .modal-body {
     padding: 40px 50px;

@@ -2,6 +2,8 @@ const mix = require('laravel-mix');
 
 mix.babel(['src/scripts/main.js'], 'public/js/main.js')
    .sass('src/sass/main.scss', 'public/css')
+   .copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/fonts/fontawesome')
+   .copyDirectory('node_modules/bootstrap-sass/assets/fonts/bootstrap', 'public/fonts/bootstrap')
    .options({
       processCssUrls: false,
       postCss: [

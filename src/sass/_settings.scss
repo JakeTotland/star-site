@@ -1,8 +1,21 @@
-@import url('normalize.css');
-@import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css');
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css');
-@import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+// Normalize CSS
+@import '~normalize.css/normalize';
+
+// Bootstrap 3.4.0
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+//@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css'); //web version (unnecessary because the local copy is specified above)
+
+// Fontawesome
+$fa-font-path: "../fonts/fontawesome"; //Fontawesome font file path (in public)
+@import '~@fortawesome/fontawesome-free/scss/fontawesome'; //Fontawesome framework (must import)
+@import '~@fortawesome/fontawesome-free/scss/brands'; //Fontawesome brands (used on site)
+//@import '~@fortawesome/fontawesome-free/scss/regular'; //Fontawesome "regular" (not used)
+@import '~@fortawesome/fontawesome-free/scss/solid'; //Fontawesome solid (used on site)
+//@import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css'); //web version (unnecessary because the local copy is specified above)
+
+// Google fonts
+@import 'googlefonts';
+//@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat'); //web version (unnecessary because the local copy is specified above)
 
 //
 // Browser Sizes
@@ -11,7 +24,7 @@ $global-browser-min-size: 320px;
 $global-browser-max-size: 1440px;
 
 //
-// System wide media queries
+// System-wide media queries
 //
 
 $mq-list: (
@@ -21,7 +34,7 @@ $mq-list: (
    'wd': 992px,  // wide
    'xw': 1024px, // extra wide
    'lg': 1280px, // large
-   'xl': 1366px // extra large
+   'xl': 1366px  // extra large
 );
 
 $_mq: (

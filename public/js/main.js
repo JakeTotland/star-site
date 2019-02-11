@@ -50,7 +50,7 @@ $(document).ready(function () {
         var _path_file2 = _path_file_appended + "partnerslides.json";
 
         retrieveJSON(_path_file2, function (elements) {
-            _appendage += '<div class="row text-center margins"><div id="partners-carousel" class="carousel slide text-center" data-ride="carousel"><div class="carousel-inner" role="listbox">';
+            _appendage += '<div class="row text-center"><div id="partners-carousel" class="carousel slide text-center" data-ride="carousel"><div class="carousel-inner" role="listbox">';
             for (i = 0; i < elements.length; i++) {
                 var link = elements[i].link;
                 var sq = "'";
@@ -63,7 +63,7 @@ $(document).ready(function () {
                 } else {
                     _appendage += '<div class="item">';
                 }
-                _appendage += '<div class="row"><div class="col-sm-3"></div><div class="col-sm-6"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-3"></div></div></div>';
+                _appendage += '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-2"></div></div></div>';
             }
             _appendage += '</div>';
             _appendage += '<div class="carousel-controls-reactive"><a id="carousel-control-prev" class="left carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
