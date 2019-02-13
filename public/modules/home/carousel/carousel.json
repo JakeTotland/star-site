@@ -1,13 +1,28 @@
 [
     {
-      "name": "SpaceVision 2018",
-      "desc": "Our SpaceVision 2018 envoys pose for a photo amid the conference",
-      "img": "redcarpet.png"
+      "name": "Laser Demo",
+      "desc": "A demonstration of Snell's law, using a green laser",
+      "img": "laserdemo.png"
     },
     {
       "name": "Antenna Trip",
       "desc": "Members survey cloud cover during a field expedition",
       "img": "antennatrip.png"
+    },
+    {
+      "name": "Cube Satellite Frame",
+      "desc": "Members gather around their newly-constructed cube satellite frame",
+      "img": "cubesatframe.png"
+    },
+    {
+      "name": "Balloon Launch",
+      "desc": "The weather balloon team prepares for launch",
+      "img": "balloonday.png"
+    },
+    {
+      "name": "Light Demo",
+      "desc": "The school outreach team presents their lesson on light",
+      "img": "lightdemo.png"
     },
     {
       "name": "Atmospheric Probe",

@@ -386,7 +386,7 @@ h3, h4 {
     &-screenside {
 
         border: 2px solid $color-text-gray;
-        border-radius: 20%;
+        border-radius: $border-radius-porthole;
         opacity: 0.9;
         width: 75%;
         
@@ -436,7 +436,7 @@ h3, h4 {
 
     &-icon {
         border: 2px solid $color-text-gray;
-        border-radius: 20px;
+        border-radius: $border-radius-porthole;
         margin-bottom: 25px;
         height: 50%;
         opacity: 0.9;
