@@ -53,15 +53,7 @@ h3, h4 {
     }
 
     &-vertical {
-        h3 {
-            text-transform: uppercase;
-        }
 
-        padding: 0px 0px;
-
-        @media ($smallpc-and-up) {
-            padding: 0px 100px;
-        }
     }
 }
 .person {
@@ -85,12 +77,21 @@ h3, h4 {
         }
     }
 }
+.row {
+    &.no-gutter {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
 .banner {
     margin-top: 35px;
     padding-top: 10px;
     padding-bottom: 20px;
     border: 2px solid $color-bg-darkgray;
     border-radius: $border-radius-card;
+}
+.blog-area {
+    max-width: $blog-area-max-width;
 }
 .card {
     position: relative;
@@ -233,12 +234,33 @@ h3, h4 {
         text-align: left;
     }
 }
-.bg-1 {
-    background: #2d2d30;
-    color: #bdbdbd;
+.bg {
+    &-1 {
+        background: #2d2d30;
+        color: #bdbdbd;
+
+        h3 {
+            color: #fff;
+        }
+
+        p {
+            font-style: italic;
+        }
+    }
+
+    &-2 {
+        background: $color-lightgray;
+        color: $color-bg-darkgray;
+
+        h3 {
+            color: $color-bg-darkgray;
+        }
+
+        p {
+            font-style: italic;
+        }
+    }
 }
-.bg-1 h3 {color: #fff;}
-.bg-1 p {font-style: italic;}
 .media {
     margin-bottom: 40px;
 
@@ -606,6 +628,13 @@ h3, h4 {
 
     @media ($tablet-and-up) {
         padding: 80px 100px;
+    }
+}
+.sidebar {
+
+    @media ($smallpc-and-up) {
+
+        height: 100vh;
     }
 }
 .nonsection {

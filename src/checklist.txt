@@ -2,8 +2,15 @@ OVERALL
 1. set .htaccess or overwrite to make links not end in .htm
 2. set the favicon to actually working
 3. make navbar page titles get highlighted or something when on the page they link to
+4. build redirect pages for the old group (like projects.html, etc.) OR figure out how to do it in .htaccess
+5. make navbar expansion of CONNECT on mobile better
 
 MEMBERS
 1. make the meetings list PDF
-2. update the two side pictures
-4. complete the eboard.json file
+2. update board member pictures
+
+SPOTLIGHT
+1. make it so photos are full-page-width and lead into the story (and collapses to square on mobile)
+
+PROJECTS
+1. make it so photos are some portion of the page width (and collapses to square on mobile)
