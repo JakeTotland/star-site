@@ -1,6 +1,7 @@
 
 let tablet_width = 768; //px
 let small_desktop_width = 992; //px
+let large_desktop_width = 1366; //px
 
 // "Main"
 $(document).ready(function () {
@@ -161,6 +162,11 @@ $(document).ready(function () {
         }
     }
 
+    // Opens sidebar automatically if screen is wider than a pretty large pc screen
+    if (document.body.clientWidth > 1500) {
+        open_sidebar();
+    }
+
     // Initializes Tooltip
     $('[data-toggle="tooltip"]').tooltip();
 
@@ -259,7 +265,45 @@ function waitToLink(link, blank) {
         });
     } else {
         openLink(link, blank);
-    }   
+    }
+}
+
+// Functions to open/close the sidebar on the Stories and Projects pages
+var prev_width = document.getElementById("page-content").style.marginLeft;
+
+function open_sidebar() {
+    var sidebar = document.getElementById("star-sidebar");
+    var content = document.getElementById("page-content");
+    var toggle = document.getElementById("toggle-sidebar");
+    prev_width = content.style.marginLeft;
+    
+    if (document.body.clientWidth < tablet_width) {
+        //document.getElementById("page-content").style.marginLeft = "75%";
+        sidebar.style.width = "100%";
+        sidebar.style.opacity = '0.925';
+        toggle.style.display = 'none';
+    } else {
+        content.style.marginLeft = "25%";
+        sidebar.style.width = "25%";
+        toggle.onclick = close_sidebar;
+    }
+    toggle.innerHTML = '<p><span class="glyphicon glyphicon-chevron-down"></span></p>';
+    sidebar.style.display = "block";
+    content.style.overflow = 'hidden';
+}
+
+function close_sidebar() {
+    var sidebar = document.getElementById("star-sidebar");
+    var content = document.getElementById("page-content");
+    var toggle = document.getElementById("toggle-sidebar");
+
+    content.style.marginLeft = prev_width;
+    sidebar.style.display = "none";
+    sidebar.style.opacity = '1';
+    toggle.style.display = "inline-block";
+    toggle.innerHTML = '<p><span class="glyphicon glyphicon-search"></span></p>';
+    content.style.overflow = 'auto';
+    toggle.onclick = open_sidebar;
 }
 
 // Google Maps widget

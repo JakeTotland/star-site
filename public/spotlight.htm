@@ -13,124 +13,159 @@
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<!-- Navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
-            </button>
-            <div class="navbar-logo">
-                <a class="navbar-main navbar-logo" href="#top" title="To Top"><img class="logo" alt="Star Logo" src="images/logo-notext.png"></a>
-                <a href="index.htm" title="Home" class="no-decoration"><div class="navbar-logo-div">Star</div></a>
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right navbar-main">
-                <li><a href="index.htm">Home</a></li>
-                <li><a href="projects.htm">Projects</a></li>
-                <li><a href="spotlight.htm">Spotlight</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Connect
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="members.htm">Members & Officers</a></li>
-                        <li><a href="alumni.htm">Alumni</a></li>
-                        <li><a href="partners.htm">Partners</a></li>
-                        <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="pointer" data-toggle="modal" data-target="#mailModal"><span class="glyphicon glyphicon-envelope"></span><span class="vanish-on-tablet"> Mailing List</span></a>
-                </li>
-                <li>
-                    <a href="slack.htm"><i class="fab fa-slack" aria-hidden="true"></i><span class="vanish-on-tablet"> Slack for Star</span></a>
-                </li>
-            </ul>
-        </div>
+<!-- Page-unique Elements Start #################################################################### -->
+
+<!-- Sidebar/Contentsbar -->
+<nav class="w3-sidebar w3-bar-block bg-2" style="display: none;" id="star-sidebar">
+    <div class="sidebar-content">
+        <button class="w3-bar-item w3-button w3-large" onclick="close_sidebar()">Close Navigator&nbsp;&nbsp;&times;</button>
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
     </div>
 </nav>
 
-<!-- Mailing List Modal -->
-<div class="modal fade" id="mailModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4><span class="glyphicon glyphicon-envelope"></span> Stay Informed </h4>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="https://my.physics.rutgers.edu/apps/star/doregister.php" href="#home" role="form">
-                    <div class="form-group">
-                        <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
-                        <input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required>
-                    </div>
-                    <button type="submit" class="btn btn-block">Subscribe
-                    </button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-remove"></span> Cancel
+<!-- Wrapper holding page content (gets pushed aside when sidebar expands) -->
+<div id="page-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
                 </button>
-                <p>Or shoot us an email at at <a href="mailto:ruspacetech@gmail.com">ruspacetech@gmail.com</a></p>
+                <div id="navbar-logo"  class="navbar-logo">
+                    <a class="navbar-main navbar-logo" href="#top" title="To Top"><img class="logo" alt="Star Logo" src="images/logo-notext.png"></a>
+                    <a href="index.htm" title="Home" class="no-decoration"><div class="navbar-logo-div">Star</div></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right navbar-main">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="projects.htm">Projects</a></li>
+                    <li><a href="spotlight.htm">Spotlight</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Connect
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.htm">Members</a></li>
+                            <li><a href="alumni.htm">Alumni</a></li>
+                            <li><a href="partners.htm">Partners</a></li>
+                            <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="pointer" data-toggle="modal" data-target="#mailModal"><span class="glyphicon glyphicon-envelope"></span><span class="vanish-on-tablet"> Mailing List</span></a>
+                    </li>
+                    <li>
+                        <a href="slack.htm"><i class="fab fa-slack" aria-hidden="true"></i><span class="vanish-on-tablet"> Slack for Star</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mailing List Modal -->
+    <div class="modal fade" id="mailModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4><span class="glyphicon glyphicon-envelope"></span> Stay Informed </h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="https://my.physics.rutgers.edu/apps/star/doregister.php" href="#home" role="form">
+                        <div class="form-group">
+                            <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
+                            <input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required>
+                        </div>
+                        <button type="submit" class="btn btn-block">Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>Or shoot us an email at at <a href="mailto:ruspacetech@gmail.com">ruspacetech@gmail.com</a></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Page-unique Elements Start #################################################################### -->
 
 
-<!-- Navbar downward extension, for title of page -->
-<div class="bg-1">
-    <div class="text-center container nonsection first-pad">
-        <h3>Spotlight</h3>
-    </div>
-</div>
-
-<!-- Noscript standard warning/error message -->
-<noscript>
-    <br><br><br><br>
-    <div class="container section text-center warning">
-        <h3>Warning</h3>
-        <p><em>JavaScript is required to enjoy this site to the fullest. Please allow <span class="upper">Star</span> permission to run scripts via your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
-    </div>
-</noscript>
-
-<!-- Sidebar/Contentsbar -->
-<div class="container-vertical">
-    <div class="row no-gutter">
-        <div class="col-md-3 col-lg-2 bg-2 text-left-smallpc sidebar">
-            glub glub
+    <!-- Navbar downward extension, for title of page -->
+    <div class="bg-1">
+        <div class="text-center container nonsection first-pad">
+            <h3>Spotlight</h3>
         </div>
+    </div>
 
-        <!-- Container (Main content) -->
-        <div class="col-md-9 col-lg-10 text-left-tablet warning">
-            <div class="blog-area warning">
-                blop blop
+    <!-- Noscript standard warning/error message -->
+    <noscript>
+        <br><br><br><br>
+        <div class="container section text-center warning">
+            <h3>Warning</h3>
+            <p><em>JavaScript is required to enjoy this site to the fullest. Please allow <span class="upper">Star</span> permission to run scripts via your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
+        </div>
+    </noscript>
+
+    <!-- Sidebar toggle tab -->
+    <div id="toggle-sidebar" class="sidebar-toggler" onclick="open_sidebar()">
+        <p><span class="glyphicon glyphicon-search"></span></p>
+    </div>
+
+    <!-- Content -->
+    <!-- Container (Prospective & New Members Section) -->
+    <div class="container section text-left-tablet">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-8 space-down-mobile">
+                <h3>New & Prospective Members</h3>
+                <p>
+                    Whether you've recently joined <span class="upper">Star</span>, or you're still just thinking about it, welcome! Here's a list of suggestions you'll want to consider in order to hit the ground running.
+                </p>
+                <ol>
+                    <li><em><a data-toggle="modal" data-target="#mailModal" class="pointer">Join our mailing list</a></em></li>
+                    <li><em><a href="slack.htm" target="_blank">Get added to our Slack workspace</a></em></li>
+                    <li><em>Decide if you want to join any of our preexisting <a href="projects.htm" target="_blank">project teams</a></em></li>
+                    <li><em>Attend a general meeting</em></li>
+                    <li><em>Brainstorm a new project idea</em></li>
+                    <li><em>Propose a new officer position you'd excel at</em></li>
+                    <li><em><a href="media.htm" target="_blank">Share <span class="upper">Star</span> on social media</a></em></li>
+                </ol>
+            </div>
+            <div class="col-sm-4">
+                    <img src="images/members/electrisitydemo.png" class="img-screenside left space-down-mobile" alt="A member of our school outreach team demonstrates concepts in electricity">
             </div>
         </div>
     </div>
+
+    <!-- Container (Prospective & New Members Section) -->
+    <div class="container section text-left-tablet">
+        <img src="modules/home/carousel/rutgersday.png" class="img-wide" alt="A member of our school outreach team demonstrates concepts in electricity">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-12">
+                    beep!
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <a class="up-arrow" href="#top" data-toggle="tooltip" title="Return to Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        <p>
+            Content on this site, except where indicated otherwise, is the property of the Space Technology Association of Rutgers, a Rutgers University student organization.<br>© <span class="upper">Star</span> 2019
+            <!-- See HTML comment underneath footer in index.htm for copyright claim details -->
+        </p> 
+    </footer>
 </div>
-
-
-
-<!-- Footer -->
-<footer class="text-center">
-    <a class="up-arrow" href="#top" data-toggle="tooltip" title="Return to Top">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br><br>
-    <p>
-        Content on this site, except where indicated otherwise, is the property of the Space Technology Association of Rutgers, a Rutgers University student organization.<br>© <span class="upper">Star</span> 2019
-        <!-- See HTML comment underneath footer in index.htm for copyright claim details -->
-    </p> 
-</footer>
 
 <!-- End of Page-unique Elements #################################################################### -->
 </body>
