@@ -73,7 +73,6 @@ h3, h4 {
             outline:none;
             text-decoration:none;
             color:inherit;
-            -webkit-tap-highlight-color: rgb(211, 211, 211);
         }
     }
 }
@@ -250,7 +249,7 @@ h3, h4 {
 
     &-2 {
 
-        background-color: $color-lightgray;
+        background-color: $color-lightoffgray;
 
         @media ($tablet-and-up) {
             background-color: $color-almost-white;
@@ -403,6 +402,12 @@ h3, h4 {
         span, i {
             font-size: 50px;
         }
+    }
+
+    &-wide {
+        width: 100%;
+        text-align: left;
+        padding: 8px 16px;
     }
 }
 .btn:hover, .btn:focus {
@@ -713,14 +718,52 @@ h3, h4 {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
     color: #fff;
     transition: all 0.3s;
 }
 .sidebar {
+    // Sidebar styles and JS heavily derived from w3schools resources 
+    height: 100%;
+    width: 200px;
+    position: fixed !important;
+    z-index:1;overflow:auto;
+    padding-top: 50px;
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    &-item {
+        width: 100%;
+        display: block;
+        padding: 8px 16px;
+        text-align: left;
+        border: none;
+        white-space: normal;
+        float: none;
+        outline: 0;
+
+        &.close-button {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        &.first {
+            font-family: Lato, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+    
     &-toggler {
 
-        background-color: rgba(214, 214, 214, 0.87);
+        background-color: $color-lightoffgray;
 
         @media ($tablet-and-up) {
             background-color: $color-almost-white;
@@ -787,13 +830,6 @@ footer a:hover {
 textarea {
     resize: none;
 }
-.w3-sidebar {
-    height: 100%;
-    width: 200px;
-    position: fixed !important;
-    z-index:1;overflow:auto;
-    padding-top: 50px;
-}
 @media (min-width:993px) {
     .w3-modal-content {
         width: 900px
@@ -821,17 +857,20 @@ textarea {
 .w3-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
 .w3-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
 .w3-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+
 .w3-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+
 .w3-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
 .w3-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
 .w3-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 .w3-animate-input{transition:width 0.4s ease-in-out}.w3-animate-input:focus{width:100%!important}
 
-.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
-.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}
-.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+.transition-width {
+    -webkit-transition-property: width; /* Safari */
+    transition-property: width;
+    -webkit-transition-property: margin; /* Safari */
+    transition-property: margin;
 
-.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
-
-.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
-.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}

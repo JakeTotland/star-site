@@ -16,17 +16,17 @@
 <!-- Page-unique Elements Start #################################################################### -->
 
 <!-- Sidebar/Contentsbar -->
-<nav class="w3-sidebar w3-bar-block bg-2" style="display: none;" id="star-sidebar">
+<nav class="sidebar bg-2 w3-animate-left" style="display: none;" id="star-sidebar">
     <div class="sidebar-content">
-        <button class="w3-bar-item w3-button w3-large" onclick="close_sidebar()">Close Navigator&nbsp;&nbsp;&times;</button>
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        <button class="sidebar-item btn-wide close-button" onclick="close_sidebar()">&times;</button>
+        <a href="#" class="sidebar-item first btn-wide">Navigating <span class="upper">Star</span> Spotlight</a>
+        <a href="#" class="sidebar-item btn-wide">Aerospike Developments and More</a>
+        <a href="#" class="sidebar-item btn-wide">Aerospike Developments</a>
     </div>
 </nav>
 
 <!-- Wrapper holding page content (gets pushed aside when sidebar expands) -->
-<div id="page-content">
+<div id="page-content" class="transition-width">
     <!-- Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -51,7 +51,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="members.htm">Members</a></li>
+                            <li><a href="members.htm">Members & Execs</a></li>
                             <li><a href="alumni.htm">Alumni</a></li>
                             <li><a href="partners.htm">Partners</a></li>
                             <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
