@@ -35,7 +35,7 @@ $(document).ready(function () {
                 //appendage += '<img src="' + path_file_appended + elements[i].img + '" alt="' + elements[i].name + '" width="1200" height="700"><div class="carousel-caption"><p>' + elements[i].desc + '</p></div></div>';
             }
             appendage += '</div>';
-            appendage += '<a id="carousel-control-prev" class="left carousel-control carousel-controls-reactive" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control carousel-controls-reactive" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
+            appendage += '<a id="carousel-control-prev" class="left carousel-control carousel-controls-reactive" style="background: none;" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control carousel-controls-reactive" style="background: none;" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
 
             carousel.innerHTML += appendage;
         });
@@ -170,7 +170,7 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     // Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
-    $(".navbar a, footer a[href='#top'], li a").on('click', function (event) {
+    $(".navbar a, .sidebar a, footer a[href='#top'], li a").on('click', function (event) {
 
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
