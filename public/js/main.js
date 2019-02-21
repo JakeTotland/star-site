@@ -299,6 +299,12 @@ function close_sidebar() {
     toggle.onclick = open_sidebar;
 }
 
+function close_sidebar_on_mobile() {
+    if (document.body.clientWidth < tablet_width) {
+        close_sidebar();
+    }
+}
+
 // Google Maps widget
 function myMap() {
     var myCenter = new google.maps.LatLng(40.522724, -74.462830);
