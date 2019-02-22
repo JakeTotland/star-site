@@ -162,7 +162,7 @@ $(document).ready(function () {
         }
     }
 
-    // Opens sidebar automatically if screen is wider than a pretty large pc screen; flashes shadow on search tab otherwise
+    // Opens sidebar automatically if screen is wider than a pretty large pc screen; flashes red border on search tab otherwise
     if (document.body.clientWidth > 1500) {
         open_sidebar();
     }

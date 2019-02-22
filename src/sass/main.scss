@@ -129,7 +129,7 @@ h3 {
         &:hover {
             cursor: pointer;
             top: -35px;
-            border-color: red;
+            border-color: $color-star-red;
         }
     }
 
@@ -796,7 +796,7 @@ h3 {
     text-transform: uppercase;
 }
 .warning {
-    border: 2px solid red;
+    border: 2px solid $color-star-red;
     border-radius: $border-radius-card;
 }
 .wrapper {
@@ -870,6 +870,7 @@ h3 {
         min-width: 10px;
         max-width: 25px;
         height: 100px;
+        border-right: 2px solid rgb(201, 38, 5); //star-red, but a bit brighter
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         position: fixed;
@@ -901,7 +902,7 @@ h3 {
             color: rgb(143, 143, 143) !important;
 
             &:hover {
-                background-color: red !important;
+                background-color: $color-star-red !important;
             }
         }
     }
@@ -973,6 +974,15 @@ textarea {
 .transition-shadow {
     -webkit-transition-property: box-shadow; /* Safari */
     transition-property: box-shadow;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.transition-shadow-and-border {
+    -webkit-transition-property: box-shadow; /* Safari */
+    transition-property: box-shadow;
+    -webkit-transition-property: border; /* Safari */
+    transition-property: border;
 
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
