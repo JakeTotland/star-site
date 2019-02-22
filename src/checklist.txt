@@ -11,11 +11,8 @@ MEMBERS
 2. update board member pictures
 3. make sure google chrome on mobile does not make a grey box appear on eboard member tap
 
-STORIES
-0. change name from spotlight to stories
-1. make it so photos are full-page-width and lead into the story (and collapses to square on mobile)
-2. see if "container" width can be changed nicely when sidebar opens up
-3. rename w3- things
+SPOTLIGHT
+0. change any references from stories to splotlight
 
 PROJECTS
 1. make it so photos are some portion of the page width (and collapses to square on mobile)

@@ -187,6 +187,7 @@ h3 {
 
         &.rounded {
             border-radius: $border-radius-card;
+            border: 1px solid $color-lightgray;
         }
     
         &-holder {
@@ -317,21 +318,43 @@ h3 {
 .space {
     &-down {
 
-        margin-bottom: 45px;
+        $margin-bottom-spaceamount: 45px;
+        margin-bottom: $margin-bottom-spaceamount;
+
+        &-pc {
+            margin-bottom: 0px;
+
+            @media ($smallpc-and-up) {
+                margin-bottom: $margin-bottom-spaceamount;
+            }
+        }
 
         &-tablet {
             @media ($tablet-and-up) {
-                margin-bottom: 45px;
+                margin-bottom: $margin-bottom-spaceamount;
             }
         }
 
         &-mobile {
-            margin-bottom: 45px;
+            margin-bottom: $margin-bottom-spaceamount;
 
             @media ($tablet-and-up) {
                 margin-bottom: 0px;
             }
+
+            &-tiny {
+                margin-bottom: 15px;
+
+                @media ($smallpc-and-up) {
+                    margin-bottom: 0px;
+                }
+            }
         }
+    }
+
+    &-up {
+
+        margin-top: 15px;
     }
 }
 .tenet {
@@ -428,7 +451,7 @@ h3 {
         height: 200px;
         padding-top: 20px;
         border: 1px solid $color-text-gray;
-        font-size: 17px;
+        font-size: 14px;
 
         span, i {
             font-size: 75px;
@@ -441,10 +464,10 @@ h3 {
 
         @media ($xl-and-up) {
             height: 300px;
-            font-size: 20px;
+            font-size: 17px;
 
             span, i {
-                font-size: 125px;
+                font-size: 110px;
             }
         }
     }
@@ -838,7 +861,6 @@ h3 {
     }
     
     &-toggler {
-
         background-color: $color-lightoffgray;
 
         @media ($tablet-and-up) {
@@ -854,7 +876,7 @@ h3 {
         top: 30vh;
 
         &:hover {
-            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
             cursor: pointer;
         }
 
@@ -941,6 +963,20 @@ textarea {
 .w3-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 .w3-animate-input{transition:width 0.4s ease-in-out}.w3-animate-input:focus{width:100%!important}
 
+.transition-border {
+    -webkit-transition-property: border; /* Safari */
+    transition-property: border;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.transition-shadow {
+    -webkit-transition-property: box-shadow; /* Safari */
+    transition-property: box-shadow;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
 .transition-width {
     -webkit-transition-property: width; /* Safari */
     transition-property: width;

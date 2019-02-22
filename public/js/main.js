@@ -64,7 +64,7 @@ $(document).ready(function () {
                 } else {
                     _appendage += '<div class="item">';
                 }
-                _appendage += '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-2"></div></div></div>';
+                _appendage += '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square transition-shadow"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-2"></div></div></div>';
             }
             _appendage += '</div>';
             _appendage += '<div class="carousel-controls-reactive"><a id="carousel-control-prev" class="left carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
@@ -161,7 +161,7 @@ $(document).ready(function () {
         }
     }
 
-    // Opens sidebar automatically if screen is wider than a pretty large pc screen
+    // Opens sidebar automatically if screen is wider than a pretty large pc screen; flashes shadow on search tab otherwise
     if (document.body.clientWidth > 1500) {
         open_sidebar();
     }
@@ -170,7 +170,7 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     // Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
-    $(".navbar a, .sidebar a, footer a[href='#top'], li a").on('click', function (event) {
+    $(".navbar a, .sidebar a, footer a[href='#top'], a[href='#landing'], li a").on('click', function (event) {
 
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -318,7 +318,7 @@ function myMap() {
 function eboard_append(position, name, year, major, desc, pic, id) {
     var appendage = "";
     appendage += '<a href="#' + id + '" data-toggle="collapse"><p class="text-center"><strong>' + position + '</strong><br>' + name + '</p>';
-    appendage += '<img src="' + pic + '" class="img-circle person" alt="' + position + ': ' + name + '" width="255" height="255">';
+    appendage += '<img src="' + pic + '" class="img-circle person transition-border" alt="' + position + ': ' + name + '" width="255" height="255">';
     //appendage += '<div class="eboard-person" style="background-image: url(' + pic + ');"></div>';
     appendage += '</a><div id="' + id + '" class="collapse"><div class="details-eboard">';
     if (major != "") {
