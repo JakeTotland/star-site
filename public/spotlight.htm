@@ -19,12 +19,31 @@
 <nav class="sidebar bg-2 w3-animate-left" style="display: none;" id="star-sidebar">
     <div class="sidebar-content">
         <button class="sidebar-item btn-wide close-button" onclick="close_sidebar()">&times;</button>
-        <div class="center-on-mobile"><a href="#landing" onclick="close_sidebar_on_mobile()" class="sidebar-item first btn-wide">Navigating <span class="upper">Star</span> Spotlight</a></div>
+        <div class="center-on-mobile"><a data-toggle="modal" data-target="#spotlightModal" onclick="close_sidebar_on_mobile()" class="sidebar-item first btn-wide">Navigating <span class="upper">Star</span> Spotlight</a></div>
         <hr>
-        <p class="sidebar-item"><em>Recent</em></p>
-        <a href="#spacevision2018" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">SpaceVision 2018</a>
-        <a href="#aerospikedevelopments" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Aerospike Developments</a>
-        <a href="#cubesatelliteupdate" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Cube Satellite Update</a>
+        <details class="sidebar-item open" open="open">
+            <summary><em>Spring 2019</em></summary>
+            <ul>
+                <li>
+                    <a href="#spacevision2018" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">SpaceVision 2018</a>
+                </li>
+                <li>
+                    <a href="#aerospikedevelopments" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Aerospike Developments</a>
+                </li>
+            </ul>
+        </details>
+        
+        <details class="sidebar-item">
+            <summary><em>Fall 2018</em></summary>
+            <ul>
+                <li>
+                    <a href="#cubesatelliteupdate" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Cube Satellite Update</a>
+                </li>
+                <li>
+                    <a href="#lastpost" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Last Post</a>
+                </li>
+            </ul>
+        </details>
     </div>
 </nav>
 
@@ -54,7 +73,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="members.htm">Members & Execs</a></li>
+                            <li><a href="members.htm">Members</a></li>
                             <li><a href="alumni.htm">Alumni</a></li>
                             <li><a href="partners.htm">Partners</a></li>
                             <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
@@ -101,6 +120,35 @@
         </div>
     </div>
 
+    <!-- Navigating STAR Spotlight Modal -->
+    <div class="modal fade" id="spotlightModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4>Using Star Spotlight</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Spotlight is like a blog. New posts are at the top of the feed, and older ones are at the bottom.
+                    </p>
+                    <br>
+                    <p>
+                        Click the <span class="nowrap">(<span class="glyphicon glyphicon-search"></span></span>) tab on the left side of the page for the table of contents. Then, click a post's title to jump to that post.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Close
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Navbar downward extension, for title of page -->
     <div class="bg-1">
@@ -130,7 +178,7 @@
             <div class="col-sm-10">
                 <em>
                     <div class="space-down-mobile-tiny"><span class="upper">Star</span> Spotlight is a collection of news, announcements, and some of our favorite moments.</div>
-                    <span class="small">Scroll down to start browsing, or <a href="#landing">click here</a> for help.</span>
+                    <span class="small">Scroll down to start browsing, or <a data-toggle="modal" data-target="#spotlightModal" class="pointer">click here</a> for help.</span>
                 </em>
             </div>
             <div class="col-sm-1"></div>
@@ -141,17 +189,17 @@
     <!-- Container (Prospective & New Members Section) -->
     <div id="spacevision2018" class="container section text-left-tablet">
         <div class="row center-vertical-tablet">
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
             <div class="col-sm-10 space-down">
                 <div class="carousel-slide-holder">
                     <div style="background-image: url('modules/home/carousel/launch.png');" class="carousel-slide rounded"></div>
                 </div>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <div class="row text-center">
-            <div class="col-sm-1 post"></div>
-            <div class="col-sm-10 post">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
                 <h3>Most Recent Post</h3>
                 <p>
                     by Elizabeth Foster-Krim
@@ -160,7 +208,7 @@
                     <span class="glyphicon glyphicon-time"></span> Feb. 2, 2019
                 </p>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <br>
         <div class="row center-vertical-tablet">
@@ -179,17 +227,17 @@
     <!-- Container (Prospective & New Members Section) -->
     <div id="aerospikedevelopments" class="container section text-left-tablet">
         <div class="row center-vertical-tablet">
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
             <div class="col-sm-10 space-down space-up">
                 <div class="carousel-slide-holder">
                     <div style="background-image: url('modules/home/carousel/lightdemo.png');" class="carousel-slide rounded"></div>
                 </div>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <div class="row text-center">
-            <div class="col-sm-1 post"></div>
-            <div class="col-sm-10 post">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
                 <h3>Second-most-recent Post</h3>
                 <p>
                     by Elizabeth Foster-Krim
@@ -198,7 +246,7 @@
                     <span class="glyphicon glyphicon-time"></span> Feb. 2, 2019
                 </p>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <br>
         <div class="row center-vertical-tablet">
@@ -217,17 +265,17 @@
     <!-- Container (Prospective & New Members Section) -->
     <div id="cubesatelliteupdate" class="container section text-left-tablet">
         <div class="row center-vertical-tablet">
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
             <div class="col-sm-10 space-down space-up">
                 <div class="carousel-slide-holder">
                     <div style="background-image: url('modules/home/carousel/rutgersday.png');" class="carousel-slide rounded"></div>
                 </div>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <div class="row text-center">
-            <div class="col-sm-1 post"></div>
-            <div class="col-sm-10 post">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
                 <h3>Post with averylongwordattheendofit</h3>
                 <p>
                     by Elizabeth Foster-Krim
@@ -236,7 +284,7 @@
                     <span class="glyphicon glyphicon-time"></span> Feb. 2, 2019
                 </p>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <br>
         <div class="row center-vertical-tablet">
@@ -253,19 +301,19 @@
     </div>
     <hr>
     <!-- Container (Prospective & New Members Section) -->
-    <div id="landing" class="container section text-left-tablet">
+    <div id="lastpost" class="container section text-left-tablet">
         <div class="row center-vertical-tablet">
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
             <div class="col-sm-10 space-down space-up">
                 <div class="carousel-slide-holder">
                     <div style="background-image: url('modules/home/carousel/balloonday.png');" class="carousel-slide rounded"></div>
                 </div>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <div class="row text-center">
-            <div class="col-sm-1 post"></div>
-            <div class="col-sm-10 post">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
                 <h3>Navigating Star Spotlight</h3>
                 <p>
                     by Elizabeth Foster-Krim
@@ -274,7 +322,7 @@
                     <span class="glyphicon glyphicon-time"></span> Feb. 2, 2019
                 </p>
             </div>
-            <div class="col-sm-1 post"></div>
+            <div class="col-sm-1 wraparound"></div>
         </div>
         <br>
         <div class="row center-vertical-tablet space-down">

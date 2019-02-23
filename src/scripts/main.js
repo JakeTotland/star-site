@@ -220,6 +220,27 @@ $(document).ready(function () {
         } else {
         }
     });
+
+    // Initializes sliding for details/summary tags
+    $('details summary').each(function(){
+        $(this).nextAll().wrapAll('<div id="wrap"></div>');
+    });
+
+    $('details').each(function() {
+        if ($(this).attr('open') == 'open') {
+            $(this).attr('open', 'open').find('#wrap').css('display','inline');
+        } else {
+            $(this).attr('open','').find('#wrap').css('display','none');
+        }
+    });
+    
+    $('details summary').click(function(e) {
+        e.preventDefault();
+        $(this).siblings('div#wrap').slideToggle(function(){
+            $(this).parent('details').toggleClass('open');
+        });
+    });
+
 });
 
 function retrieveJSON(file, callback) {
@@ -269,27 +290,31 @@ function waitToLink(link, blank) {
 }
 
 // Functions to open/close the sidebar on the Stories and Projects pages
-var prev_width = document.getElementById("page-content").style.marginLeft;
-
+var prev_width = 0;
 function open_sidebar() {
-    var sidebar = document.getElementById("star-sidebar");
-    var content = document.getElementById("page-content");
-    var toggle = document.getElementById("toggle-sidebar");
-    prev_width = content.style.marginLeft;
-    
-    if (document.body.clientWidth < tablet_width) {
-        //document.getElementById("page-content").style.marginLeft = "75%";
-        sidebar.style.width = "100%";
-        sidebar.style.opacity = '0.925';
-        toggle.style.display = 'none';
-    } else {
-        content.style.marginLeft = "25%";
-        sidebar.style.width = "25%";
-        toggle.onclick = close_sidebar;
+    prev_width = document.getElementById("page-content");
+
+    if (prev_width != null) {
+        prev_width = prev_width.style.marginLeft;
+        var sidebar = document.getElementById("star-sidebar");
+        var content = document.getElementById("page-content");
+        var toggle = document.getElementById("toggle-sidebar");
+        prev_width = content.style.marginLeft;
+        
+        if (document.body.clientWidth < tablet_width) {
+            //document.getElementById("page-content").style.marginLeft = "75%";
+            sidebar.style.width = "100%";
+            sidebar.style.opacity = '0.925';
+            toggle.style.display = 'none';
+        } else {
+            content.style.marginLeft = "25%";
+            sidebar.style.width = "25%";
+            toggle.onclick = close_sidebar;
+        }
+        toggle.innerHTML = '<p><span class="glyphicon glyphicon-chevron-down"></span></p>';
+        sidebar.style.display = "block";
+        content.style.overflow = 'hidden';
     }
-    toggle.innerHTML = '<p><span class="glyphicon glyphicon-chevron-down"></span></p>';
-    sidebar.style.display = "block";
-    content.style.overflow = 'hidden';
 }
 
 function close_sidebar() {

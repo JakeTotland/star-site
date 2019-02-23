@@ -17,6 +17,20 @@ h3 {
     text-transform: uppercase;
     font-family: Montserrat, sans-serif;
 }
+// Summary/Details styles and JS adapted from w3schools example
+summary::-webkit-details-marker {
+    display: none;
+}
+summary:before {
+    content: "►";
+}
+details.open summary:before {
+    content: "▼";
+}
+summary:before, summary:after {
+    font-size:.8em;
+    margin-right:6px;
+}
 .container {
     padding: 40px 40px;
 
@@ -584,7 +598,7 @@ h3 {
         color: #fff !important;
         text-align: center;
         font-family: Montserrat, sans-serif;
-        font-size: 25px;
+        font-size: 20px;
         text-transform: uppercase;
     }
 }
@@ -593,6 +607,9 @@ h3 {
 }
 .nav-tabs li a {
     color: $color-text-gray;
+}
+.nowrap {
+    white-space: nowrap;
 }
 .vanish-on-tablet {
     display: inline;
@@ -714,7 +731,7 @@ h3 {
         cursor: pointer;
     }
 }
-.post {
+.wraparound {
     word-wrap: break-word;
     white-space: normal;
 }
@@ -819,7 +836,8 @@ h3 {
     height: 100%;
     width: 200px;
     position: fixed !important;
-    z-index:1;overflow:auto;
+    z-index: 1;
+    overflow: auto;
     padding-top: 50px;
 
     h3 {
@@ -835,6 +853,15 @@ h3 {
         white-space: normal;
         float: none;
         outline: 0;
+
+        summary {
+            text-transform: uppercase;
+            font-family: Montserrat, sans-serif;
+
+            &:hover {
+                color: $color-star-red;
+            }
+        }
 
         &.close-button {
             text-align: center;
@@ -856,6 +883,10 @@ h3 {
 
         &:hover {
             cursor: pointer;
+            text-decoration: none;
+        }
+
+        &:active {
             text-decoration: none;
         }
     }
