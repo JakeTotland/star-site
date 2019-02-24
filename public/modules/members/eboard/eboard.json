@@ -5,7 +5,7 @@
       "classyear": "2020",
       "major": "Aerospace Engineering",
       "desc": "",
-      "img": ""
+      "img": "timothy.png"
     },
     {
         "position": "Vice President",
@@ -13,7 +13,7 @@
         "classyear": "2020",
         "major": "Aerospace Engineering",
         "desc": "",
-        "img": ""
+        "img": "lara.png"
     },
     {
         "position": "Treasurer",
@@ -21,7 +21,7 @@
         "classyear": "2020",
         "major": "Supply Chain Management",
         "desc": "",
-        "img": ""
+        "img": "arynn.png"
     },
     {
         "position": "Webmaster",
@@ -29,7 +29,7 @@
         "classyear": "2019",
         "major": "Computer Science",
         "desc": "",
-        "img": ""
+        "img": "jason.png"
     },
     {
         "position": "Public Relations",
@@ -37,7 +37,7 @@
         "classyear": "2020",
         "major": "Aerospace Engineering",
         "desc": "",
-        "img": ""
+        "img": "elizabeth.png"
     },
     {
         "position": "Acquisitions Head",
@@ -45,15 +45,7 @@
         "classyear": "2020",
         "major": "Accounting",
         "desc": "",
-        "img": ""
-    },
-    {
-        "position": "Representative",
-        "name": "Hossain Ahmad",
-        "classyear": "2020",
-        "major": "Aerospace Engineering",
-        "desc": "Representative to SEDS (Students for the Exploration and Development of Space)",
-        "img": ""
+        "img": "tony.png"
     },
     {
         "position": "Representative",
@@ -61,6 +53,14 @@
         "classyear": "2020",
         "major": "Aerospace Engineering",
         "desc": "Representative to the Engineering Governing Council at Rutgers University",
-        "img": ""
+        "img": "drew.png"
+    },
+    {
+        "position": "Representative",
+        "name": "Hossain Ahmad",
+        "classyear": "2020",
+        "major": "Aerospace Engineering",
+        "desc": "Representative to SEDS (Students for the Exploration and Development of Space)",
+        "img": "hossain.png"
     }
 ]

@@ -7,6 +7,13 @@ body {
     font: 400 15px/1.8 Lato, sans-serif;
     color: $color-text-gray;
 }
+h2 {
+    font-size: 20px;
+
+    @media ($tablet-and-up) {
+        font-size: 30px;
+    }
+}
 h3, h4 {
     margin: 10px 0 30px 0;
     letter-spacing: 5px;
@@ -481,7 +488,7 @@ summary:before, summary:after {
             font-size: 17px;
 
             span, i {
-                font-size: 110px;
+                font-size: 90px;
             }
         }
     }
@@ -928,7 +935,7 @@ summary:before, summary:after {
 }
 .dropdown-menu {
     
-    li { 
+    li {
         a {
             color: rgb(143, 143, 143) !important;
 
@@ -1001,6 +1008,9 @@ textarea {
 
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+}
+.transition-display {
+    transition: visibility 0s, opacity 0.4s linear;
 }
 .transition-shadow {
     -webkit-transition-property: box-shadow; /* Safari */

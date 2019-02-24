@@ -2,6 +2,7 @@
 var tablet_width = 768; //px
 var small_desktop_width = 992; //px
 var large_desktop_width = 1366; //px
+var scroll_time = 550; //ms
 
 // "Main"
 $(document).ready(function () {
@@ -64,7 +65,7 @@ $(document).ready(function () {
                 } else {
                     _appendage += '<div class="item">';
                 }
-                _appendage += '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square transition-shadow"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-2"></div></div></div>';
+                _appendage += '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-2"></div></div></div>';
             }
             _appendage += '</div>';
             _appendage += '<div class="carousel-controls-reactive"><a id="carousel-control-prev" class="left carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
@@ -85,11 +86,11 @@ $(document).ready(function () {
         var appendage_members = "";
         path_file = _path_file_appended2 + "meetings.json";
 
-        // Loads the members module
+        // Loads the meetings module
         retrieveJSON(path_file, function (elements) {
             var element = elements[0];
 
-            appendage_members += '<div class="row"><div class="col-sm-1"></div><div class="col-sm-10 banner"><h2>Meeting Details: ' + element.season + ' ' + element.year + '</h2><hr><br><div class="row"><div class="col-sm-1"></div><div class="col-sm-4"><em>Time</em><br><h3>' + element.time + ' ' + element.ampm + '</h3></div><div class="col-sm-2"><i class="fas fa-meteor space-down-mobile" style="font-size: 60px;"></i></div><div class="col-sm-4"><em>Place</em><br><h3><a href="' + element.bldglink + '" target="_blank">' + element.bldgabbreviation + '</a>  ' + element.room + '</h3></div><div class="col-sm-1"></div></div><div class="row"><div class="col-sm-1"></div><div class="col-sm-10"><em>' + element.pattern + '</em><br><h3><a href="' + element.pdflink + '" target="_blank">List of Dates</a></h3></div><div class="col-sm-1"></div></div><br><div class="row smaller"><div class="col-sm-1"></div><div class="col-sm-10"><p><em>For the most up-to-date meeting information, including topics, room changes, and cancellations, make sure you are subscribed to our mailing list.</em></p><p>Send all meeting-related inquiries to <a href="mailto:' + element.contactemail + '">' + element.contactemail + '</a></p></div><div class="col-sm-1"></div></div></div><div class="col-sm-1"></div></div>';
+            appendage_members += '<div class="row space-down-tablet"><div class="col-sm-1"></div><div class="col-sm-10 banner"><h2>Meeting Details: ' + element.season + ' ' + element.year + '</h2><hr><div class="row space-down-tablet"><div class="col-sm-1"></div><div class="col-sm-4"><em>Time</em><h3>' + element.time + ' ' + element.ampm + '</h3></div><div class="col-sm-2"><i class="fas fa-meteor space-down-mobile-tiny" style="font-size: 60px;"></i></div><div class="col-sm-4"><em>Place</em><h3><a href="' + element.bldglink + '" target="_blank">' + element.bldgabbreviation + '</a>  ' + element.room + '</h3></div><div class="col-sm-1"></div></div><div class="row"><div class="col-sm-1"></div><div class="col-sm-10"><em>' + element.pattern + '</em><br><h3><a href="' + element.pdflink + '" target="_blank">List of Dates</a></h3></div><div class="col-sm-1"></div></div><div class="row smaller"><div class="col-sm-1"></div><div class="col-sm-10"><p><em>For the most up-to-date meeting information, including topics, room changes, and cancellations, make sure you are subscribed to our mailing list.</em></p><p>Send all meeting-related inquiries to <a href="mailto:' + element.contactemail + '">' + element.contactemail + '</a></p></div><div class="col-sm-1"></div></div></div><div class="col-sm-1"></div></div>';
 
             members.innerHTML += appendage_members;
         });
@@ -112,6 +113,8 @@ $(document).ready(function () {
                     pic = item.img;
                     if (pic == "") {
                         pic = _path_file_appended2 + "logo.png";
+                    } else {
+                        pic = _path_file_appended2 + pic;
                     }
 
                     // begin this element
@@ -126,6 +129,8 @@ $(document).ready(function () {
                     pic = elements[i].img;
                     if (pic == "") {
                         pic = _path_file_appended2 + "logo.png";
+                    } else {
+                        pic = _path_file_appended2 + pic;
                     }
 
                     // start a new row when needed
@@ -161,16 +166,24 @@ $(document).ready(function () {
         }
     }
 
-    // Opens sidebar automatically if screen is wider than a pretty large pc screen; flashes red border on search tab otherwise
+    // Opens sidebar automatically if screen is wider than a pretty large pc screen
     if (document.body.clientWidth > 1500) {
-        open_sidebar();
+        if (document.getElementsByClassName('sidebar').length != 0) {
+            open_sidebar();
+        }
+    }
+
+    // Opens the appropriate project div
+    if (document.getElementById('projects-flag') != null) {
+        showDivFromUrl(null);
+        window.scrollTo(0, 0);
     }
 
     // Initializes Tooltip
     $('[data-toggle="tooltip"]').tooltip();
 
     // Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
-    $(".navbar a, .sidebar a, footer a[href='#top'], a[href='#landing'], li a").on('click', function (event) {
+    $(".navbar a, .sidebar a, .slack-list li a, footer a[href='#top']").on('click', function (event) {
 
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -182,10 +195,10 @@ $(document).ready(function () {
             var hash = this.hash;
 
             // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            // The optional number (scroll_time) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 900, function () {
+            }, scroll_time, function () {
 
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
@@ -216,20 +229,20 @@ $(document).ready(function () {
 
     // Initializes sliding for details/summary tags
     $('details summary').each(function () {
-        $(this).nextAll().wrapAll('<div id="wrap"></div>');
+        $(this).nextAll().wrapAll('<div id="details-wrapper"></div>');
     });
 
     $('details').each(function () {
         if ($(this).attr('open') == 'open') {
-            $(this).attr('open', 'open').find('#wrap').css('display', 'inline');
+            $(this).attr('open', 'open').find('#details-wrapper').css('display', 'inline');
         } else {
-            $(this).attr('open', '').find('#wrap').css('display', 'none');
+            $(this).attr('open', '').find('#details-wrapper').css('display', 'none');
         }
     });
 
     $('details summary').click(function (e) {
         e.preventDefault();
-        $(this).siblings('div#wrap').slideToggle(function () {
+        $(this).siblings('div#details-wrapper').slideToggle(function () {
             $(this).parent('details').toggleClass('open');
         });
     });
@@ -242,15 +255,6 @@ function retrieveJSON(file, callback) {
         success: callback
     });
 }
-
-/*
-function useJSON(file, callback) { 
-    retrieveJSON(file, function(result) {
-        let elements = Object.keys(result).length;
-        callback(elements);
-    });
-}
-*/
 
 function wait(milliseconds, callback) {
     //console.log("Waiting with " + milliseconds + " milliseconds");
@@ -267,6 +271,34 @@ function openLink(link, blank) {
     } else {
         window.location.href = link;
     }
+}
+
+function showDivFromUrl(name) {
+    if (name == null || name == "top") {
+        var url = window.location.href.split("#");
+        if (url.length == 1 || url[url.length - 1] == "top") {
+            name = 'landing';
+        } else {
+            name = url[url.length - 1];
+        }
+    }
+
+    $('.project-desc').each(function () {
+        $(this).addClass('hidden');
+    });
+    document.getElementById(name).classList.remove('hidden');
+}
+
+function openDiv(name) {
+    var url = window.location.href.split("#");
+    if (url.length > 1) {
+        window.location.href += "#" + name;
+    } else {
+        window.location.href = url[0] + "#" + name;
+    }
+
+    showDivFromUrl();
+    close_sidebar_on_mobile();
 }
 
 // Waits for a delay to open a link using openLink; only waits if the screen is smaller than a small desktop sreen

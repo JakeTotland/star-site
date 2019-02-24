@@ -11,13 +11,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </head>
-<body id="top" data-spy="scroll" data-target=".navbar" data-offset="50" class="bg-1">
+<body id="top" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <!-- Navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#star-navbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
@@ -27,7 +27,7 @@
                 <a href="index.htm" title="Home" class="no-decoration"><div class="navbar-logo-div">Star</div></a>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="star-navbar">
             <ul class="nav navbar-nav navbar-right navbar-main">
                 <li><a href="index.htm">Home</a></li>
                 <li><a href="projects.htm">Projects</a></li>
@@ -37,7 +37,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="members.htm">Members & Officers</a></li>
+                        <li><a href="members.htm">Members</a></li>
                         <li><a href="alumni.htm">Alumni</a></li>
                         <li><a href="partners.htm">Partners</a></li>
                         <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
@@ -84,95 +84,96 @@
     </div>
 </div>
 
-<!-- Noscript standard warning/error message -->
-<noscript>
-    <br><br><br><br>
-    <div class="container section text-center warning">
-        <h3>Warning</h3>
-        <p><em>JavaScript is required to enjoy this site to the fullest. Please allow <span class="upper">Star</span> permission to run scripts via your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
-    </div>
-</noscript>
-
-<!-- Fully-page-unique Elements Start #################################################################### -->
-
-<!-- Navbar downward extension, with description, for title and info on page -->
-<div class="text-center container nonsection first-pad">
-    <h3>Our Social Media</h3>
-
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-            <p>
-                You can connect with <span class="upper">Star</span> and its members on a number of other platforms. Expand your professional connections via LinkedIn, follow our Facebook page to keep up with our events, scroll through our top highlights on Instagram, or watch some of our filmed content on YouTube. It's all up there for your education and entertainment. 
-            </p>
+<div class="bg-1">
+    <!-- Noscript standard warning/error message -->
+    <noscript>
+        <br><br><br><br>
+        <div class="container section text-center warning">
+            <h3>Warning</h3>
+            <p><em>JavaScript is required to enjoy this site to the fullest. Please allow <span class="upper">Star</span> permission to run scripts via your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
         </div>
-        <div class="col-sm-1"></div>
+    </noscript>
+
+    <!-- Fully-page-unique Elements Start #################################################################### -->
+
+    <!-- Navbar downward extension, with description, for title and info on page -->
+    <div class="text-center container nonsection first-pad">
+        <h3>Our Social Media</h3>
+
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <p>
+                    You can connect with <span class="upper">Star</span> and its members on a number of other platforms. Expand your professional connections via LinkedIn, follow our Facebook page to keep up with our events, scroll through our top highlights on Instagram, or watch some of our filmed content on YouTube. It's all up there for your education and entertainment. 
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
     </div>
+
+    <!-- Rows of media buttons -->
+    <div class="container nonsection last text-center">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 media">
+                <a class="no-decoration" href="https://www.linkedin.com/company/spacetechru">
+                    <button type="button" class="btn btn-block btn-media">
+                        <i class="fab fa-linkedin"></i>
+                        <br>
+                        <p><strong>Linkedin</strong></p>
+                    </button>
+                </a>
+            </div>
+            <div class="col-sm-4 media">
+                <a class="no-decoration" href="https://www.facebook.com/SpaceTechRU/">
+                    <button type="button" class="btn btn-block btn-media">
+                        <i class="fab fa-facebook"></i>
+                        <br>
+                        <p><strong>Facebook</strong></p>
+                    </button>
+                </a>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 media">
+                <a class="no-decoration" href="https://www.instagram.com/ruspacetech/">
+                    <button type="button" class="btn btn-block btn-media">
+                        <i class="fab fa-instagram"></i>
+                        <br>
+                        <p><strong>Instagram</strong></p>
+                    </button>
+                </a>
+            </div>
+            <div class="col-sm-4 media">
+                <a class="no-decoration" href="https://www.youtube.com/channel/UCDgs0sYkvWtl_pWUbpRhJGg?view_as=subscriber?sub_confirmation=1">
+                    <button type="button" class="btn btn-block btn-media">
+                        <i class="fab fa-youtube"></i>
+                        <br>
+                        <p><strong>YouTube</strong></p>
+                    </button>
+                </a>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    <hr>
+    <!-- End of Fully-page-unique Elements #################################################################### -->
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <h1></h1>
+        <a class="up-arrow" href="#top" data-toggle="tooltip" title="Return to Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        <p>
+            Content on this site, except where indicated otherwise, is the property of the Space Technology Association of Rutgers, a Rutgers University student organization.<br>© <span class="upper">Star</span> 2019
+            <!-- See HTML comment underneath footer in index.htm for copyright claim details -->
+        </p> 
+    </footer>
 </div>
-
-<!-- Rows of media buttons -->
-<div class="container nonsection last text-center">
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-4 media">
-            <a class="no-decoration" href="https://www.linkedin.com/company/spacetechru" target="_blank">
-                <button type="button" class="btn btn-block btn-media">
-                    <i class="fab fa-linkedin"></i>
-                    <br>
-                    <p><strong>Linkedin</strong></p>
-                </button>
-            </a>
-        </div>
-        <div class="col-sm-4 media">
-            <a class="no-decoration" href="https://www.facebook.com/SpaceTechRU/" target="_blank">
-                <button type="button" class="btn btn-block btn-media">
-                    <i class="fab fa-facebook"></i>
-                    <br>
-                    <p><strong>Facebook</strong></p>
-                </button>
-            </a>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-4 media">
-            <a class="no-decoration" href="https://www.instagram.com/ruspacetech/" target="_blank">
-                <button type="button" class="btn btn-block btn-media">
-                    <i class="fab fa-instagram"></i>
-                    <br>
-                    <p><strong>Instagram</strong></p>
-                </button>
-            </a>
-        </div>
-        <div class="col-sm-4 media">
-            <a class="no-decoration" href="https://www.youtube.com/channel/UCDgs0sYkvWtl_pWUbpRhJGg?view_as=subscriber?sub_confirmation=1" target="_blank">
-                <button type="button" class="btn btn-block btn-media">
-                    <i class="fab fa-youtube"></i>
-                    <br>
-                    <p><strong>YouTube</strong></p>
-                </button>
-            </a>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
-</div>
-<hr>
-
-<!-- End of Fully-page-unique Elements #################################################################### -->
-
-<!-- Footer -->
-<footer class="text-center">
-    <h1></h1>
-    <a class="up-arrow" href="#top" data-toggle="tooltip" title="Return to Top">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br><br>
-    <p>
-        Content on this site, except where indicated otherwise, is the property of the Space Technology Association of Rutgers, a Rutgers University student organization.<br>© <span class="upper">Star</span> 2019
-        <!-- See HTML comment underneath footer in index.htm for copyright claim details -->
-    </p> 
-</footer>
 </body>
 
 </html>

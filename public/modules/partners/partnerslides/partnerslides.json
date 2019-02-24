@@ -6,9 +6,27 @@
       "link": "https://www.jnj.com/"
     },
     {
+      "name": "Roosevelt Elementary School",
+      "role": "School Outreach Event Host",
+      "timeframe": "2018",
+      "link": "http://rs.nbpschools.net/"
+    },
+    {
       "name": "Chipotle Mexican Grill",
       "role": "Fundraising Partner",
       "timeframe": "2018",
       "link": "https://chipotle.com"
+    },
+    {
+      "name": "Schneider Electric",
+      "role": "Large-sum Donor",
+      "timeframe": "2018",
+      "link": "https://www.schneider-electric.com/ww/en/"
+    },
+    {
+      "name": "Panera Bread",
+      "role": "Fundraising Partner",
+      "timeframe": "2018",
+      "link": "https://www.panerabread.com/en-us/home.html/"
     }
 ]

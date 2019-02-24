@@ -2,13 +2,13 @@
     {
       "season": "Spring",
       "year": "2019",
-      "time": "8:30",
+      "time": "7:00",
       "ampm": "PM",
       "bldglink": "https://rie.rutgers.edu/content/serc-building",
       "bldgabbreviation": "SERC",
-      "room": "211",
+      "room": "206",
       "pattern": "Every Other Monday",
-      "pdflink": "",
+      "pdflink": "assets/meetings/2019sp.pdf",
       "contactemail": "ruspacetech@gmail.com"
     }
 ]

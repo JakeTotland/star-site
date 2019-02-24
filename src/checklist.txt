@@ -1,21 +1,18 @@
 OVERALL
-0. change all references from SPOTLIGHT to STORIES (and change "myNavbar" name while at it)
 1. set .htaccess or overwrite to make links not end in .htm
 2. set the favicon to actually working
 3. make navbar page titles get highlighted or something when on the page they link to
 4. build redirect pages for the old group (like projects.html, etc.) OR figure out how to do it in .htaccess
 5. make navbar expansion of CONNECT on mobile better
+6. delete projects and spotlight page image folders (and elizabeth-proof both pages)
 
 MEMBERS
 1. make the meetings list PDF
 2. update board member pictures
 3. make sure google chrome on mobile does not make a grey box appear on eboard member tap
 
-SPOTLIGHT
-0. change any references from stories to splotlight
-
 PROJECTS
-1. make it so photos are some portion of the page width (and collapses to square on mobile)
+1. link to appropriate form format
 
 MEDIA
 1. add downloadable QR code to page
