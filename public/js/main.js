@@ -2,7 +2,7 @@
 var tablet_width = 768; //px
 var small_desktop_width = 992; //px
 var large_desktop_width = 1366; //px
-var scroll_time = 550; //ms
+var scroll_time = 600; //ms
 
 // "Main"
 $(document).ready(function () {
@@ -39,6 +39,8 @@ $(document).ready(function () {
             appendage += '<a id="carousel-control-prev" class="left carousel-control carousel-controls-reactive" style="background: none;" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control carousel-controls-reactive" style="background: none;" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
 
             carousel.innerHTML += appendage;
+
+            initializeDraggableCarousels();
         });
     }
 
@@ -65,7 +67,7 @@ $(document).ready(function () {
                 } else {
                     _appendage += '<div class="item">';
                 }
-                _appendage += '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-2"></div></div></div>';
+                _appendage += '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><a onclick="waitToLink(' + sq + link + sq + ', true)" class="card-link"><div class="card shadow square transition-shadow"><div class="panel-body"><p class="subheader">' + elements[i].name + '</p></div><div class="panel-footer"><p>' + elements[i].role + '</p><p class="smaller"><em>' + elements[i].timeframe + '</em></p></div></div></a></div><div class="col-sm-2"></div></div></div>';
             }
             _appendage += '</div>';
             _appendage += '<div class="carousel-controls-reactive"><a id="carousel-control-prev" class="left carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control" style="background: none; color: gray;" href="#partners-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
@@ -75,6 +77,8 @@ $(document).ready(function () {
             _appendage += '</em></p>';
 
             partnerslides.innerHTML += _appendage;
+
+            initializeDraggableCarousels();
         });
     }
 
@@ -206,27 +210,6 @@ $(document).ready(function () {
         } // End if
     });
 
-    // Initializes carousels that need to be dragged
-    var direction = 0; // negative for dragging left, positive for dragging right, 0 for not dragging
-    var startingX = 0;
-    var threshold = 50;
-    $('.draggable-carousel').bind('mousedown', function (pos) {
-        direction = 0;
-        startingX = pos.pageX;
-    }).bind('touchstart', function (pos) {
-        startingX = pos.originalEvent.touches[0].pageX;
-    }).bind('mousemove', function (pos) {
-        direction = pos.pageX - startingX;
-    }).bind('touchmove', function (pos) {
-        direction = pos.originalEvent.touches[0].pageX - startingX;
-    }).bind('touchend mouseup', function () {
-        if (direction < -threshold) {
-            document.getElementById('carousel-control-next').click();
-        } else if (direction > threshold) {
-            document.getElementById('carousel-control-prev').click();
-        } else {}
-    });
-
     // Initializes sliding for details/summary tags
     $('details summary').each(function () {
         $(this).nextAll().wrapAll('<div id="details-wrapper"></div>');
@@ -261,6 +244,29 @@ function wait(milliseconds, callback) {
     window.setTimeout(function () {
         callback();
     }, milliseconds);
+}
+
+// Initializes carousels that need to be dragged
+function initializeDraggableCarousels() {
+    var direction = 0; // negative for dragging left, positive for dragging right, 0 for not dragging
+    var startingX = 0;
+    var threshold = 50;
+    $('.draggable-carousel').bind('mousedown', function (pos) {
+        direction = 0;
+        startingX = pos.pageX;
+    }).bind('touchstart', function (pos) {
+        startingX = pos.originalEvent.touches[0].pageX;
+    }).bind('mousemove', function (pos) {
+        direction = pos.pageX - startingX;
+    }).bind('touchmove', function (pos) {
+        direction = pos.originalEvent.touches[0].pageX - startingX;
+    }).bind('touchend mouseup', function () {
+        if (direction < -threshold) {
+            document.getElementById('carousel-control-next').click();
+        } else if (direction > threshold) {
+            document.getElementById('carousel-control-prev').click();
+        } else {}
+    });
 }
 
 // Opens the given link; if blank == true, then opens the link in a new tab
