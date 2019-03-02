@@ -374,8 +374,11 @@ summary:before, summary:after {
     }
 
     &-up {
-
         margin-top: 15px;
+
+        &-more {
+            margin-top: 45px;
+        }
     }
 }
 .tenet {
@@ -710,6 +713,7 @@ summary:before, summary:after {
 }
 .padding {
     $amount: 50px;
+    
     &-right {
         &-on-smallpc {
             @media ($smallpc-and-up) {
@@ -724,6 +728,10 @@ summary:before, summary:after {
                 padding-left: $amount;
             }
         }
+    }
+
+    &-all {
+        padding: $amount $amount $amount $amount;
     }
 }
 .phablet-and-up {
