@@ -1,0 +1,14 @@
+{
+    "full_title": "Aerospike Lifts Off",
+    "author": "Laura Kershaw",
+    "year_written": "2018",
+    "month_written": "Dec.",
+    "day_written": "3",
+    "img": "aerospike.png",
+    "paragraphs":
+        [
+            "The Aerospike team, led by Vivek Vidyarthi, has been busy this semester beginning their project from the ground up. For some background, Aerospike nozzles are potential replacements to conventional bell-shaped nozzle and allow for Single Stage to Orbit (SSTO) vehicles. They have currently created a script which produces an optimized contour design for the aerospike using the output characteristic of a motor along with a corresponding pressure distribution. Additionally, they are in the preliminary stages of putting together parameters for the motor test stand.",
+
+            "The end goal of this project is to design both the aerospike and a static test bench with a functioning liquid motor that will be available to STAR members. We look forward to seeing this new project progress in the spring semester."
+        ]
+}

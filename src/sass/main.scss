@@ -371,6 +371,14 @@ summary:before, summary:after {
                 }
             }
         }
+
+        &-small {
+            margin-bottom: 0px;
+
+            @media ($tablet-and-up) {
+                margin-bottom: 30px;
+            }
+        }
     }
 
     &-up {

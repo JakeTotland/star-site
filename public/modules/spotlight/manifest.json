@@ -1,0 +1,32 @@
+[
+    [
+        {
+            "folder": "2019s",
+            "name": "Spring 2019",
+            "default": "OPEN"
+        },
+        {
+            "post_file": "newantenna",
+            "post_name": "New Antenna"
+        }
+    ],
+    [
+        {
+            "folder": "2018f",
+            "name": "Fall 2018",
+            "default": "OPEN"
+        },
+        {
+            "post_file": "spacevision2018",
+            "post_name": "SpaceVision 2018"
+        },
+        {
+            "post_file": "aerospikeliftsoff",
+            "post_name": "Aerospike Lifts Off"
+        },
+        {
+            "post_file": "cubesatnews",
+            "post_name": "Cube Satellite News"
+        }
+    ]
+]

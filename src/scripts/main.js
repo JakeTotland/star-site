@@ -4,6 +4,11 @@ let small_desktop_width = 992; //px
 let large_desktop_width = 1366; //px
 let scroll_time = 600; //ms
 
+
+let spotlight_post_locations = {};
+let spotlight_last_post = "";
+let spotlight_first_post = "";
+
 // "Main"
 $(document).ready(function () {
 
@@ -116,7 +121,7 @@ $(document).ready(function () {
                     id = "boardmemberX";
                     pic = item.img;
                     if (pic == "") {
-                        pic = path_file_appended + "logo.png";
+                        pic = path_file_appended + "defaultpic.png";
                     } else {
                         pic = path_file_appended + pic;
                     }
@@ -133,7 +138,7 @@ $(document).ready(function () {
                 for (i = 0; i < elements.length; i++) {
                     pic = elements[i].img;
                     if (pic == "") {
-                        pic = path_file_appended + "logo.png";
+                        pic = path_file_appended + "defaultpic.png";
                     } else {
                         pic = path_file_appended + pic;
                     }
@@ -171,11 +176,67 @@ $(document).ready(function () {
         }
     }
 
-    // Opens sidebar automatically if screen is wider than a pretty large pc screen
-    if (document.body.clientWidth > 1500) {
-        if (document.getElementsByClassName('sidebar').length != 0) {
-            open_sidebar();
-        }
+    // Loads the Spotlight page module (Sidebar)
+    let sidebar_spotlight = document.getElementById('sidebar_spotlight');
+    let content_spotlight = document.getElementById('content_spotlight');
+    if (sidebar_spotlight != null && content_spotlight != null) {
+        let path_file_appended_base = path_file_base + "spotlight/";
+        let path_file_appended = path_file_appended_base + "posts/";
+        let appendage_spotlight_sidebar = "";
+        let appendage_spotlight_content = "";
+
+        // Populates the sidebar and apportions a div section for each post
+        retrieveJSON(path_file_appended_base + "manifest.json", function(elements) {
+            for (i = 0; i < elements.length; i++) {
+                let post_folder = elements[i][0].folder;
+                if (elements[i][0].default.toUpperCase() == "OPEN") {
+                    appendage_spotlight_sidebar += '<details class="sidebar-item open" open="open">';
+                } else {
+                    appendage_spotlight_sidebar += '<details class="sidebar-item">';
+                }
+                appendage_spotlight_sidebar += '<summary><em>' + elements[i][0].name + '</em></summary><ul>';
+                for (j = 1; j < elements[i].length; j++) {
+
+                    let post_file = elements[i][j].post_file;
+                    appendage_spotlight_content += '<!-- Spotlight post --> <div id="' + post_file + '" class="container nonsection space-up space-down-small text-left-tablet"></div>';
+
+                    appendage_spotlight_sidebar += '<li><a href="#' + post_file + '" onclick="openDivsThrough(\'' + post_file + '\', false, true)" class="sidebar-item btn-wide">' + elements[i][j].post_name + '</a></li>';
+                    spotlight_post_locations[post_file] = path_file_appended + post_folder + '/' + post_file + '/';
+
+                    if (i == 0 && j == 1) {
+                        spotlight_first_post = post_file;
+                    } else if (i == elements.length - 1 && j == elements[i].length - 1) {
+                        spotlight_last_post = post_file;
+                    }
+                }
+                appendage_spotlight_sidebar += '</ul></details>';
+            }
+
+            sidebar_spotlight.innerHTML += appendage_spotlight_sidebar;
+            content_spotlight.innerHTML += appendage_spotlight_content;
+            initializeDetailsSliders();
+            initializeSidebar();
+
+            // Loads the Spotlight page post that each other url refers to, if the corresponding div is in view
+            $(window).scroll(function(){
+                for (var key in spotlight_post_locations) {
+                    let post = document.getElementById(key);
+                    if (isInView(post) && !(post.classList.contains("populated"))) {
+                        openDiv(key, false, false);
+                    }
+                }
+            });
+
+            // Loads the Spotlight page post that the current url refers to (NOTE: must also load all the ones before it)
+            openDivsThrough(null, false, true);
+        });
+    }
+
+    // Loads the Projects page module (Sidebar) (TODO)
+    let sidebar_projects = document.getElementById('sidebar_projects');
+    if (sidebar_projects != null) {
+        initializeDetailsSliders();
+        initializeSidebar();
     }
 
     // Opens the appropriate project div
@@ -187,50 +248,7 @@ $(document).ready(function () {
     // Initializes Tooltip
     $('[data-toggle="tooltip"]').tooltip();
 
-    // Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
-    $(".navbar a, .sidebar a, .slack-list li a, footer a[href='#top']").on('click', function (event) {
-
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (scroll_time) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, scroll_time, function () {
-
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
-            });
-        } // End if
-    });
-
-    // Initializes sliding for details/summary tags
-    $('details summary').each(function(){
-        $(this).nextAll().wrapAll('<div id="details-wrapper"></div>');
-    });
-
-    $('details').each(function() {
-        if ($(this).attr('open') == 'open') {
-            $(this).attr('open', 'open').find('#details-wrapper').css('display','inline');
-        } else {
-            $(this).attr('open','').find('#details-wrapper').css('display','none');
-        }
-    });
-    
-    $('details summary').click(function(e) {
-        e.preventDefault();
-        $(this).siblings('div#details-wrapper').slideToggle(function(){
-            $(this).parent('details').toggleClass('open');
-        });
-    });
-
+    initializeSmoothScrolling(".navbar a, .slack-list li a, footer a[href='#top']");
 });
 
 function retrieveJSON(file, callback) {
@@ -277,6 +295,64 @@ function initializeDraggableCarousels() {
     });
 }
 
+// Initializes sliding for details/summary tags
+function initializeDetailsSliders() {
+    $('details summary').each(function(){
+        $(this).nextAll().wrapAll('<div id="details-wrapper"></div>');
+    });
+
+    $('details').each(function() {
+        if ($(this).attr('open') == 'open') {
+            $(this).attr('open', 'open').find('#details-wrapper').css('display','inline');
+        } else {
+            $(this).attr('open','').find('#details-wrapper').css('display','none');
+        }
+    });
+    
+    $('details summary').click(function(e) {
+        e.preventDefault();
+        $(this).siblings('div#details-wrapper').slideToggle(function(){
+            $(this).parent('details').toggleClass('open');
+        });
+    });
+}
+
+// Initializes the sidebar to be open on large screens
+function initializeSidebar() {
+    // Opens sidebar automatically if screen is wider than a pretty large pc screen
+    if (document.body.clientWidth > 1500) {
+        if (document.getElementsByClassName('sidebar').length != 0) {
+            open_sidebar();
+        }
+    }
+}
+
+// Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
+function initializeSmoothScrolling(tags) {
+    $(tags).on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (scroll_time) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, scroll_time, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        }
+    });
+}
+
 // Opens the given link; if blank == true, then opens the link in a new tab
 function openLink(link, blank) {
     if (blank) {
@@ -285,6 +361,14 @@ function openLink(link, blank) {
     } else {
         window.location.href=link;
     }
+}
+
+function smoothScrollToDiv(div) {
+    $('html, body').animate({
+        scrollTop: $("#" + div).offset().top
+    }, scroll_time);
+
+
 }
 
 function showDivFromUrl(name) {
@@ -303,16 +387,97 @@ function showDivFromUrl(name) {
     document.getElementById(name).classList.remove('hidden');
 }
 
-function openDiv(name) {
-    let url = window.location.href.split("#");
-    if (url.length > 1) {
-        window.location.href += "#" + name;
+function openDiv(name, projects_rules, scroll) {
+
+    if (projects_rules) {
+        // projects means that only this div will be shown; all others will be hidden, and the JSON format for Projects posts will be followed. otherwise, Spotlight format will be followed
+        window.location.hash = name;
+        showDivFromUrl();
+
+        if (scroll) {
+            smoothScrollToDiv(name);
+        }
     } else {
-        window.location.href = url[0] + "#" + name;
+        let post_section = document.getElementById(name);
+
+        if (!(post_section.classList.contains("populated"))) {
+            post_section.classList.add("populated");
+
+            let post_address = spotlight_post_locations[name];
+            
+            retrieveJSON(post_address + "post.json", function(element) {
+                let post_img = element.img;
+                if (post_img == "") {
+                    post_img = 'modules/spotlight/defaultpic.png';
+                } else {
+                    post_img = post_address + post_img;
+                }
+
+                let post_content = '<div class="row center-vertical-tablet"><div class="col-sm-1"></div><div class="col-sm-10 space-down space-up"><div class="carousel-slide-holder">';
+
+                post_content += '<div style="background-image: url(\'' + post_img + '\');" class="carousel-slide rounded"></div></div></div><div class="col-sm-1"></div></div>';
+                post_content += '<div class="row text-center"><div class="col-sm-1"></div><div class="col-sm-10">';
+                post_content += '<h3>' + element.full_title + '</h3><p>by ' + element.author + '</p>';
+                post_content += '<p class="small"><span class="glyphicon glyphicon-time"></span> ' + element.month_written + ' ' + element.day_written + ',' + element.year_written + '</p></div><div class="col-sm-1"></div></div><br>';
+
+                post_content += '<div class="row center-vertical-tablet"><div class="col-sm-1"></div><div class="col-md-10"><p>' + element.paragraphs[0] + '</p>';
+
+                for (i = 1; i < element.paragraphs.length; i++) {
+                    post_content += '<br><p>' + element.paragraphs[i] + '</p>';
+                }
+                post_content += '</div><div class="col-sm-1"></div></div>';
+
+                //if (name != spotlight_last_post) {
+                    post_content += '<hr>';
+                //}
+
+                post_section.innerHTML = post_content;
+                if (scroll) {
+                    smoothScrollToDiv(name);
+                }
+            });
+        } else {
+            if (scroll) {
+                smoothScrollToDiv(name);
+            }
+        }
     }
 
-    showDivFromUrl();
     close_sidebar_on_mobile();
+}
+
+function openDivsThrough(name, projects_rules, scroll) {
+    let section = name;
+    let directed = false;
+
+    if (section == null) {
+        let url = window.location.href.split("#");
+        section = spotlight_first_post;
+        if (url.length > 1) {
+            if (url[1] != "top") {
+                directed = true;
+                section = url[1];
+            }
+        }
+    } else {
+        directed = true;
+    }
+    
+    for (var key in spotlight_post_locations) {
+
+        if (key == section) {
+            if (!directed) {
+                openDiv(key, projects_rules, false);
+            } else {
+                openDiv(key, projects_rules, scroll);
+            }
+
+            break;
+
+        } else {
+            openDiv(key, projects_rules, false);
+        }
+    }
 }
 
 // Waits for a delay to open a link using openLink; only waits if the screen is smaller than a small desktop sreen
@@ -325,6 +490,20 @@ function waitToLink(link, blank) {
     } else {
         openLink(link, blank);
     }
+}
+
+// Check if an element is scrolled into view (Thanks to Jakub T. Jankewicz)
+function isInView(div) {
+    var rect = div.getBoundingClientRect();
+    var element_top = rect.top;
+    var element_bottom = rect.bottom;
+
+    // Only completely visible elements return true:
+    //var is_visible = (element_top >= 0) && (element_bottom <= window.innerHeight);
+
+    // Partially visible elements return true:
+    var is_visible = element_top < window.innerHeight && element_bottom >= 0;
+    return is_visible;
 }
 
 // Functions to open/close the sidebar on the Stories and Projects pages

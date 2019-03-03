@@ -1,0 +1,12 @@
+{
+    "full_title": "Star Unveils New Satellite Receiving Antenna",
+    "author": "Timothy Nuber",
+    "year_written": "2019",
+    "month_written": "Feb.",
+    "day_written": "24",
+    "img": "newantenna.png",
+    "paragraphs":
+        [
+            "As part of its antennae project, which seeks to capture pictures of the earth taken from passing weather satellites, STAR has completed construction of a helical antenna. Its most complex receiver yet, the spiraled arrangement of the copper rods serves to block interference from nearby radio sources, locking onto signals of passing satellites more securely and downlinking a clearer picture. With dipole, tetrahedral, and now helical antennae in its wheelhouse, the STAR project team will begin comparing data captured by all three to compare performance, fidelity, and telemetric accuracy. The organization would like to thank key members Anthony Parfilko and Yousef Ansari for their chief contributions to the device’s construction."
+        ]
+}

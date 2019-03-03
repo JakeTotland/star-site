@@ -17,35 +17,12 @@
 
 <!-- Sidebar/Contentsbar -->
 <nav class="sidebar sidebar-spotlight bg-2 w3-animate-left" style="display: none;" id="star-sidebar">
-    <div class="sidebar-content">
+    <div id="sidebar_spotlight" class="sidebar-content">
         <button class="sidebar-item btn-wide close-button" onclick="close_sidebar()">&times;</button>
         <div class="center-on-mobile">
-            <a data-toggle="modal" data-target="#spotlightModal" onclick="close_sidebar_on_mobile()" class="sidebar-item first btn-wide">Navigating <span class="upper">Star</span> Spotlight</a>
+            <a data-toggle="modal" data-target="#spotlightModal" onclick="close_sidebar_on_mobile()" class="sidebar-item first btn-wide">Using <span class="upper">Star</span> Spotlight</a>
         </div>
         <hr>
-        <details class="sidebar-item open" open="open">
-            <summary><em>Spring 2019</em></summary>
-            <ul>
-                <li>
-                    <a href="#newantenna" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">New Antenna</a>
-                </li>
-            </ul>
-        </details>
-        
-        <details class="sidebar-item open" open="open">
-            <summary><em>Fall 2018</em></summary>
-            <ul>
-                <li>
-                    <a href="#spacevision2018" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">SpaceVision 2018</a>
-                </li>
-                <li>
-                    <a href="#aerospikeliftsoff" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Aerospike Lifts Off</a>
-                </li>
-                <li>
-                    <a href="#cubesatnews" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Cube Satellite News</a>
-                </li>
-            </ul>
-        </details>
     </div>
 </nav>
 
@@ -180,7 +157,7 @@
             <div class="col-sm-10">
                 <em>
                     <div class="space-down-mobile-tiny"><span class="upper">Star</span> Spotlight is a collection of news, announcements, and some of our favorite moments.</div>
-                    <span class="small">Scroll down to start browsing, or <a data-toggle="modal" data-target="#spotlightModal" class="pointer">click here</a> for help.</span>
+                    <span class="small">Use the <span class="nowrap">(<span class="glyphicon glyphicon-search"></span>)</span> tab on the left to browse.</span>
                 </em>
             </div>
             <div class="col-sm-1"></div>
@@ -188,147 +165,16 @@
     </div>
 
     <!-- Content -->
-    <!-- Container (Spotlight Post) -->
-    <div id="newantenna" class="container section text-left-tablet">
-        <div class="row center-vertical-tablet">
-            <div class="col-sm-1 wraparound"></div>
+    <div id="content_spotlight">
+    </div>
+
+    <div class="container nonsection">
+        <div class="row text-center">
+            <div class="col-sm-1"></div>
             <div class="col-sm-10 space-down">
-                <div class="carousel-slide-holder">
-                    <div style="background-image: url('images/spotlight/newantenna.png');" class="carousel-slide rounded"></div>
-                </div>
+                <p class="small"><em>You've reached the end of <span class="upper">Star</span> Spotight. Thanks for reading!</em></p>
             </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <div class="row text-center">
-            <div class="col-sm-1 wraparound"></div>
-            <div class="col-sm-10 wraparound">
-                <h3>Star Unveils New Satellite Receiving Antenna</h3>
-                <p>
-                    by Timothy Nuber
-                </p>
-                <p class="small">
-                    <span class="glyphicon glyphicon-time"></span> Feb. 24, 2019
-                </p>
-            </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <br>
-        <div class="row center-vertical-tablet">
-            <div class="col-md-12">
-                <p>
-                    As part of its antennae project, which seeks to capture pictures of the earth taken from passing weather satellites, STAR has completed construction of a helical antenna.  Its most complex receiver yet, the spiraled arrangement of the copper rods serves to block interference from nearby radio sources, locking onto signals of passing satellites more securely and downlinking a clearer picture.  With dipole, tetrahedral, and now helical antennae in its wheelhouse, the STAR project team will begin comparing data captured by all three to compare performance, fidelity, and telemetric accuracy.  The organization would like to thank key members Anthony Parfilko and Yousef Ansari for their chief contributions to the device’s construction.
-                </p>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <!-- Container (Spotlight Post) -->
-    <div id="spacevision2018" class="container section text-left-tablet">
-        <div class="row center-vertical-tablet">
-            <div class="col-sm-1 wraparound"></div>
-            <div class="col-sm-10 space-down space-up">
-                <div class="carousel-slide-holder">
-                    <div style="background-image: url('images/spotlight/spacevision2018.png');" class="carousel-slide rounded"></div>
-                </div>
-            </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <div class="row text-center">
-            <div class="col-sm-1 wraparound"></div>
-            <div class="col-sm-10 wraparound">
-                <h3>SpaceVision 2018</h3>
-                <p>
-                    by Elizabeth Foster-Krim
-                </p>
-                <p class="small">
-                    <span class="glyphicon glyphicon-time"></span> Dec. 12, 2018
-                </p>
-            </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <br>
-        <div class="row center-vertical-tablet">
-            <div class="col-md-12">
-                <p>
-                    As a new chapter of the Students for the Exploration and Development of Space (SEDS), STAR members were able to attend the 2018 SpaceVision Conference hosted in San Diego. The conference was three days long and hosted by Lockheed Martin. They held activities for students such as a trivia night and a banquet at the end of the conference. There was also a question box, where students could solve engineering problems with the opportunity to enter the box (which had screens congratulating the student and showing them flying through space) and win a copy of the Voyager Golden Record. Students also had the chance to network throughout the conference, as well as attend the career fair and talk to representatives from Boeing, NASA, Lockheed, Virgin Orbit, and other companies. During the day there were many speakers and panelists discussing their roles in the space world, as well as workshops that students could attend. This was a fantastic opportunity for STAR, and we’re looking forward to the 2019 conference!
-                </p>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <!-- Container (Spotlight Post) -->
-    <div id="aerospikeliftsoff" class="container section text-left-tablet">
-        <div class="row center-vertical-tablet">
-            <div class="col-sm-1 wraparound"></div>
-            <div class="col-sm-10 space-down space-up">
-                <div class="carousel-slide-holder">
-                    <div style="background-image: url('images/spotlight/aerospikeliftsoff.png');" class="carousel-slide rounded"></div>
-                </div>
-            </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <div class="row text-center">
-            <div class="col-sm-1 wraparound"></div>
-            <div class="col-sm-10 wraparound">
-                <h3>Aerospike Lifts Off</h3>
-                <p>
-                    by Laura Kershaw
-                </p>
-                <p class="small">
-                    <span class="glyphicon glyphicon-time"></span> Dec. 3, 2018
-                </p>
-            </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <br>
-        <div class="row center-vertical-tablet">
-            <div class="col-md-12">
-                <p>
-                    The Aerospike team, led by Vivek Vidyarthi, has been busy this semester beginning their project from the ground up. For some background, Aerospike nozzles are potential replacements to conventional bell-shaped nozzle and allow for Single Stage to Orbit (SSTO) vehicles. They have currently created a script which produces an optimized contour design for the aerospike using the output characteristic of a motor along with a corresponding pressure distribution. Additionally, they are in the preliminary stages of putting together parameters for the motor test stand.
-                </p>
-                <br>
-                <p>
-                    The end goal of this project is to design both the aerospike and a static test bench with a functioning liquid motor that will be available to STAR members. We look forward to seeing this new project progress in the spring semester.
-                </p>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <!-- Container (Spotlight Post) -->
-    <div id="cubesatnews" class="container section text-left-tablet">
-        <div class="row center-vertical-tablet">
-            <div class="col-sm-1 wraparound"></div>
-            <div class="col-sm-10 space-down space-up">
-                <div class="carousel-slide-holder">
-                    <div style="background-image: url('images/spotlight/cubesatnews.png');" class="carousel-slide rounded"></div>
-                </div>
-            </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <div class="row text-center">
-            <div class="col-sm-1 wraparound"></div>
-            <div class="col-sm-10 wraparound">
-                <h3>Cube Satellite News</h3>
-                <p>
-                    by Laura Kershaw
-                </p>
-                <p class="small">
-                    <span class="glyphicon glyphicon-time"></span> Nov. 19, 2018
-                </p>
-            </div>
-            <div class="col-sm-1 wraparound"></div>
-        </div>
-        <br>
-        <div class="row center-vertical-tablet space-down">
-            <div class="col-md-12">
-                <p>
-                    The Cube Satellite subteams have been hard at work this semester. The structures team has begun working on the test frame and thoughts about a final frame design are in the works. They will be working closely with the experiment team on mounting the experiment to the frame. As parts arrive, they continue to update SolidWorks models to reflect the newest information. The avionics team has ordered the majority of necessary parts and will start work on the rotator mechanism soon. This, along with a helical antenna and radio will make up the ground station that will be used to communicate with satellites in low-earth orbit. Additionally, they will continue to research CubeSat electronics and computing.
-                </p>
-                <br>
-                <p>
-                    Finally, the propulsion team is on target to submit the drag sail design to Binghamton by January this coming year with a newly developed mechanism for drag sail deployment being finalized soon. The new mechanism will allow for side deployment rather than extending outward. STAR is excited that all of these developments will help us continue finalizing our prototype and take the next step towards our final design!
-                </p>
-            </div>
+            <div class="col-sm-1"></div>
         </div>
     </div>
 

@@ -1,0 +1,14 @@
+{
+    "full_title": "Cube Satellite News",
+    "author": "Laura Kershaw",
+    "year_written": "2018",
+    "month_written": "Nov.",
+    "day_written": "19",
+    "img": "cubesatframe.png",
+    "paragraphs":
+        [
+            "The Cube Satellite subteams have been hard at work this semester. The structures team has begun working on the test frame and thoughts about a final frame design are in the works. They will be working closely with the experiment team on mounting the experiment to the frame. As parts arrive, they continue to update SolidWorks models to reflect the newest information. The avionics team has ordered the majority of necessary parts and will start work on the rotator mechanism soon. This, along with a helical antenna and radio will make up the ground station that will be used to communicate with satellites in low-earth orbit. Additionally, they will continue to research CubeSat electronics and computing.",
+
+            "Finally, the propulsion team is on target to submit the drag sail design to Binghamton by January this coming year with a newly developed mechanism for drag sail deployment being finalized soon. The new mechanism will allow for side deployment rather than extending outward. STAR is excited that all of these developments will help us continue finalizing our prototype and take the next step towards our final design! "
+        ]
+}

@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spotlight: Space Technology Association of Rutgers</title>
+
+    <!-- Stylesheet and Scripts -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- Page-unique Elements Start #################################################################### -->
+
+<!-- Sidebar/Contentsbar -->
+<nav class="sidebar sidebar-spotlight bg-2 w3-animate-left" style="display: none;" id="star-sidebar">
+    <div class="sidebar-content">
+        <button class="sidebar-item btn-wide close-button" onclick="close_sidebar()">&times;</button>
+        <div class="center-on-mobile">
+            <a data-toggle="modal" data-target="#spotlightModal" onclick="close_sidebar_on_mobile()" class="sidebar-item first btn-wide">Navigating <span class="upper">Star</span> Spotlight</a>
+        </div>
+        <hr>
+        <details class="sidebar-item open" open="open">
+            <summary><em>Spring 2019</em></summary>
+            <ul>
+                <li>
+                    <a href="#newantenna" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">New Antenna</a>
+                </li>
+            </ul>
+        </details>
+        
+        <details class="sidebar-item open" open="open">
+            <summary><em>Fall 2018</em></summary>
+            <ul>
+                <li>
+                    <a href="#spacevision2018" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">SpaceVision 2018</a>
+                </li>
+                <li>
+                    <a href="#aerospikeliftsoff" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Aerospike Lifts Off</a>
+                </li>
+                <li>
+                    <a href="#cubesatnews" onclick="close_sidebar_on_mobile()" class="sidebar-item btn-wide">Cube Satellite News</a>
+                </li>
+            </ul>
+        </details>
+    </div>
+</nav>
+
+<!-- Wrapper holding page content (gets pushed aside when sidebar expands) -->
+<div id="page-content" class="transition-width">
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#star-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <div id="navbar-logo"  class="navbar-logo">
+                    <a class="navbar-main navbar-logo" href="#top" title="To Top"><img class="logo" alt="Star Logo" src="images/logo-notext.png"></a>
+                    <a href="index.htm" title="Home" class="no-decoration"><div class="navbar-logo-div">Star</div></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="star-navbar">
+                <ul class="nav navbar-nav navbar-right navbar-main">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="projects.htm">Projects</a></li>
+                    <li><a href="spotlight.htm">Spotlight</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Connect
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.htm">Members</a></li>
+                            <li><a href="alumni.htm">Alumni</a></li>
+                            <li><a href="partners.htm">Partners</a></li>
+                            <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="pointer" data-toggle="modal" data-target="#mailModal"><span class="glyphicon glyphicon-envelope"></span><span class="vanish-on-tablet"> Mailing List</span></a>
+                    </li>
+                    <li>
+                        <a href="slack.htm"><i class="fab fa-slack" aria-hidden="true"></i><span class="vanish-on-tablet"> Slack for Star</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mailing List Modal -->
+    <div class="modal fade" id="mailModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4><span class="glyphicon glyphicon-envelope"></span> Stay Informed </h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="https://my.physics.rutgers.edu/apps/star/doregister.php" href="#home" role="form">
+                        <div class="form-group">
+                            <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
+                            <input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required>
+                        </div>
+                        <button type="submit" class="btn btn-block">Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>Or shoot us an email at at <a href="mailto:ruspacetech@gmail.com">ruspacetech@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigating STAR Spotlight Modal -->
+    <div class="modal fade" id="spotlightModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4>Using Star Spotlight</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Spotlight is like a blog. New posts are at the top of the feed, and older ones are at the bottom.
+                    </p>
+                    <br>
+                    <p>
+                        Click the <span class="nowrap">(<span class="glyphicon glyphicon-search"></span>)</span> tab on the left side of the page for the table of contents. Then, click a post's title to jump to that post.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Close
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Navbar downward extension, for title of page -->
+    <div class="bg-1">
+        <div class="text-center container nonsection first-pad space-down-tablet">
+            <h3>Spotlight</h3>
+        </div>
+    </div>
+
+    <!-- Noscript standard warning/error message -->
+    <noscript>
+        <br><br><br><br>
+        <div class="container section text-center warning">
+            <h3>Warning</h3>
+            <p><em>JavaScript is required to enjoy this site to the fullest. Please allow <span class="upper">Star</span> permission to run scripts via your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
+        </div>
+    </noscript>
+
+    <!-- Sidebar toggle tab -->
+    <div id="toggle-sidebar" class="sidebar-toggler transition-shadow" onclick="open_sidebar()">
+        <p><span class="glyphicon glyphicon-search"></span></p>
+    </div>
+
+    <!-- Help/description bar for page -->
+    <div class="container nonsection text-center">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <em>
+                    <div class="space-down-mobile-tiny"><span class="upper">Star</span> Spotlight is a collection of news, announcements, and some of our favorite moments.</div>
+                    <span class="small">Check the <span class="nowrap">(<span class="glyphicon glyphicon-search"></span>)</span> tab to browse, or <a data-toggle="modal" data-target="#spotlightModal" class="pointer">click here</a> for help.</span>
+                </em>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <!-- Container (Spotlight Post) -->
+    <div id="newantenna" class="container section text-left-tablet">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 space-down">
+                <div class="carousel-slide-holder">
+                    <div style="background-image: url('images/spotlight/newantenna.png');" class="carousel-slide rounded"></div>
+                </div>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
+                <h3>Star Unveils New Satellite Receiving Antenna</h3>
+                <p>
+                    by Timothy Nuber
+                </p>
+                <p class="small">
+                    <span class="glyphicon glyphicon-time"></span> Feb. 24, 2019
+                </p>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <br>
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1"></div>
+            <div class="col-md-10">
+                <p>
+                    As part of its antennae project, which seeks to capture pictures of the earth taken from passing weather satellites, STAR has completed construction of a helical antenna.  Its most complex receiver yet, the spiraled arrangement of the copper rods serves to block interference from nearby radio sources, locking onto signals of passing satellites more securely and downlinking a clearer picture.  With dipole, tetrahedral, and now helical antennae in its wheelhouse, the STAR project team will begin comparing data captured by all three to compare performance, fidelity, and telemetric accuracy.  The organization would like to thank key members Anthony Parfilko and Yousef Ansari for their chief contributions to the device’s construction.
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <hr>
+    </div>
+    
+    <!-- Container (Spotlight Post) -->
+    <div id="spacevision2018" class="container section text-left-tablet">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 space-down space-up">
+                <div class="carousel-slide-holder">
+                    <div style="background-image: url('images/spotlight/spacevision2018.png');" class="carousel-slide rounded"></div>
+                </div>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
+                <h3>SpaceVision 2018</h3>
+                <p>
+                    by Elizabeth Foster-Krim
+                </p>
+                <p class="small">
+                    <span class="glyphicon glyphicon-time"></span> Dec. 12, 2018
+                </p>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <br>
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1"></div>
+            <div class="col-md-10">
+                <p>
+                    As a new chapter of the Students for the Exploration and Development of Space (SEDS), STAR members were able to attend the 2018 SpaceVision Conference hosted in San Diego. The conference was three days long and hosted by Lockheed Martin. They held activities for students such as a trivia night and a banquet at the end of the conference. There was also a question box, where students could solve engineering problems with the opportunity to enter the box (which had screens congratulating the student and showing them flying through space) and win a copy of the Voyager Golden Record. Students also had the chance to network throughout the conference, as well as attend the career fair and talk to representatives from Boeing, NASA, Lockheed, Virgin Orbit, and other companies. During the day there were many speakers and panelists discussing their roles in the space world, as well as workshops that students could attend. This was a fantastic opportunity for STAR, and we’re looking forward to the 2019 conference!
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <hr>
+    </div>
+    
+    <!-- Container (Spotlight Post) -->
+    <div id="aerospikeliftsoff" class="container section text-left-tablet">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 space-down space-up">
+                <div class="carousel-slide-holder">
+                    <div style="background-image: url('images/spotlight/aerospikeliftsoff.png');" class="carousel-slide rounded"></div>
+                </div>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
+                <h3>Aerospike Lifts Off</h3>
+                <p>
+                    by Laura Kershaw
+                </p>
+                <p class="small">
+                    <span class="glyphicon glyphicon-time"></span> Dec. 3, 2018
+                </p>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <br>
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1"></div>
+            <div class="col-md-10">
+                <p>
+                    The Aerospike team, led by Vivek Vidyarthi, has been busy this semester beginning their project from the ground up. For some background, Aerospike nozzles are potential replacements to conventional bell-shaped nozzle and allow for Single Stage to Orbit (SSTO) vehicles. They have currently created a script which produces an optimized contour design for the aerospike using the output characteristic of a motor along with a corresponding pressure distribution. Additionally, they are in the preliminary stages of putting together parameters for the motor test stand.
+                </p>
+                <br>
+                <p>
+                    The end goal of this project is to design both the aerospike and a static test bench with a functioning liquid motor that will be available to STAR members. We look forward to seeing this new project progress in the spring semester.
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <hr>
+    </div>
+    
+    <!-- Container (Spotlight Post) -->
+    <div id="cubesatnews" class="container section text-left-tablet">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 space-down space-up">
+                <div class="carousel-slide-holder">
+                    <div style="background-image: url('images/spotlight/cubesatnews.png');" class="carousel-slide rounded"></div>
+                </div>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-1 wraparound"></div>
+            <div class="col-sm-10 wraparound">
+                <h3>Cube Satellite News</h3>
+                <p>
+                    by Laura Kershaw
+                </p>
+                <p class="small">
+                    <span class="glyphicon glyphicon-time"></span> Nov. 19, 2018
+                </p>
+            </div>
+            <div class="col-sm-1 wraparound"></div>
+        </div>
+        <br>
+        <div class="row center-vertical-tablet space-down">
+            <div class="col-sm-1"></div>
+            <div class="col-md-10">
+                <p>
+                    The Cube Satellite subteams have been hard at work this semester. The structures team has begun working on the test frame and thoughts about a final frame design are in the works. They will be working closely with the experiment team on mounting the experiment to the frame. As parts arrive, they continue to update SolidWorks models to reflect the newest information. The avionics team has ordered the majority of necessary parts and will start work on the rotator mechanism soon. This, along with a helical antenna and radio will make up the ground station that will be used to communicate with satellites in low-earth orbit. Additionally, they will continue to research CubeSat electronics and computing.
+                </p>
+                <br>
+                <p>
+                    Finally, the propulsion team is on target to submit the drag sail design to Binghamton by January this coming year with a newly developed mechanism for drag sail deployment being finalized soon. The new mechanism will allow for side deployment rather than extending outward. STAR is excited that all of these developments will help us continue finalizing our prototype and take the next step towards our final design!
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <a class="up-arrow" href="#top" data-toggle="tooltip" title="Return to Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        <p>
+            Content on this site, except where indicated otherwise, is the property of the Space Technology Association of Rutgers, a Rutgers University student organization.<br>© <span class="upper">Star</span> 2019
+            <!-- See HTML comment underneath footer in index.htm for copyright claim details -->
+        </p> 
+    </footer>
+    <div id="bottom"></div>
+</div>
+
+<!-- End of Page-unique Elements #################################################################### -->
+</body>
+
+</html>
