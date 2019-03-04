@@ -1,0 +1,29 @@
+{
+    "full_title": "Board Game",
+    "leaders":
+        [
+            "Anthony Parfilko"
+        ],
+    "year_established": "2018",
+    "month_established": "Jan.",
+    "day_established": "23",
+    "year_page_updated": "2018",
+    "month_page_updated": "May",
+    "day_page_updated": "2",
+    "img": "boardgame.png",
+    "paragraphs":
+        [
+            "In the modern world, team-building experiences are vital to future success. It is difficult for individuals to single-handedly accomplish monumental tasks without help from a team. Knowing this, Star is producing a space-themed board game that teaches players the necessity of working as a team to foster success. Within our concepts are realistic elements of space exploration, including restrictions on viable space-faring destinations based on ship and cargo specs. We are currently in the Alpha stage of development and intend to begin production within a year."
+        ],
+    "distinguished_nonleaders":
+        [
+            {
+                "name": "Alec Pizarro",
+                "link": ""
+            },
+            {
+                "name": "Gabriel Borger",
+                "link": "https://www.linkedin.com/in/gabriel-borger-32a93b112/"
+            }
+        ]
+}

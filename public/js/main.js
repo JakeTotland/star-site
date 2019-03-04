@@ -8,6 +8,8 @@ var scroll_time = 600; //ms
 var spotlight_post_locations = {};
 var spotlight_last_post = "";
 var spotlight_first_post = "";
+var project_team_locations = {};
+var eboard_number = 0;
 
 // "Main"
 $(document).ready(function () {
@@ -111,67 +113,7 @@ $(document).ready(function () {
             var _appendage2 = "";
             path_file = _path_file_appended2 + "eboard.json";
 
-            retrieveJSON(path_file, function (elements) {
-
-                if (elements.length % 2 != 0) {
-                    // there is an odd number of board members; this sets the first one in its own row
-
-                    item = elements.shift();
-                    _appendage2 += '<div class="row"><div class="col-sm-4"></div>';
-                    id = "boardmemberX";
-                    pic = item.img;
-                    if (pic == "") {
-                        pic = _path_file_appended2 + "defaultpic.png";
-                    } else {
-                        pic = _path_file_appended2 + pic;
-                    }
-
-                    // begin this element
-                    _appendage2 += '<div class="col-sm-4 person-container">';
-                    _appendage2 += eboard_append(item.position, item.name, item.classyear, item.major, item.desc, pic, id);
-                    // end this element
-                    _appendage2 += '</div>';
-                    _appendage2 += '<div class="col-sm-4"></div></div>';
-                }
-
-                for (i = 0; i < elements.length; i++) {
-                    pic = elements[i].img;
-                    if (pic == "") {
-                        pic = _path_file_appended2 + "defaultpic.png";
-                    } else {
-                        pic = _path_file_appended2 + pic;
-                    }
-
-                    // start a new row when needed
-                    if (i == 0 || elements.length % 4 == 0 && i % 4 == 0 || elements.length % 4 != 0 && (i + 2) % 4 == 0) {
-                        _appendage2 += '<div class="row">';
-                    }
-
-                    // left-pad the first (and only) row of two, if necessary
-                    if (elements.length % 4 != 0 && i == 0) {
-                        _appendage2 += '<div class="col-sm-3"></div>';
-                    }
-
-                    // set items within the row
-                    // begin this element
-                    _appendage2 += '<div class="col-sm-3 person-container">';
-                    _appendage2 += eboard_append(elements[i].position, elements[i].name, elements[i].classyear, elements[i].major, elements[i].desc, pic, "boardmember" + i);
-                    // end this element
-                    _appendage2 += '</div>';
-
-                    // right-pad the first (and only) row of two, if necessary
-                    if (elements.length % 4 != 0 && i == 1) {
-                        _appendage2 += '<div class="col-sm-3"></div>';
-                    }
-
-                    // end the current row when it's filled
-                    if (elements.length % 4 == 0 && (i + 1) % 4 == 0 || elements.length % 4 != 0 && (i == 1 || (i + 3) % 4 == 0)) {
-                        _appendage2 += '</div>';
-                    }
-                }
-
-                eboard.innerHTML += _appendage2;
-            });
+            populateEboard(eboard, path_file, _path_file_appended2, false, null);
         }
     }
 
@@ -231,17 +173,51 @@ $(document).ready(function () {
         });
     }
 
-    // Loads the Projects page module (Sidebar) (TODO)
+    // Loads the Projects page module (Sidebar)
     var sidebar_projects = document.getElementById('sidebar_projects');
-    if (sidebar_projects != null) {
-        initializeDetailsSliders();
-        initializeSidebar();
-    }
+    var content_projects = document.getElementById('content_projects');
+    if (sidebar_projects != null && content_projects != null) {
 
-    // Opens the appropriate project div
-    if (document.getElementById('projects-flag') != null) {
-        showDivFromUrl(null);
-        window.scrollTo(0, 0);
+        var _path_file_appended_base2 = path_file_base + "projects/";
+        var _path_file_appended4 = _path_file_appended_base2 + "teams/";
+        var appendage_projects_sidebar = "";
+        var appendage_projects_content = "";
+
+        // Populates the sidebar and apportions a div section for each post
+        retrieveJSON(_path_file_appended_base2 + "manifest.json", function (elements) {
+            for (i = 0; i < elements.length; i++) {
+                var post_folder = elements[i][0].folder;
+                if (elements[i][0].default.toUpperCase() == "OPEN") {
+                    appendage_projects_sidebar += '<details class="sidebar-item open" open="open">';
+                } else {
+                    appendage_projects_sidebar += '<details class="sidebar-item">';
+                }
+                appendage_projects_sidebar += '<summary><em>' + elements[i][0].name + '</em></summary><ul>';
+                for (j = 1; j < elements[i].length; j++) {
+
+                    var post_file = elements[i][j].post_file;
+                    appendage_projects_content += '<!-- Project team --> <div id="' + post_file + '" class="hidden project-desc transition-display container section text-left-tablet"></div>';
+
+                    appendage_projects_sidebar += '<li><a href="#' + post_file + '" onclick="openDiv(\'' + post_file + '\', true, true)" class="sidebar-item btn-wide">' + elements[i][j].post_name + '</a></li>';
+                    project_team_locations[post_file] = _path_file_appended4 + post_folder + '/' + post_file + '/';
+
+                    if (i == 0 && j == 1) {
+                        projects_first_post = post_file;
+                    } else if (i == elements.length - 1 && j == elements[i].length - 1) {
+                        projects_last_post = post_file;
+                    }
+                }
+                appendage_projects_sidebar += '</ul></details>';
+            }
+
+            sidebar_projects.innerHTML += appendage_projects_sidebar;
+            content_projects.innerHTML += appendage_projects_content;
+            initializeDetailsSliders();
+            initializeSidebar();
+
+            // Loads the Projects team page that the current url refers to
+            openDiv(null, true, false);
+        });
     }
 
     // Initializes Tooltip
@@ -363,14 +339,6 @@ function smoothScrollToDiv(div) {
 }
 
 function showDivFromUrl(name) {
-    if (name == null || name == "top") {
-        var url = window.location.href.split("#");
-        if (url.length == 1 || url[url.length - 1] == "top") {
-            name = 'landing';
-        } else {
-            name = url[url.length - 1];
-        }
-    }
 
     $('.project-desc').each(function () {
         $(this).addClass('hidden');
@@ -382,11 +350,85 @@ function openDiv(name, projects_rules, scroll) {
 
     if (projects_rules) {
         // projects means that only this div will be shown; all others will be hidden, and the JSON format for Projects posts will be followed. otherwise, Spotlight format will be followed
-        window.location.hash = name;
-        showDivFromUrl();
 
-        if (scroll) {
-            smoothScrollToDiv(name);
+        if (name == null || name == "top") {
+            var url = window.location.href.split("#");
+            if (url.length == 1 || url[url.length - 1] == "top") {
+                name = 'landing';
+            } else {
+                name = url[url.length - 1];
+            }
+        }
+        showDivFromUrl(name);
+
+        var team_page = document.getElementById(name);
+        if (!team_page.classList.contains("populated")) {
+
+            team_page.classList.add("populated");
+
+            var team_address = project_team_locations[name];
+
+            retrieveJSON(team_address + "team.json", function (element) {
+                var team_img = element.img;
+                if (team_img == "") {
+                    team_img = 'modules/projects/defaultpic.png';
+                } else {
+                    team_img = team_address + team_img;
+                }
+
+                var team_page_content = '<div class="row center-vertical-tablet"><div class="col-sm-4 space-down post wraparound">';
+                team_page_content += '<h3>' + element.full_title + '</h3><p class="text-left">Led by<ul>';
+
+                var leaders = element.leaders;
+                for (i = 0; i < leaders.length; i++) {
+                    team_page_content += '<li>' + leaders[i] + '</li>';
+                }
+                team_page_content += '</ul></p><p class="small"><em>Established ' + element.month_established + ' ' + element.day_established + ', ' + element.year_established + '</em><br><span class="glyphicon glyphicon-time"></span> Last Updated ' + element.month_page_updated + ' ' + element.day_page_updated + ', ' + element.year_page_updated + '</p></div>';
+
+                team_page_content += '<div class="col-sm-8 space-down"><div class="carousel-slide-holder"><div style="background-image: url(\'' + team_img + '\');" class="carousel-slide rounded"></div></div></div></div><br>';
+
+                var paragraphs = element.paragraphs;
+                team_page_content += '<div class="row center-vertical-tablet"><div class="col-md-12 space-down"><p>' + paragraphs[0] + '</p>';
+
+                for (i = 1; i < paragraphs.length; i++) {
+                    team_page_content += '<br><p>' + element.paragraphs[i] + '</p>';
+                }
+                team_page_content += '</div></div>';
+
+                team_page.innerHTML = team_page_content;
+                populateEboard(team_page, team_address + "primary_members.json", team_address, true, function () {
+
+                    var members = element.distinguished_nonleaders;
+
+                    if (members != null) {
+                        if (members.length != 0) {
+                            team_page_content = team_page.innerHTML;
+                            team_page_content += '<div class="row center-vertical-tablet"><div class="col-sm-12 space-down small"><p>Distinguished Members<ul>';
+
+                            for (i = 0; i < members.length; i++) {
+                                var member = members[i];
+
+                                if (member.link != "") {
+                                    team_page_content += '<li><a href="' + member.link + '" target="_blank">' + member.name + '</a></li>';
+                                } else {
+                                    team_page_content += '<li>' + member.name + '</li>';
+                                }
+                            }
+
+                            team_page_content += '</ul></p></div></div>';
+                            team_page.innerHTML = team_page_content;
+                        }
+                    }
+
+                    if (scroll) {
+                        smoothScrollToDiv(name);
+                    }
+                });
+            });
+        } else {
+            if (scroll) {
+                smoothScrollToDiv(name);
+            }
         }
     } else {
         var post_section = document.getElementById(name);
@@ -554,10 +596,16 @@ function myMap() {
 }
 
 // Function to append the eboard 
-function eboard_append(position, name, year, major, desc, pic, id) {
+function eboard_append(position, name, year, major, desc, pic, link, link_icon, id, project_team) {
     var appendage = "";
-    appendage += '<a href="#' + id + '" data-toggle="collapse"><p class="text-center"><strong>' + position + '</strong><br>' + name + '</p>';
-    appendage += '<img src="' + pic + '" class="img-circle person transition-border" alt="' + position + ': ' + name + '" width="255" height="255">';
+    appendage += '<a style="text-center" href="#' + id + '" data-toggle="collapse"><p class="text-center"><strong>' + position + '</strong><br>' + name + '</p>';
+    appendage += '<img src="' + pic + '" class="img-circle person transition-border ';
+
+    if (project_team) {
+        appendage += 'project-person';
+    }
+
+    appendage += '" alt="' + position + ': ' + name + '" width="255" height="255">';
     //appendage += '<div class="eboard-person" style="background-image: url(' + pic + ');"></div>';
     appendage += '</a><div id="' + id + '" class="collapse"><div class="details-eboard">';
     if (major != "") {
@@ -566,9 +614,96 @@ function eboard_append(position, name, year, major, desc, pic, id) {
     if (year != "") {
         appendage += '<p><em>Class of ' + year + '</em></p>';
     }
+    if (link != "") {
+        if (link_icon != "") {
+            appendage += '<a class="link-standout" style="color: #396A96;" href="' + link + '" target="_blank"><i class="' + link_icon + '"></i></a>';
+        }
+    }
     if (desc != "") {
         appendage += '<p>' + desc + '</p>';
     }
     appendage += '</div></div>';
     return appendage;
+}
+
+// Function to allocate the correct amount of eboard-style circles for people
+function populateEboard(append_to, path_file, path_file_appended, project_team, callback) {
+    $.get(path_file).done(function () {
+        retrieveJSON(path_file, function (elements) {
+
+            var appendage = "";
+
+            if (elements.length % 2 != 0) {
+                // there is an odd number of board members; this sets the first one in its own row
+
+                var item = elements.shift();
+                appendage += '<div class="row"><div class="col-sm-4"></div>';
+                id = "memberX" + "_" + eboard_number;
+                pic = item.img;
+                if (pic == "") {
+                    pic = path_file_appended + "defaultpic.png";
+                } else {
+                    pic = path_file_appended + pic;
+                }
+
+                // begin this element
+                appendage += '<div class="col-sm-4 person-container">';
+                appendage += eboard_append(item.position, item.name, item.classyear, item.major, item.desc, pic, item.link, item.link_icon, id, project_team);
+                // end this element
+                appendage += '</div>';
+                appendage += '<div class="col-sm-4"></div></div>';
+            }
+
+            for (i = 0; i < elements.length; i++) {
+                pic = elements[i].img;
+                if (pic == "") {
+                    if (project_team) {
+                        pic = "modules/projects/defaultpic-square.png";
+                    } else {
+                        pic = path_file_appended + "defaultpic.png";
+                    }
+                } else {
+                    pic = path_file_appended + pic;
+                }
+
+                // start a new row when needed
+                if (i == 0 || elements.length % 4 == 0 && i % 4 == 0 || elements.length % 4 != 0 && (i + 2) % 4 == 0) {
+                    appendage += '<div class="row">';
+                }
+
+                // left-pad the first (and only) row of two, if necessary
+                if (elements.length % 4 != 0 && i == 0) {
+                    appendage += '<div class="col-sm-3"></div>';
+                }
+
+                // set items within the row
+                // begin this element
+                appendage += '<div class="col-sm-3 person-container">';
+                appendage += eboard_append(elements[i].position, elements[i].name, elements[i].classyear, elements[i].major, elements[i].desc, pic, elements[i].link, elements[i].link_icon, "member" + i + "_" + eboard_number, project_team);
+                // end this element
+                appendage += '</div>';
+
+                // right-pad the first (and only) row of two, if necessary
+                if (elements.length % 4 != 0 && i == 1) {
+                    appendage += '<div class="col-sm-3"></div>';
+                }
+
+                // end the current row when it's filled
+                if (elements.length % 4 == 0 && (i + 1) % 4 == 0 || elements.length % 4 != 0 && (i == 1 || (i + 3) % 4 == 0)) {
+                    appendage += '</div>';
+                }
+            }
+
+            append_to.innerHTML += appendage;
+            eboard_number++;
+
+            if (callback != null) {
+                callback();
+            }
+        });
+    }).fail(function () {
+        if (callback != null) {
+            callback();
+        }
+    });
 }

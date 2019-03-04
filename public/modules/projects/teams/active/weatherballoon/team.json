@@ -1,0 +1,25 @@
+{
+    "full_title": "Weather Balloon",
+    "leaders":
+        [
+            "Matthew Lesiw"
+        ],
+    "year_established": "2017",
+    "month_established": "Oct.",
+    "day_established": "20",
+    "year_page_updated": "2018",
+    "month_page_updated": "May",
+    "day_page_updated": "2",
+    "img": "weatherballoon.png",
+    "paragraphs":
+        [
+            "Each year, this team builds and launches a raspberry pi based weather monitoring experiment suite 30,000 meters into the sky using a weather balloon. The experiments carried onboard will record data that we will use to characterize the temperature, pressure, humidity, altitude, and light conditions found in the troposphere and stratosphere layers of the atmosphere. We hope launch a weather balloon as a yearly project in order to analyze trends in the data collected. The 8 ft diameter weather balloon requires 50 cubic feet of helium to carry a 1 lb payload to an approximate height of 72,000 ft. Reaching this altitude puts us well within the stratosphere allowing for measurements to be recorded that are not possible from the ground. This project also has the capacity to monitor climate change over time in New Jersey. "
+        ],
+    "distinguished_nonleaders":
+        [
+            {
+                "name": "Jason Scot",
+                "link": ""
+            }
+        ]
+}

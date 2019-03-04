@@ -1,0 +1,115 @@
+{
+    "full_title": "BEAM \"Cube Satellite\"",
+    "leaders":
+        [
+            "Thomas McGovern"
+        ],
+    "year_established": "2017",
+    "month_established": "Oct.",
+    "day_established": "20",
+    "year_page_updated": "2018",
+    "month_page_updated": "Dec.",
+    "day_page_updated": "13",
+    "img": "cubesat.png",
+    "paragraphs":
+        [
+            "3D printing, although still in its infancy as an engineering field, is one of the fastest growing. Additive manufacturing is appealing because it offers the ability to create parts with speed, convenience, and versatility unmatched by conventional manufacturing methods. It takes mere hours to go from an idea to a CAD model to a 3D printed part, in your hands. This convenience would obviously be extremely useful in remote environments, cut off from supplies, and what environment is more remote than space? NASA and the Made in Space program have already done extensive work with 3D printing thermoplastics in space, but no research has been done on 3D printing with thermosets in space. Thermoset 3D printing on earth by itself is a rather new field.",
+
+            "Inspired by the work done here at Rutgers University by the Mazzeo Research group on thermoset 3D printing, we are determined to carry out the first thermoset 3D printing experiment in space. To accomplish this, we are currently designing BEAM (Beyond Earth Additive Manufacturing), a microsatellite meant to carry out a contact-angle goniometry experiment on thermosetting resins in zero gravity. BEAM will extrude a droplet onto a heated bed, and take multiple photographs to monitor the droplet’s morphology as it cures over time. We hope to see decreased droplet spreading in the absence of gravity-driven spreading, opening the door to higher-resolutions in 3D printed thermoset parts."
+        ],
+    "distinguished_nonleaders":
+        [
+            {
+                "name": "Akshat Patki",
+                "link": ""
+            },
+            {
+                "name": "Alexander Cid",
+                "link": ""
+            },
+            {
+                "name": "Alexander Corring",
+                "link": ""
+            },
+            {
+                "name": "Andrew Krynicki",
+                "link": ""
+            },
+            {
+                "name": "Bernie Somers",
+                "link": ""
+            },
+            {
+                "name": "Billy Kundiff",
+                "link": ""
+            },
+            {
+                "name": "Brian Comerford",
+                "link": ""
+            },
+            {
+                "name": "Drew Stirnweis",
+                "link": ""
+            },
+            {
+                "name": "Elizabeth Foster-Krim",
+                "link": ""
+            },
+            {
+                "name": "Jennifer Mead",
+                "link": ""
+            },
+            {
+                "name": "Jonathan Wong",
+                "link": ""
+            },
+            {
+                "name": "Katie Welch",
+                "link": ""
+            },
+            {
+                "name": "Kyle O’Donnell",
+                "link": ""
+            },
+            {
+                "name": "Lara Hirsch",
+                "link": ""
+            },
+            {
+                "name": "Ludwig Randazzo",
+                "link": ""
+            },
+            {
+                "name": "Marissa Navarro",
+                "link": ""
+            },
+            {
+                "name": "Matt Chianese",
+                "link": ""
+            },
+            {
+                "name": "Nick Florio",
+                "link": ""
+            },
+            {
+                "name": "Ray Martin",
+                "link": ""
+            },
+            {
+                "name": "Syed Hyder",
+                "link": ""
+            },
+            {
+                "name": "Trevor Rokosky",
+                "link": ""
+            },
+            {
+                "name": "Vincent Cheng",
+                "link": ""
+            },
+            {
+                "name": "Zack Billingham",
+                "link": ""
+            }
+        ]
+}

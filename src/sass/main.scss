@@ -99,6 +99,11 @@ summary:before, summary:after {
         }
     }
 }
+.project-person {
+    @media ($tablet-and-up) {
+        position: relative; display: inline-block; left: 50%; transform: translate(-50%);
+    }
+}
 .row {
     &.no-gutter {
         margin-right: 0px;
@@ -308,6 +313,7 @@ summary:before, summary:after {
 .details {
     &-eboard {
         margin-bottom: 60px;
+        text-align: center;
     }
 }
 .even {
@@ -925,7 +931,7 @@ summary:before, summary:after {
 
         @media ($tablet-and-up) {
             background-color: $color-almost-white;
-            max-width: 45px;
+            max-width: 35px;
             height: 130px
         }
         
@@ -945,7 +951,7 @@ summary:before, summary:after {
             font-size: 12px;
 
             @media ($tablet-and-up) {
-                margin-top: 61px;
+                margin-top: 58px;
                 font-size: 15px;
             }
 
@@ -958,6 +964,14 @@ summary:before, summary:after {
             -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
         }
+    }
+}
+.link-standout {
+    font-size: 35px;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
     }
 }
 .dropdown-menu {

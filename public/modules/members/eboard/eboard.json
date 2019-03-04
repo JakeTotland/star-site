@@ -1,11 +1,13 @@
 [
     {
-      "position": "President",
-      "name": "Timothy Nuber",
-      "classyear": "2020",
-      "major": "Aerospace Engineering",
-      "desc": "",
-      "img": "timothy.png"
+        "position": "President",
+        "name": "Timothy Nuber",
+        "classyear": "2020",
+        "major": "Aerospace Engineering",
+        "desc": "",
+        "img": "timothy.png",
+        "link": "https://www.linkedin.com/in/timothy-nuber-48087a9a/",
+        "link_icon": "fab fa-linkedin"
     },
     {
         "position": "Vice President",
@@ -13,7 +15,9 @@
         "classyear": "2020",
         "major": "Aerospace Engineering",
         "desc": "",
-        "img": "lara.png"
+        "img": "lara.png",
+        "link": "https://www.linkedin.com/in/lara-beth-hirsch-631062124/",
+        "link_icon": "fab fa-linkedin"
     },
     {
         "position": "Treasurer",
@@ -21,7 +25,9 @@
         "classyear": "2020",
         "major": "Supply Chain Management",
         "desc": "",
-        "img": "arynn.png"
+        "img": "arynn.png",
+        "link": "https://www.linkedin.com/in/arynnrizick/",
+        "link_icon": "fab fa-linkedin"
     },
     {
         "position": "Webmaster",
@@ -29,7 +35,9 @@
         "classyear": "2019",
         "major": "Computer Science",
         "desc": "",
-        "img": "jason.png"
+        "img": "jason.png",
+        "link": "https://www.linkedin.com/in/jasonscot/",
+        "link_icon": "fab fa-linkedin"
     },
     {
         "position": "Public Relations",
@@ -37,7 +45,9 @@
         "classyear": "2020",
         "major": "Aerospace Engineering",
         "desc": "",
-        "img": "elizabeth.png"
+        "img": "elizabeth.png",
+        "link": "https://www.linkedin.com/in/elizabeth-foster-krim-b43586130/",
+        "link_icon": "fab fa-linkedin"
     },
     {
         "position": "Acquisitions Head",
@@ -45,7 +55,9 @@
         "classyear": "2020",
         "major": "Accounting",
         "desc": "",
-        "img": "tony.png"
+        "img": "tony.png",
+        "link": "https://www.linkedin.com/in/tony-le-3b8898173/",
+        "link_icon": "fab fa-linkedin"
     },
     {
         "position": "Representative",
@@ -53,7 +65,9 @@
         "classyear": "2020",
         "major": "Aerospace Engineering",
         "desc": "Representative to the Engineering Governing Council at Rutgers University",
-        "img": "drew.png"
+        "img": "drew.png",
+        "link": "https://www.linkedin.com/in/andrew-stirnweis-15437b136/",
+        "link_icon": "fab fa-linkedin"
     },
     {
         "position": "Representative",
@@ -61,6 +75,8 @@
         "classyear": "2020",
         "major": "Aerospace Engineering",
         "desc": "Representative to SEDS (Students for the Exploration and Development of Space)",
-        "img": "hossain.png"
+        "img": "hossain.png",
+        "link": "",
+        "link_icon": ""
     }
 ]

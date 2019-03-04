@@ -1,0 +1,22 @@
+[
+    {
+        "position": "Co-Leader",
+        "name": "Jennifer Mead",
+        "classyear": "2019",
+        "major": "Physics",
+        "desc": "",
+        "img": "jenny.png",
+        "link": "",
+        "link_icon": ""
+    },
+    {
+        "position": "Co-Leader",
+        "name": "Lasa Hirsch",
+        "classyear": "2020",
+        "major": "Aerospace Engineering",
+        "desc": "",
+        "img": "lara.png",
+        "link": "https://www.linkedin.com/in/lara-beth-hirsch-631062124/",
+        "link_icon": "fab fa-linkedin"
+    }
+]

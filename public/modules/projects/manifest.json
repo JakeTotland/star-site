@@ -1,0 +1,48 @@
+[
+    [
+        {
+            "folder": "active",
+            "name": "Active",
+            "default": "OPEN"
+        },
+        {
+            "post_file": "aerospike",
+            "post_name": "Aerospike Test Stand"
+        },
+        {
+            "post_file": "cubesat",
+            "post_name": "Cube Satellite"
+        },
+        {
+            "post_file": "marketing",
+            "post_name": "Marketing"
+        },
+        {
+            "post_file": "schooloutreach",
+            "post_name": "School Outreach"
+        },
+        {
+            "post_file": "weatherballoon",
+            "post_name": "Weather Balloon"
+        }
+    ],
+    [
+        {
+            "folder": "archived",
+            "name": "Archived",
+            "default": "CLOSED"
+        },
+        {
+            "post_file": "boardgame",
+            "post_name": "Board Game"
+        },
+        {
+            "post_file": "roadrunner",
+            "post_name": "Roadrunner"
+        },
+        {
+            "post_file": "speakerseries",
+            "post_name": "Speaker Series"
+        }
+    ]
+]

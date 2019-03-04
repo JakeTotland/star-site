@@ -1,0 +1,38 @@
+{
+    "full_title": "Speaker Series",
+    "leaders":
+        [
+            "Nada Ibrahim",
+            "Jessica Olson"
+        ],
+    "year_established": "2017",
+    "month_established": "Sep.",
+    "day_established": "29",
+    "year_page_updated": "2018",
+    "month_page_updated": "May",
+    "day_page_updated": "4",
+    "img": "speakerseries.png",
+    "paragraphs":
+        [
+            "The Speaker Series is a monthly project in which Star invites professors, researchers, engineers, and anyone else working in the field of space or space exploration to Rutgers University to describe their career or work. We host events in the hope to spread knowledge about the field of aerospace and astrophysics. Our main goal is to educate space enthusiasts on different aspects within the field. By bringing outside speakers, connections are made for students to pursue careers with companies and organization such as SpaceX and NASA. We work hard to correspond with the best contacts we can find, and our main method of interaction with our events' audience tends to be through social media."
+        ],
+    "distinguished_nonleaders":
+        [
+            {
+                "name": "Anthony Parfilko",
+                "link": ""
+            },
+            {
+                "name": "Brian Comerford",
+                "link": ""
+            },
+            {
+                "name": "Jacob Rothberg",
+                "link": ""
+            },
+            {
+                "name": "Steven Ferrante",
+                "link": ""
+            }
+        ]
+}

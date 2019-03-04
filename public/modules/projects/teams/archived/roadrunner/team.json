@@ -1,0 +1,20 @@
+{
+    "full_title": "Roadrunner",
+    "leaders":
+        [
+            "Matthew Lesiw"
+        ],
+    "year_established": "2018",
+    "month_established": "Mar.",
+    "day_established": "17",
+    "year_page_updated": "2018",
+    "month_page_updated": "May",
+    "day_page_updated": "4",
+    "img": "",
+    "paragraphs":
+        [
+            "The goal of this project team is to produce the first microrover derived from a well-established, well-documented, and well-tested spacecraft standard. That sounds like a lot, but all it means is that we’re looking to make a CubeSat into a small rover. For science!",
+            "We’re currently working on building a prototype—affectionately called Roadrunner—of what will eventually become the microrover standard. A bit like how biologists have “type specimens” to define a species, we’re going to lay out and define most of the physical and mechanical elements that will go into a very exhaustive document that will allow anyone to build our tiny rovers.",
+            "As of now, we’re in the middle of producing the skeleton on which the rest of the first prototype will be built. Eventually, it will be outfitted with the hardware needed to make what amounts to an RC car, and we’ll be taking it out into different environments to see how it handles—and adjust our design accordingly."
+        ]
+}

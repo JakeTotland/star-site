@@ -1,7 +1,3 @@
 OVERALL
 1. set .htaccess or overwrite to make links not end in .htm
 5. make navbar expansion of CONNECT on mobile better
-6. delete projects and spotlight page image folders (and elizabeth-proof both pages)
-
-PROJECTS
-1. link to appropriate form format

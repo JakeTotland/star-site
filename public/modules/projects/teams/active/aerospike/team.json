@@ -1,0 +1,47 @@
+{
+    "full_title": "Aerospike Test Stand",
+    "leaders":
+        [
+            "Vivek Vidyarthi"
+        ],
+    "year_established": "2018",
+    "month_established": "Sep.",
+    "day_established": "18",
+    "year_page_updated": "2018",
+    "month_page_updated": "Nov.",
+    "day_page_updated": "1",
+    "img": "aerospike.png",
+    "paragraphs":
+        [
+            "Conventional rocket nozzles are designed for a relatively small altitude range and as a result, require current rockets to have multiple stages, thereby increasing cost and complexity. Aerospike nozzles are potential replacements to conventional bell-shaped nozzle and allow for Single Stage to Orbit (SSTO) vehicles. The annular nozzle, through its altitude compensating characteristics, allows for efficient thrust on a wide altitude range and reduce complexity. In order to make SSTO feasible, altitude compensating nozzles must be further developed.",
+
+            "In previous research, the thermal and strength issues resulted in the reduction development, but current developments in additive manufacturing allow for possible refinement in manufacturing and thermal management. The aerospike team’s primary objective is to design, optimize, and outline the benefits of the aerospike.Along with the aerospike, we will be designing a static test bench with a functioning liquid motor that will be accessible to Star members. We are currently in the process of generating designs for an aerospike nozzle as well as outlining a basic liquid motor."
+        ],
+    "distinguished_nonleaders":
+       [
+            {
+                "name": "Adisesh Yeragudi",
+                "link": ""
+            },
+            {
+                "name": "Edwin Guerrero",
+                "link": ""
+            },
+            {
+                "name": "Maxwell Shapiro",
+                "link": ""
+            },
+            {
+                "name": "Shakti Patel",
+                "link": ""
+            },
+            {
+                "name": "Shivani Patel",
+                "link": ""
+            },
+            {
+                "name": "Visshal Suresh",
+                "link": ""
+            }
+        ]
+}
