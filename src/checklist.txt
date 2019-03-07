@@ -1,2 +1,6 @@
 OVERALL
 1. make navbar expansion of CONNECT on mobile better
+2. set .htaccess rule making unknown url redirect to not-found page
+
+ALUMNI
+1. make alumni page
