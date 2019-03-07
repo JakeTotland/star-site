@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spotlight: Space Technology Association of Rutgers</title>
+
+    <!-- Stylesheet and Scripts -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- Page-unique Elements Start #################################################################### -->
+
+<!-- Sidebar/Contentsbar -->
+<nav class="sidebar sidebar-spotlight bg-2 w3-animate-left" style="display: none;" id="star-sidebar">
+    <div id="sidebar_spotlight" class="sidebar-content">
+        <button class="sidebar-item btn-wide close-button" onclick="close_sidebar()">&times;</button>
+        <div class="center-on-mobile">
+            <a data-toggle="modal" data-target="#spotlightModal" onclick="close_sidebar_on_mobile()" class="sidebar-item first btn-wide">Using <span class="upper">Star</span> Spotlight</a>
+        </div>
+        <hr>
+    </div>
+</nav>
+
+<!-- Wrapper holding page content (gets pushed aside when sidebar expands) -->
+<div id="page-content" class="transition-width">
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#star-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <div id="navbar-logo"  class="navbar-logo">
+                    <a class="navbar-main navbar-logo" href="#top" title="To Top"><img class="logo" alt="Star Logo" src="images/logo-notext.png"></a>
+                    <a href="index.htm" title="Home" class="no-decoration"><div class="navbar-logo-div">Star</div></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="star-navbar">
+                <ul class="nav navbar-nav navbar-right navbar-main">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="projects.htm">Projects</a></li>
+                    <li><a href="spotlight.htm">Spotlight</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Connect
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="members.htm">Members</a></li>
+                            <li><a href="alumni.htm">Alumni</a></li>
+                            <li><a href="partners.htm">Partners</a></li>
+                            <li><a href="media.htm"><i class="fab fa-linkedin"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="pointer" data-toggle="modal" data-target="#mailModal"><span class="glyphicon glyphicon-envelope"></span><span class="vanish-on-tablet"> Mailing List</span></a>
+                    </li>
+                    <li>
+                        <a href="slack.htm"><i class="fab fa-slack" aria-hidden="true"></i><span class="vanish-on-tablet"> Slack for Star</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mailing List Modal -->
+    <div class="modal fade" id="mailModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4><span class="glyphicon glyphicon-envelope"></span> Stay Informed </h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="https://my.physics.rutgers.edu/apps/star/doregister.php" href="#home" role="form">
+                        <div class="form-group">
+                            <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
+                            <input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required>
+                        </div>
+                        <button type="submit" class="btn btn-block">Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>Or shoot us an email at at <a href="mailto:ruspacetech@gmail.com">ruspacetech@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigating STAR Spotlight Modal -->
+    <div class="modal fade" id="spotlightModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4>Using Star Spotlight</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Spotlight is like a blog. New posts are at the top of the feed, and older ones are at the bottom.
+                    </p>
+                    <br>
+                    <p>
+                        Click the <span class="nowrap">(<span class="glyphicon glyphicon-search"></span>)</span> tab on the left side of the page for the table of contents. Then, click a post's title to jump to that post.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Close
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Navbar downward extension, for title of page -->
+    <div class="bg-1">
+        <div class="text-center container nonsection first-pad space-down-tablet">
+            <h3>Spotlight</h3>
+        </div>
+    </div>
+
+    <!-- Noscript standard warning/error message -->
+    <noscript>
+        <br><br><br><br>
+        <div class="container section text-center warning">
+            <h3>Warning</h3>
+            <p><em>JavaScript is required to enjoy this site to the fullest. Please allow <span class="upper">Star</span> permission to run scripts via your browser settings, or you won't be able to properly view this page. Thanks!</em></p>
+        </div>
+    </noscript>
+
+    <!-- Sidebar toggle tab -->
+    <div id="toggle-sidebar" class="sidebar-toggler transition-shadow" onclick="open_sidebar()">
+        <p><span class="glyphicon glyphicon-search"></span></p>
+    </div>
+
+    <!-- Help/description bar for page -->
+    <div class="container nonsection text-center">
+        <div class="row center-vertical-tablet">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <em>
+                    <div class="space-down-mobile-tiny"><span class="upper">Star</span> Spotlight is a collection of news, announcements, and some of our favorite moments.</div>
+                    <span class="small">Use the <span class="nowrap">(<span class="glyphicon glyphicon-search"></span>)</span> tab on the left to browse.</span>
+                </em>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div id="content_spotlight">
+    </div>
+
+    <div class="container nonsection">
+        <div class="row text-center">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 space-down">
+                <p class="small"><em>You've reached the end of <span class="upper">Star</span> Spotight. Thanks for reading!</em></p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <a class="up-arrow" href="#top" data-toggle="tooltip" title="Return to Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        <p>
+            Content on this site, except where indicated otherwise, is the property of the Space Technology Association of Rutgers, a Rutgers University student organization.<br>© <span class="upper">Star</span> 2019
+            <!-- See HTML comment underneath footer in index.htm for copyright claim details -->
+        </p> 
+    </footer>
+</div>
+
+<!-- End of Page-unique Elements #################################################################### -->
+</body>
+
+</html>
