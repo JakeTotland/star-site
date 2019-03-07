@@ -1,8 +1,8 @@
 [
     {
-      "name": "Laser Demo",
-      "desc": "A demonstration of Snell's law, using a green laser",
-      "img": "laserdemo.png"
+      "name": "Light Demo",
+      "desc": "The school outreach team presents their lesson on light",
+      "img": "lightdemo.png"
     },
     {
       "name": "Antenna Trip",
@@ -20,9 +20,9 @@
       "img": "balloonday.png"
     },
     {
-      "name": "Light Demo",
-      "desc": "The school outreach team presents their lesson on light",
-      "img": "lightdemo.png"
+      "name": "Laser Demo",
+      "desc": "A demonstration of Snell's law, using a green laser",
+      "img": "laserdemo.png"
     },
     {
       "name": "Atmospheric Probe",
