@@ -561,6 +561,15 @@ summary:before, summary:after {
         }
     }
 
+    &-notwide {
+        border-radius: $border-radius-card;
+        width: 90%;
+
+        @media ($phablet-and-up) {
+            width: 60%;
+        }
+    }
+
     &-wide {
         width: 100%;
         border-radius: $border-radius-porthole-long;
@@ -634,6 +643,10 @@ summary:before, summary:after {
 }
 .nowrap {
     white-space: nowrap;
+}
+.padded {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .vanish-on-tablet {
     display: inline;
@@ -922,6 +935,8 @@ summary:before, summary:after {
     
     &-toggler {
 
+        z-index: 10;
+
         width: 10%;
         min-width: 20px;
         max-width: 28px;
@@ -931,8 +946,12 @@ summary:before, summary:after {
 
         @media ($tablet-and-up) {
             background-color: $color-almost-white;
-            max-width: 35px;
+            max-width: 50px;
             height: 130px
+        }
+
+        @media (min-width: $size-autosidebar) {
+            max-width: 35px;
         }
         
         border-right: 2px solid $color-star-red;
@@ -947,6 +966,29 @@ summary:before, summary:after {
         }
 
         p {
+            margin-top: 42px;
+            font-size: 12px;
+
+            @media ($tablet-and-up) {
+                margin-top: 66px;
+                font-size: 15px;
+            }
+
+            @media (min-width: $size-autosidebar) {
+                margin-top: 59px;
+            }
+
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 0px 0px 0px 0px;
+
+            -ms-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        h2 {
             margin-top: 42px;
             font-size: 12px;
 

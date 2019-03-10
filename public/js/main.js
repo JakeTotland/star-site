@@ -296,7 +296,7 @@ function initializeSidebar() {
     }
 }
 
-// Add smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link)
+// Initializes smooth scrolling to all links to an id section within the page (e.g. navbar logo, slack table of contents, footer link) (based on w3Schools smooth scrolling)
 function initializeSmoothScrolling(tags) {
     $(tags).on('click', function (event) {
 
@@ -316,6 +316,7 @@ function initializeSmoothScrolling(tags) {
             }, scroll_time, function () {
 
                 // Add hash (#) to URL when done scrolling (default click behavior)
+                var old_location = window.location;
                 window.location.hash = hash;
             });
         }
