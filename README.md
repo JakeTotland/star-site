@@ -10,11 +10,11 @@ Version control for this project is managed with git, and stored remotely using 
 
 It is intended for the entire contents of the repository to be uploaded to the hosting server **tpn23@physsun.rutgers.edu**
 
-On the server, *only* the **public** folder and its contents/subdirectories must be made publically readable. All other files and directories must *not* be accessible by users.
+On the server, *only* the **public** folder and its contents/subdirectories are uploaded (into the **star** folder). All other files and directories must *not* be uploaded.
 
 ## NPM & Dependencies
 
-Editing the project's HTML and adding new documents/directories can be done easily. However, editing this project's existing JavaScript or SCSS will necessitate installing the appropriate npm dependencies (recorded within the project). The simplest way to do this is to install npm on your machine, then in the project's main directory run the command
+Editing the project's HTML and adding new documents/directories can be done easily. However, editing this project's existing JavaScript or SASS/SCSS will necessitate installing the appropriate npm dependencies (recorded within the project). The simplest way to do this is to install npm on your machine, then in the project's main directory run the command
 ```
 npm install
 ```
