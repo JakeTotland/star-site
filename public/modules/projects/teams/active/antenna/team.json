@@ -1,0 +1,26 @@
+{
+    "full_title": "Project Antenna",
+    "leaders":
+        [
+            "Anthony Parfilko"
+        ],
+    "year_established": "2018",
+    "month_established": "Sep.",
+    "day_established": "29",
+    "year_page_updated": "2018",
+    "month_page_updated": "Mar.",
+    "day_page_updated": "20",
+    "img": "antenna.png",
+    "paragraphs":
+        [
+            "The goal of Project Antenna is to be able to receive images from satellites in space through the use of antennas. We create all of our antennas in-house. The VHF antennas that we have made so far include the dipole, the half-wave ground plane, and the double cross antenna. The entire project is just a build-up for the expedition out to a flat area to record signals from known weather satellites. Three of these satellites are from the American NOAA lineup, while one is the Russian-made Meteor M-2. The team is responsible not only to track the location of the satellite, but also know when they pass within a close range of the expedition’s position. When a satellite performs a fly-by, the antennas will receive the transmitted signals. The team uses SDRs and proprietary software to decode the signals into pictures.",
+            "This project is vital to the success of the education of up-and-coming engineers. Communication with far away things is the backbone to any space-related endeavor. The traits developed during the project provide invaluable experience for all the students involved. It teaches hands-on skills in the construction of the antennas, software skills in signal processing, and offers leadership opportunities during the expeditions. Members are confronted with many problems, such as calculating and calibrating the correct dimensions for a known frequency range, accurately tracking a moving target, and reconstructing pictures from an SSTV signal. These aspects make it a great project for any student looking to beef up their resume."
+        ],
+    "distinguished_nonleaders":
+        [
+            {
+                "name": "Yousef Ansari",
+                "link": ""
+            }
+        ]
+}

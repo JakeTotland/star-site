@@ -6,8 +6,8 @@
             "default": "OPEN"
         },
         {
-            "post_file": "aerospike",
-            "post_name": "Aerospike Test Stand"
+            "post_file": "antenna",
+            "post_name": "Antenna"
         },
         {
             "post_file": "cubesat",
@@ -31,6 +31,10 @@
             "folder": "archived",
             "name": "Archived",
             "default": "CLOSED"
+        },
+        {
+            "post_file": "aerospike",
+            "post_name": "Aerospike Test Stand"
         },
         {
             "post_file": "boardgame",
