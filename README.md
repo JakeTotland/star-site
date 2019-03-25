@@ -18,6 +18,7 @@
 - [Affecting the Site](#affecting-the-site)
   - [***Connecting via FTP***](#connecting-via-ftp)
   - [***Uploading to the Site***](#uploading-to-the-site)
+  - [***Permissions and Overwrites***](#permissions-and-overwrites)
 - [Updating Code](#updating-code)
   - [***NPM & Dependencies***](#npm--dependencies)
   - [***Coding***](#coding)
@@ -36,6 +37,9 @@
   - [***Keep in Mind***](#keep-in-mind)
 - [Article Modules](#article-modules)
   - [***Projects: Root Module***](#projects-root-module)
+  - [***Projects: Team Modules***](#projects-team-modules)
+  - [***Spotlight: Root Module***](#spotlight-root-module)
+  - [***Spotlight: Article Modules***](#spotlight-article-modules)
 - [Semesterly Update Checklists](#semesterly-update-checklists)
   - [***Members Page***](#members-page)
   - [***Projects Page***](#projects-page)
@@ -161,6 +165,14 @@ This pretty simple, but it is also so important that I have included an example 
 
 ![readmeftppath](readmeftppath.png)
 
+### ***Permissions and Overwrites***
+
+Three quick (but very important) notes about uploading things, especially new files.
+
+1. The permission level of ***all*** files on the site server should be set to 755. If you CTRL+A on the server side, then right click and select "File Permissions..." you can use the numeric value 755 and *do recurse into subdirectories*. This will make it so anyone can read or execute files on the server (good for viewing and running JavaScript) but that only you can write things. This is actually extremely important, because—albeit unlikely—if you were to set permissions that let anyone write files, the site would become much more vulnerable to people writing in malware/changing your content.
+2. Often, while changing things for the site, I will forget exactly what I worked on, even after pushing to BitBucket. So, when uploading files to the site server, I just do a CTRL+A to select everything in my *public/* folder, then upload them all to the server's *star/* folder. (Note that if you only work with Modules, you can do this on the *modules/* folder instead.) It will then tell me that many of these files already exist on the server, and ask me what to do. At this point, I select "Overwrite if source is newer" and check the boxes "Always perform this action" and "Apply to current queue only." This makes it so everything I have in my repo gets saved as the newest version of the site.
+3. When you look at the site on your browser to check it after uploading new content, since you only just uploaded your changes a moment ago, your browser is probably showing you a cached version and not the latest update. Just hard refresh (CTRL+F5) any pages that don't seem to have updated after you save updates to the server to see if that's the issue.
+
 <hr>
 
 ## Updating Code
@@ -205,7 +217,7 @@ If you are new to markup, please [read the basics](https://www.w3schools.com/htm
 
 ### ***Naming Convention and URLs***
 
-The pages in this site have the naming convention **__<page_title>-page-matter.htm** (e.g. *__index-page-matter.htm*). The two leading underscores make them appear at the top of your file hierarchy, and the *-page-matter.htm* part is there to make it less likely any random site visitor will guess the full address. But you'll notice that all the URLs between pages reference each other simply as *partners*, *projects*, *members*, etc. This is because our server uses a RewriteRule (you can see this in the .htaccess file in *public/*) which rewrites (in this case, shortening) the URL when it is hosted on a server.
+The pages in this site have the naming convention **__\<page_title\>-page-matter.htm** (e.g. *__index-page-matter.htm*). The two leading underscores make them appear at the top of your file hierarchy, and the *-page-matter.htm* part is there to make it less likely any random site visitor will guess the full address. But you'll notice that all the URLs between pages reference each other simply as *partners*, *projects*, *members*, etc. This is because our server uses a RewriteRule (you can see this in the .htaccess file in *public/*) which rewrites (in this case, shortening) the URL when it is hosted on a server.
 
 All this is to say that, to edit a page (the **members** page for example) you will edit the appropriate HTML file (e.g. **__members-page-matter.htm**) and upload it to the server's *star/* directory. If you are testing the site and notice that links don't seem to work, that's the point. The links you write in the HTML only work on servers that can implement the rewrite rules. If you really want to get them to work locally, I suggest figuring out how to run a server locally that can do that. Otherwise, you can just paste the full file name into your local testing setup each time you want to move to a new page.
 
@@ -326,13 +338,91 @@ The next few subsections describe the modules in use on the site. If you have an
 
 ## Article Modules
 
-You probably noticed that we haven't talked about the Projects and Spotlight modules yet. That's because they are unlike other modules. To differentiate them, I will call them "article modules" in this guide, since spotlight articles and project team pages are handled similarly by the module reader.
+You probably noticed that we haven't talked about the Projects and Spotlight modules yet. That's because they are unlike other modules. To differentiate them, I will call them "article modules" in this guide, since spotlight articles and project team pages are handled similarly by the module reader. This may seem complicated, but as long as you understood the above examples, you will be able to handle this one just by looking at its format.
 
-In the Projects and Spotlight modules, each "article" gets its own directory, json file, and mention in the *manifest.json* for that type of module. Read on, and keep this in mind as you upload project teams and spotlight articles.
+The most important differences to note are...
+1.  Each article gets its very own module folder, with json file, images, etc.
+2.  Articles exist in subfolders ("active" and "archived" for projects, years for spotlight articles), and these must remain accurate
+3.  There is a *manifest.json* in the root of each module type, which keeps track of which subfolder each article belongs in. If the folder changes, you must also change the *manifest.json* file around. The order of items in the manifest file determines the order they will appear on the sidebar (and on the page, for Spotlight) down the screen.
+
+NOTE: Any amount of project teams and spotlight page articles can be added, as long as they are correctly catalogued in the manifest file.
 
 ### ***Projects: Root Module***
 
-(WIP)
+- *purpose*: To display a given project team's information (loads dynamically when clicked-on)
+- *path*: **star/public/modules/projects/**
+- *json file name*: **manifest.json** (note: each and every team's json file must be called *team.json*; this forces them to all be in their own appropriately-named folders)
+- *non-json contents*: *teams/* folder, containing indexing subfolders (e.g. *active/*) for the team modules; *defaultpic.png*, and *defaultpic-square.png*
+- *json format*:
+  - 1 array with however many sub-arrays, each one representing an indexing subfolder
+    - Each indexing subfolder sub-array contains however many objects, the first of which represents the subfolder's properties, and the others represent the folder's contents
+      - First object: subfolder properties; an object with 3 fields
+        - "folder": the name of the folder, **exactly as it appears** in your file hierarchy (e.g. "active" or "archived")
+        - "name": the name that will be displayed on the page, as the containing dropdown menu for these types of articles (case-sensitive, e.g. "Active")
+        - "default": the default state of the dropdown menu on the page (must be either "OPEN" or "CLOSED")
+      - Other objects: subfolder contents; an object with 2 fields
+        - "post_file": the exact name of the directory, within the folder specified above, where the corresponding module's *team.json* lives (e.g. *cubesat*)
+        - "post_name": the name of the project team that will appear on the sidebar (shortened, if less than 20 characters); does not need to match the full name of the project that gets displayed via the team module
+
+NOTE: the sidebar indexers (i.e. archived and active) that are used as the containing folders of the team modules can be called anything, and there can be any number of them, but it makes sense for there only to be these two right now.
+
+### ***Projects: Team Modules***
+- *purpose*: To display a given project team's information (loads dynamically when clicked-on)
+- *path*: **star/public/modules/projects/teams/\<active OR archived\>/\<team name\>**
+- *json file name*: **team.json** (note: each and every team's json file must be called *team.json*; this forces them to all be in their own appropriately-named folders)
+- *non-json contents*: main photo representing the project team; square photo(s) of team leader(s) (optional), same format as in the eboard module above
+- *remarks*: for the distinguished_nonleaders field, team leaders choose however many members of their team they want who they think deserve special recognition of the website
+- *json format*:
+  - 1 object with 11 fields, three of which are themselves arrays
+    - "full_title": the full name of the project team, e.g. "Cube Satellite"
+    - "leaders": one array of hover many strings (must be at least one); each one is the full name (First Last) of a team leader
+    - "year_established": the year this team was established, e.g. "2018"
+    - "month_established": the month this team was established, e.g. "Sep." (I like to use a 3-letter month abbreviation, this includes the trailing period, except for the month "May")
+    - "day_established": the day of the month that this team was established, e.g. "29"
+    - "year_page_updated": the year this team's page was most recently updated, e.g. "2018" (it will be the same year you edit this module)
+    - "month_page_updated": the month this team's page was last updated, e.g. "Mar." (again, I like to use three-letter month abbreviations here)
+    - "day_page_updated": the day of the month this team's page was last updated, e.g. "20"
+    - "img": the image representing this project team, "antenna.png" (**can be empty** (i.e. ""), and if so it uses the default photo in the projects modules directory)
+    - "paragraphs": one array of however many strings (must be at least one); each string is a paragraph of the description of the project team (see examples in the module folder)
+    - "distinguished_nonleaders": one array of hover many objects (can be zero or more); each object is a member's full name and a link that they want associated with them (e.g. their LinkedIn page); the link can be empty (i.e. ""), but if the link is filled out their name will be clickable and will lead to their link
+
+NOTE: in addition to *team.json*, in this directory, the *primary_members.json* file is optional; if it exists, it should be in the exact format as an eboard module, and show pictures of the team's leaders. See the projects modules for examples of this in action.
+
+### ***Spotlight: Root Module***
+
+This is pretty much identical to the Projects root module
+
+- *purpose*: To display a given project post's information (loads dynamically when clicked-on)
+- *path*: **star/public/modules/spotlight/**
+- *json file name*: **manifest.json** (note: each and every post's json file must be called *post.json*; this forces them to all be in their own appropriately-named folders)
+- *non-json contents*: *posts/* folder, containing indexing subfolders (e.g. *active/*) for the post modules; *defaultpic.png*
+  - 1 array with however many sub-arrays, each one representing an indexing subfolder
+    - Each indexing subfolder sub-array contains however many objects, the first of which represents the subfolder's properties, and the others represent the folder's contents
+      - First object: subfolder properties; an object with 3 fields
+        - "folder": the name of the folder, **exactly as it appears** in your file hierarchy (e.g. "active" or "archived")
+        - "name": the name that will be displayed on the page, as the containing dropdown menu for these types of articles (case-sensitive, e.g. "Active")
+        - "default": the default state of the dropdown menu on the page (must be either "OPEN" or "CLOSED")
+      - Other objects: subfolder contents; an object with 2 fields
+        - "post_file": the exact name of the directory, within the folder specified above, where the corresponding module's *post.json* lives (e.g. *cubesat*)
+        - "post_name": the name of the project post that will appear on the sidebar (shortened, if less than 20 characters); does not need to match the full name of the project that gets displayed via the post module
+
+NOTE: the sidebar indexers (e.g. 2018f, 2019s, etc.) that are used as the containing folders of the post modules can be called anything, and there can be any number of them.
+
+### ***Spotlight: Article Modules***
+
+- *purpose*: To display a given Spotlight page article (these load dynamically as you scroll down the screen)
+- *path*: **star/public/modules/projects/posts/\<year indexer\>/\<post name\>**
+- *json file name*: **post.json** (note: each and every article's json file must be called *post.json*; this forces them to all be in their own appropriately-named folders)
+- *non-json contents*: main photo representing the post
+- *json format*:
+  - 1 object with 7 fields, one of which is itself an array of strings
+    - "full_title": the full title of this article, e.g. "Aerospike Lifts Off"
+    - "author": the full name of the author of this article, e.g. "Laura Kershaw"
+    - "year_written": the year the article was written, e.g. "2018"
+    - "month_written": the month this article was written, e.g. "Dec." (like the project page months, I like to use a three-letter month abbreviation, including trailing period, except in "May")
+    - "day_written": the day of the month this article was written, e.g. "3"
+    - "img": the image that goes along with this article, e.g. "aerospike.png" (**can be empty** (i.e. ""), and if so it uses the default photo in the spotlight modules directory, but having no photo for an article is probably not a good idea from a PR perspective)
+    - "paragraphs": one array of however many strings (must be at least one); each string is a subsequent paragraph from the article (see examples in the module folder)
 
 <hr>
 
