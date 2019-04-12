@@ -95,10 +95,10 @@ git pull
 ### ***Uploading Changes***
 
 
-The following command "adds" the current directory (signified by the single period) to a list of objects that will be used later. This keeps track of all changes you've made within this directory (adding files, deleting files, editing files, etc.)
+The following command "adds" everything in this repository (directory's contents) to a list of objects that will be used later. This keeps track of all changes you've made within this directory (adding files, deleting files, editing files, etc.) The asterisk is a common symbol used to mean "all" or "everything" in software jargon.
 
 ```
-git add .
+git add *
 ```
 
 Next, this command "commits" the list of objects that you just selected to your local repo, solidifying them as the most recent version. You should write a descriptive update message in your command (do include the quoatation marks) instead of just writing *message here*.
@@ -112,6 +112,8 @@ Finally, this command will **push** your local repo to BitBucket, adding your ch
 ```
 git push
 ```
+
+NOTE: you could add things one by one by simply naming them outright instead (e.g. *git add index.htm* then *git add spotlight.htm*, etc.); each time you run "add" the list of items to commit to the remote repo for storage is expanded, and that list is only flushed when you commit or manually flush it.
 
 ### ***Recap***
 
