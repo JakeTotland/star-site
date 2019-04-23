@@ -45,7 +45,7 @@ $(document).ready(function () {
             appendage += '</div>';
             appendage += '<a id="carousel-control-prev" class="left carousel-control carousel-controls-reactive" style="background: none;" href="#carousel-module" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a id="carousel-control-next" class="right carousel-control carousel-controls-reactive" style="background: none;" href="#carousel-module" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
 
-            carousel.innerHTML += appendage;
+            carousel.innerHTML = appendage;
 
             initializeDraggableCarousels();
         });

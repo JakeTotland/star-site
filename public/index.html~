@@ -120,6 +120,11 @@
 
 <!-- Carousel (photos populate on page load with JavaScript) -->
 <div id="carousel-module" class="carousel slide draggable-carousel" data-ride="carousel">
+    <!-- The following img (and everything in this carousel-module div section) is removed on JavaScript execution (essentially immediately); it exists here only to allow web scrapers (like Linkedin's) to see a preview of our site's home page's pictures (since they can't load without JS) -->
+    <div style="text-align: center;">
+        <br>
+        <img class="img-wide" src="images/home/star-noscript.png" alt="The Space Technology Association of Rutgers" width="1200">
+    </div>
 </div>
 
 <!-- Container (About/Tenets Section) -->
