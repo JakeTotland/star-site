@@ -1,11 +1,10 @@
 OVERALL
 1. make navbar expansion of CONNECT on mobile better
 2. set .htaccess rule making unknown url redirect to not-found page
-3. write README.md for curator(s)
-4. write changelog
+3. write changelog
 
 ALUMNI
 1. make alumni page
 
 PROJECTS
-1. load title of page as this project
+1. load title of page as this project (maybe?)

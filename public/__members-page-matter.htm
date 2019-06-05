@@ -58,14 +58,15 @@
 <div class="modal fade" id="mailModal" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
+        <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">×</button>
                 <h4><span class="glyphicon glyphicon-envelope"></span> Stay Informed </h4>
             </div>
             <div class="modal-body">
-                <form method="POST" action="https://my.physics.rutgers.edu/apps/star/doregister.php" href="#home" role="form">
+                <form id="email_list_form" method="GET" action="http://star.physics.rutgers.edu" href="#home" role="form">
+                <!-- NOTE: the following form definition is for testing only; use the above one in implementation --><!-- <form id="email_list_form" method="GET" action="__index-page-matter.htm" href="#home" role="form"> -->
                     <div class="form-group">
                         <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
                         <input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required>

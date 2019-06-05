@@ -20,6 +20,25 @@ $(document).ready(function () {
     // Loads the homepage carousel module
     var carousel = document.getElementById('carousel-module');
     if (carousel != null) {
+
+        // ASIDE: this is a hacky add-on that solves a problem we were having with the email list submission script. Only the index page can submit emails correctly (due to physics domain restrictions or something), so since 'carousel-module' will only show up on the index page, this code effectively sees if an email parameter has been forwarded to the index page, and if so, parses it and sends it off as its own form.
+        var url = new URL(window.location.href);
+        var email = url.searchParams.get("email");
+
+        if (email != null) {
+            // console.log(email);
+
+            var email_form = document.getElementById('email_list_form_root');
+            if (email_form != null) {
+                email_form.classList.remove("hidden");
+                email_form.email.value = email;
+                email_form.submit();
+            } else {
+                console.log("Error submitting email: cannot find root email form");
+            }
+        }
+        // END ASIDE for hacky add-on. Now back to the module loading.
+
         var path_file_appended = path_file_base + "home/";
         path_file_appended += "carousel/";
 

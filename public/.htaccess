@@ -1,6 +1,6 @@
 RewriteEngine on
+RewriteRule ^index$ index.html~ [L]
 RewriteRule ^alumni$ __alumni-page-matter.htm [L]
-RewriteRule ^index$ __index-page-matter.htm [L]
 RewriteRule ^media$ __media-page-matter.htm [L]
 RewriteRule ^connect$ __media-page-matter.htm [L]
 RewriteRule ^contact$ __media-page-matter.htm [L]
