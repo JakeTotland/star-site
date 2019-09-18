@@ -204,6 +204,8 @@ in the project's main directory. This will compile code from **src/sass/** and *
 
 NOTE: *Please* follow these above steps to change this project's JavaScript code, and especially CSS/SCSS. The CSS file *public/main.css* is compiled down from SCSS, so changing *main.css* directly (i.e. not by compiling down SCSS) will likely break something or itself be broken later on.
 
+NOTE: also, feel free to use more features of NPM/Node.js if you want. And if you're looking for a modern, reactive web app framework for this or another project of yours, I highly recommend Vue (easily compatible with NPM), which I would have used for this project if I wasn't trying to keep it more simple for maintainers.
+
 ### ***Coding***
 
 A certain familiarity with CSS and JavaScript is assumed if you are trying to so deeply affect these things on the site. A strong understanding of SASS/SCSS is also assumed, but [graduating from CSS to SASS](https://css-tricks.com/sass-style-guide/) is not too difficult. If this guide contained a lot of things you were unfamiliar with so far, and you want to change things like the styling and functionality of the site, please look up guides and get help from other STAR people before going down the coding rabbit-hole. If all you want to do is change HTML, images and page content, continue on.
