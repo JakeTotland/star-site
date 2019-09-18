@@ -56,7 +56,9 @@ Welcome. This README markdown file is meant as a reference for the website's cur
 
 The first half of this guide is dedicated to quickly getting your coding environment up and running. The second half explains how to actually affect changes within the website. As you are first introduced to these technologies, someone with the appropriate level of knowledge will probably help you through it, and you can just use it as needed (consulting it more like a reference than a guide).
 
-Ideally, you will barely need to read this. In fact, this site was made with the assumption that only the different [*modules*](#modules) would need to be updated, and this can be done without coding anything whatsoever. However, the reason this guide is so thorough is so future STAR website curators may explore and implement new features if they know what they are doing (or are willing to learn). Or, if something ever were to go wrong with the site, so they could figure out how to fix it.
+Side note: if you have web development experience and feel like you can jump right in, go for it. I built this site/framework with ease of updating in mind (well, I tried to anyway) for people with no coding knowledge. But I won't be offended in the slightest if you go ahead and change stuff. Even if you trash the entire site and replace it with something all your own, more power to you! If it's what's easiest for you and best for STAR during your tenure, it's what you should do. With that said, let's continue under the assumption that you will be using this framework...
+
+Ideally, you will barely need to read this guide. In fact, this site was made with the assumption that only the different [*modules*](#modules) would need to be updated, and this can be done without coding anything whatsoever. However, the reason this guide is so thorough is so future STAR website curators may explore and implement new features if they know what they are doing (or are willing to learn). Or, if something ever were to go wrong with the site, so they could figure out how to fix it.
 
 If you have never done any web development or coding stuff before, the first thing you will need is a web-optimized text editor. I highly recommend [installing Visual Studio Code](https://code.visualstudio.com/Download) for this purpose if you do not have another preference. It has a built-in console, nice structure/layout, great plugin choices, and a solid feel. If you use VS Code, you will definitely want to use some kind of [live preview plugin](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to visualize site changes.
 
@@ -114,6 +116,8 @@ git push
 ```
 
 NOTE: you could add things one by one by simply naming them outright instead (e.g. *git add index.htm* then *git add spotlight.htm*, etc.); each time you run "add" the list of items to commit to the remote repo for storage is expanded, and that list is only flushed when you commit or manually flush it.
+
+NOTE: also, if you know how (or would like to learn) to use "fancy" Git stuff, like the built-in commit pane in VS Code, go ahead and do it! In fact, if you want to try anything that seems cool, including changing stuff in the site's code, go for it. If it works, then upload it to the server and show the world. Never let this guide become a limitation for you.
 
 ### ***Recap***
 
@@ -450,6 +454,6 @@ These are the things that need to be done at the beginning of each semester. Thi
 
 Wow, what a journey. Like I've been saying, I don't blame you if you didn't read through that whole thing. I don't even know if I'd be able to. And sorry for all the rambling, especially rambling in the form of parentheticals.
 
-If you run into any problems that this guide (or others on the Internet) cannot solve, especially regarding things specific to the STAR site and how it all works and can be changed, please reach out to whoever preceeded as curator of the website (if possible). A good approach might be to go down the emails of the BitBucket repo contributors. If they can't help you, and it's getting desperate, then you can reach out to me: Jason Scot. I wrote this guide and made the site, so hopefully I'll have some answers. Shoot me an email at jason.s.scot@gmail.com and I'll try to help you figure it out.
+If you run into any problems that this guide (or others on the Internet) cannot solve, especially regarding things specific to the STAR site and how it all works and can be changed, please reach out to whoever preceeded you as curator of the website (if possible). A good approach might be to go down the emails of the BitBucket repo contributors. If they can't help you, and it's getting desperate, then you can try reach out to me, Jason Scot. I wrote this guide and made the site, so hopefully I'll have some answers.
 
 Good luck in your role as STAR website curator. I hope it ends up being an enjoyable and rewarding experience.
