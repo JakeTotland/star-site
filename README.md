@@ -2,9 +2,9 @@
 
 ### Website of the [Space Technology Association of Rutgers](http://star.physics.rutgers.edu). <!-- omit in toc -->
 
-### *Assembled by Jason Scot.* <!-- omit in toc -->
+### *Assembled (originally) by Jason Scot at [https://bitbucket.org/jasonscot/star-site-original/src/master/](https://bitbucket.org/jasonscot/star-site-original/)* <!-- omit in toc -->
 
-*README last updated 03/24/2019*
+*README last updated 10/06/2019*
 
 ## Table of Contents <!-- omit in toc -->
 - [Overview](#overview)
@@ -56,7 +56,7 @@ Welcome. This README markdown file is meant as a reference for the website's cur
 
 The first half of this guide is dedicated to quickly getting your coding environment up and running. The second half explains how to actually affect changes within the website. As you are first introduced to these technologies, someone with the appropriate level of knowledge will probably help you through it, and you can just use it as needed (consulting it more like a reference than a guide).
 
-Side note: if you have web development experience and feel like you can jump right in, go for it. I built this site/framework with ease of updating in mind (well, I tried to anyway) for people with no coding knowledge. But I won't be offended in the slightest if you go ahead and change stuff. Even if you trash the entire site and replace it with something all your own, more power to you! If it's what's easiest for you and best for STAR during your tenure, it's what you should do. With that said, let's continue under the assumption that you will be using this framework...
+If you have web development experience and feel like you can jump right in, go for it. I built this site/framework with ease of updating in mind (well, I tried to anyway) for people with no coding knowledge. That's why it doesn't go all-into Node and some modern framework. (Tangent: I love Vue.js, and sometimes I'm sad this site doesn't get to use Vue's awesome features. I wrestled with the idea of making all these pages/components Vue elements, which only had to be filled out in a hard-coded API file. I ended up building the site this way instead so that a curator with web-dev experience, but no motivation to learn Vue, could still make direct updates to the code. Was that the right decision? I guess that's up to you to decide...) All this is to say, I won't be offended in the slightest if you go ahead and change stuff—I'll probably never even know. Even if you trash the entire site and replace it with something all your own, more power to you! If it's what's easiest for you and best for STAR during your tenure, it's your responsibility to do just that. With all that said, let's continue under the assumption that you will be using the template I've set up...
 
 Ideally, you will barely need to read this guide. In fact, this site was made with the assumption that only the different [*modules*](#modules) would need to be updated, and this can be done without coding anything whatsoever. However, the reason this guide is so thorough is so future STAR website curators may explore and implement new features if they know what they are doing (or are willing to learn). Or, if something ever were to go wrong with the site, so they could figure out how to fix it.
 
@@ -70,9 +70,11 @@ If anything ever gets outdated (e.g. the URL for the site, the URL for the repo,
 
 ## Version Control
 
-Version control for this project is managed with git, and stored remotely using BitBucket at the repository ("repo") [https://bitbucket.org/jasonscot/star/src/](https://bitbucket.org/jasonscot/star/src/)
+Version control for this project is managed with git, and stored remotely using BitBucket at the repository ("repo") [https://bitbucket.org/ru_spacetech/star-site/src/master/](https://bitbucket.org/ru_spacetech/star-site/src/master/)
 
 To begin accessing the repo, you must have a BitBucket account that has been made a collaborator on this project (if you need this access but do not have it yet, contact a member with administrative access to the git repo). Then, you will need to [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), the version control software. This is what lets you make changes locally that agree with the version stored by BitBucket.
+
+Side note: we use BitBucket, instead of the current version control "obvious choice" Github, only because private repos are free with up to three contributors. The official STAR email owns this repo, and (up to two) website curators are added/removed as necessary. If Github ever becomes significantly preferable, feel free to change platforms!
 
 The following are the simplified steps you must take to get up and running with Git/Bitbucket *after first installing Git*. If you need more help using or understanding Git or BitBucket, please consult a [tutorial](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone) or search the Internet for a solution to the problem(s) you are facing. You may also contact whoever formerly administered the site.
 
@@ -81,7 +83,7 @@ The following are the simplified steps you must take to get up and running with 
 Downloading the repo to your local machine for the first time is called **cloning** the repo. After installing Git and gaining access with your BitBucket account, choose the directory on your local machine where you would like to hold all the site's files. It is recommended to make a new directory for your web sites if you do not already have one (e.g. *C:/users/jason/Sites/*). Go to this directory, then open a terminal (on Windows, a Git terminal—not *cmd*) and type the following command.
 
 ```
-git clone https://bitbucket.org/jasonscot/star/src/
+git clone https://ru_spacetech@bitbucket.org/ru_spacetech/star-site.git
 ```
 
 Enter your BitBucket account information when prompted. Now you have the most recent copy of the repo on your local machine. At some point, someone else with access may upload newer changes to BitBucket, in which case you will need to pull their changes if you want to keep up with their version.
@@ -117,7 +119,7 @@ git push
 
 NOTE: you could add things one by one by simply naming them outright instead (e.g. *git add index.htm* then *git add spotlight.htm*, etc.); each time you run "add" the list of items to commit to the remote repo for storage is expanded, and that list is only flushed when you commit or manually flush it.
 
-NOTE: also, if you know how (or would like to learn) to use "fancy" Git stuff, like the built-in commit pane in VS Code, go ahead and do it! In fact, if you want to try anything that seems cool, including changing stuff in the site's code, go for it. If it works, then upload it to the server and show the world. Never let this guide become a limitation for you.
+NOTE: also, if you know how (or would like to learn) to use "fancy" Git stuff, like the built-in commit pane in VS Code, go ahead and do it! In fact, if you want to try anything that seems cool, including changing stuff in the site's code, go for it. If it works, then upload it to the server and show the world. I built this site alone, so I had no use for pull requests and code reviews—but they are invaluable in certain circumstances, so if they interest you, give them a try! Never let this guide become a limitation for you.
 
 ### ***Recap***
 
