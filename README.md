@@ -173,6 +173,8 @@ This pretty simple, but it is also so important that I have included an example 
 
 ![readmeftppath](readmeftppath.png)
 
+Side note: yes, in modern web frameworks like Vue, this is completely not the point of "public" and "src" directories. But, again, I made it this way to make changing the site more accessible for those uninitated to frameworks. If you don't like it, I encourage you to change it.
+
 ### ***Permissions and Overwrites***
 
 Three quick (but very important) notes about uploading things, especially new files.
