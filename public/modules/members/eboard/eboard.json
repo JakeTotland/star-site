@@ -1,12 +1,12 @@
 [
     {
         "position": "President",
-        "name": "Timothy Nuber",
-        "classyear": "2020",
-        "major": "Aerospace Engineering",
+        "name": "Collin Enright",
+        "classyear": "2021",
+        "major": "Electrical and Computer Engineering",
         "desc": "",
-        "img": "timothy.png",
-        "link": "https://www.linkedin.com/in/timothy-nuber-48087a9a/",
+        "img": "",
+        "link": "",
         "link_icon": "fab fa-linkedin"
     },
     {
@@ -31,12 +31,12 @@
     },
     {
         "position": "Webmaster",
-        "name": "Jason Scot",
-        "classyear": "2019",
-        "major": "Computer Science",
+        "name": "Jake Totland",
+        "classyear": "2021",
+        "major": "Electrical and Computer Engineering",
         "desc": "",
-        "img": "jason.png",
-        "link": "https://www.linkedin.com/in/jasonscot/",
+        "img": "",
+        "link": "",
         "link_icon": "fab fa-linkedin"
     },
     {
