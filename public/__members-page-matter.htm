@@ -66,15 +66,16 @@
             </div>
             <div class="modal-body">
                 <form id="email_list_form" method="GET" action="http://star.physics.rutgers.edu" href="#home" role="form">
-                <!-- NOTE: the following form definition is for testing only; use the above one in implementation --><!-- <form id="email_list_form" method="GET" action="__index-page-matter.htm" href="#home" role="form"> -->
-                    <div class="form-group">
-                        <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
-                        <input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required>
-                    </div>
-                    <button type="submit" class="btn btn-block">Subscribe
-                    </button>
-                </form>
-            </div>
+               <!-- NOTE: the following form definition is for testing only; use the above one in implementation --><!-- <form id="email_list_form" method="GET" action="__index-page-matter.htm" href="#home" role="form"> -->
+                   <div class="form-group">
+                       <label for="usrname">Join our mailing list to keep up with all things <span class="upper">Star</span>.</label>
+                       <button type="submit" formaction="https://mailchi.mp/8eaa254440dc/star">Mailing List</button>
+                       <!--<input type="email" name="email" class="form-control" id="usrname" placeholder="Email address" required> -->
+                   </div>
+                   <!--<button type="submit" class="btn btn-block">Subscribe
+                   </button> -->
+               </form>
+           </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
                     <span class="glyphicon glyphicon-remove"></span> Cancel
