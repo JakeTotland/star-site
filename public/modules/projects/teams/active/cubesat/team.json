@@ -2,20 +2,27 @@
     "full_title": "BEAM \"Cube Satellite\"",
     "leaders":
         [
-            "Thomas McGovern"
+            "Connie Liou"
         ],
     "year_established": "2017",
     "month_established": "Oct.",
     "day_established": "20",
-    "year_page_updated": "2018",
-    "month_page_updated": "Dec.",
-    "day_page_updated": "13",
+    "year_page_updated": "2020",
+    "month_page_updated": "Nov.",
+    "day_page_updated": "06",
     "img": "cubesat.png",
     "paragraphs":
         [
-            "3D printing, although still in its infancy as an engineering field, is one of the fastest growing. Additive manufacturing is appealing because it offers the ability to create parts with speed, convenience, and versatility unmatched by conventional manufacturing methods. It takes mere hours to go from an idea to a CAD model to a 3D printed part, in your hands. This convenience would obviously be extremely useful in remote environments, cut off from supplies, and what environment is more remote than space? NASA and the Made in Space program have already done extensive work with 3D printing thermoplastics in space, but no research has been done on 3D printing with thermosets in space. Thermoset 3D printing on earth by itself is a rather new field.",
+            "The STAR CubeSat team aims to send a CubeSat into space! We are currently working on a 3U CubeSat proposal for NASA, implementing controls research from Rutgers faculty member, Prof. Burlion. With everything being remote, we are developing the skill sets and knowledge base necessary to do all of this, researching topics like orbit determination, navigation, flight software, space communications, and much more! From space electronics to flight dynamics, the CubeSat team covers a wide range of majors and areas of interest. We aim to learn how to design, analyze, and build each system from ground up. You’ll have the opportunity to work with a team on real mission concepts and develop working systems, alongside professors, industry professionals, and other students! If you're interested in space systems and learning more about how these magic boxes (satellites) operate autonomously in space, check out the CubeSat team!",
 
-            "Inspired by the work done here at Rutgers University by the Mazzeo Research group on thermoset 3D printing, we are determined to carry out the first thermoset 3D printing experiment in space. To accomplish this, we are currently designing BEAM (Beyond Earth Additive Manufacturing), a microsatellite meant to carry out a contact-angle goniometry experiment on thermosetting resins in zero gravity. BEAM will extrude a droplet onto a heated bed, and take multiple photographs to monitor the droplet’s morphology as it cures over time. We hope to see decreased droplet spreading in the absence of gravity-driven spreading, opening the door to higher-resolutions in 3D printed thermoset parts."
+            "The STAR CubeSat team aims to grow into a lab that is capable of designing a full fledged cube satellite mission from ground up. Members from any background have the opportunity to explore space systems and learn how to design, analyze, and build subsystems crucial to functioning CubeSat missions.",
+
+            "From spacecraft power and thermal systems, to orbit determination and navigation, members are introduced to the mission lifecycle in the space industry. Students would have the chance to work hands on with space-grade equipment and gain exposure to the various subsystems on an intimate level. Members have the opportunity to present in front of other team members, work with professors at Rutgers and other universities, and speak with industry professionals to collaborate and speak with them about their work. From mission design to integration and launch, we plan to be involved every step of the way.",
+            
+            "STAR proposes a 3U CubeSat mission, dedicated to testing a propellant sloshing oriented controller design which will utilize multiple existing slosh models along with a newly designed controller developed by Professor Burlion here at Rutgers. With the upcoming generation of observation and long range spacecraft, designs featuring large liquid propellant tanks are becoming more prevalent. Propellant slosh dynamics can lead to serious consequences, such as mission delay or even failure. On observatory spacecraft such as the SDO, or long range missions like the Europa Clipper, propellant slosh modeling has become an important part of the analysis done to ensure mission success. If successful, this would be the first CubeSat launched by Rutgers University students, and the second one launched by New Jersey college teams.",
+
+            "Students in the various subteams are developing and utilizing a wide range of skills as they progress through their objectives. These include 3D modeling with Solidworks CAD, Python programming for thermal modeling software, analyzing flight orbits and communication systems, and building electromechanical components. Arduinos, accelerometers, and other devices are also being used. We aim to match up new recruits with sub-teams based on their expertise and interests. If they have no experience like many of the incoming first-year students, we have many opportunities in which they can learn a new skill while still contributing to the team."
+
         ],
     "distinguished_nonleaders":
         [

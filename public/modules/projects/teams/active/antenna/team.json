@@ -2,14 +2,14 @@
     "full_title": "Project Antenna",
     "leaders":
         [
-            "Anthony Parfilko"
+            "Ceara Gagliano"
         ],
     "year_established": "2018",
     "month_established": "Sep.",
     "day_established": "29",
-    "year_page_updated": "2018",
-    "month_page_updated": "Mar.",
-    "day_page_updated": "20",
+    "year_page_updated": "2020",
+    "month_page_updated": "Nov.",
+    "day_page_updated": "6",
     "img": "antenna.png",
     "paragraphs":
         [
@@ -20,6 +20,18 @@
         [
             {
                 "name": "Yousef Ansari",
+                "link": ""
+            },
+            {
+                "name": "Jake Totland",
+                "link": ""
+            },
+            {
+                "name": "Collin Enright",
+                "link": ""
+            },
+            {
+                "name": "Pablo Hernandez",
                 "link": ""
             }
         ]

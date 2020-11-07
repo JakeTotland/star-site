@@ -11,23 +11,23 @@
     },
     {
         "position": "Vice President",
-        "name": "Lara Hirsch",
-        "classyear": "2020",
+        "name": "Connie Liou",
+        "classyear": "2022",
         "major": "Aerospace Engineering",
         "desc": "",
-        "img": "lara.png",
-        "link": "https://www.linkedin.com/in/lara-beth-hirsch-631062124/",
-        "link_icon": "fab fa-linkedin"
+        "img": "",
+        "link": "",
+        "link_icon": ""
     },
     {
         "position": "Treasurer",
-        "name": "Arynn Rizick",
-        "classyear": "2020",
-        "major": "Supply Chain Management",
+        "name": "Ann He",
+        "classyear": "2022",
+        "major": "",
         "desc": "",
-        "img": "arynn.png",
-        "link": "https://www.linkedin.com/in/arynnrizick/",
-        "link_icon": "fab fa-linkedin"
+        "img": "",
+        "link": "",
+        "link_icon": ""
     },
     {
         "position": "Webmaster",
@@ -36,47 +36,7 @@
         "major": "Electrical and Computer Engineering",
         "desc": "",
         "img": "",
-        "link": "",
+        "link": "https://www.linkedin.com/in/jake-totland/",
         "link_icon": "fab fa-linkedin"
-    },
-    {
-        "position": "Public Relations",
-        "name": "Elizabeth F. Krim",
-        "classyear": "2020",
-        "major": "Aerospace Engineering",
-        "desc": "",
-        "img": "elizabeth.png",
-        "link": "https://www.linkedin.com/in/elizabeth-foster-krim-b43586130/",
-        "link_icon": "fab fa-linkedin"
-    },
-    {
-        "position": "Acquisitions Head",
-        "name": "Tony Le",
-        "classyear": "2020",
-        "major": "Accounting",
-        "desc": "",
-        "img": "tony.png",
-        "link": "https://www.linkedin.com/in/tony-le-3b8898173/",
-        "link_icon": "fab fa-linkedin"
-    },
-    {
-        "position": "Representative",
-        "name": "Drew Stirnweis",
-        "classyear": "2020",
-        "major": "Aerospace Engineering",
-        "desc": "Representative to the Engineering Governing Council at Rutgers University",
-        "img": "drew.png",
-        "link": "https://www.linkedin.com/in/andrew-stirnweis-15437b136/",
-        "link_icon": "fab fa-linkedin"
-    },
-    {
-        "position": "Representative",
-        "name": "Hossain Ahmad",
-        "classyear": "2020",
-        "major": "Aerospace Engineering",
-        "desc": "Representative to SEDS (Students for the Exploration and Development of Space)",
-        "img": "hossain.png",
-        "link": "",
-        "link_icon": ""
     }
 ]

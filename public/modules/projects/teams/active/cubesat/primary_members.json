@@ -1,51 +1,41 @@
 [
     {
         "position": "Leader",
-        "name": "Thomas McGovern",
-        "classyear": "2020",
-        "major": "Mechanical Engineering",
+        "name": "Connie Liou",
+        "classyear": "2022",
+        "major": "Aerospace Engineering",
         "desc": "",
-        "img": "tom.png",
-        "link": "https://www.linkedin.com/in/thomas-mcgovern-b03b52130/",
+        "img": "",
+        "link": "https://www.connie-liou.github.io",
         "link_icon": "fab fa-linkedin"
     },
     {
-        "position": "Avionics Lead",
-        "name": "Stephen Dahl",
-        "classyear": "2020",
+        "position": "Electronics Lead",
+        "name": "Nick Florio",
+        "classyear": "Graduate Student",
         "major": "E.C.E.",
         "desc": "",
-        "img": "stephen.png",
+        "img": "",
         "link": "",
         "link_icon": ""
     },
     {
-        "position": "Structures Lead",
-        "name": "Jon Snyder",
-        "classyear": "2021",
+        "position": "Flight Dynamics Lead",
+        "name": "Manav Jadeja",
+        "classyear": "2023",
         "major": "Aerospace Engineering",
         "desc": "",
-        "img": "jon.png",
+        "img": "",
         "link": "",
         "link_icon": ""
     },
     {
         "position": "Propulsion Lead",
-        "name": "Tanumaya Bhowmik",
-        "classyear": "2020",
+        "name": "Ali Hamza",
+        "classyear": "2022",
         "major": "Aerospace Engineering",
         "desc": "",
-        "img": "bhowmik.png",
-        "link": "",
-        "link_icon": ""
-    },
-    {
-        "position": "Experiment Lead",
-        "name": "Hossain Ahmad",
-        "classyear": "2020",
-        "major": "Aerospace Engineering",
-        "desc": "",
-        "img": "hossain.png",
+        "img": "",
         "link": "",
         "link_icon": ""
     }
