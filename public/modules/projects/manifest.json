@@ -14,8 +14,8 @@
             "post_name": "Cube Satellite"
         },
         {
-            "post_file": "marketing",
-            "post_name": "Marketing"
+            "post_file": "spaceshot",
+            "post_name": "Spaceshot"
         },
         {
             "post_file": "schooloutreach",
@@ -35,6 +35,10 @@
         {
             "post_file": "aerospike",
             "post_name": "Aerospike Test Stand"
+        },
+        {
+            "post_file": "marketing",
+            "post_name": "Marketing"
         },
         {
             "post_file": "boardgame",

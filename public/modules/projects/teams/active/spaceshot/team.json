@@ -1,0 +1,25 @@
+{
+    "full_title": "Spaceshot",
+    "leaders":
+        [
+            "Devin Lewis"
+        ],
+    "year_established": "2019",
+    "month_established": "Oct.",
+    "day_established": "20",
+    "year_page_updated": "2020",
+    "month_page_updated": "Nov.",
+    "day_page_updated": "06",
+    "img": "",
+    "paragraphs":
+        [
+            "The STAR SpaceShot team is working on creating an orbital rocket capable of delivering payloads to LEO for Rutgers. Basically we are looking to build a big rocket that will deliver some awesome satellites into space! If you are interested in building rockets, working on the hardware inside rockets, creating your own propellant for rockets, just love rocketry, or a friend is forcing you to join, then please join us for our weekly sessions where we talk rockets, school, and work on designing a multi-stage rocket that will be ready to launch by the end of the Spring Semester. This semester will involve designing our next rockets, discussing future launches, what tech may be interesting to mess with, and deciding what propellant would be the safest, and most fun, to mix ourselves once propellant certified. I will also be publishing videos working on building an L1 kit and a thrust vector controlled rocket that will serve as a basic introduction into how to build your own rocket as well as how to get an L1 certification for high power rockets quick and easy through the club. Hope to see you virtually in our club’s discord server!",
+
+            "The Spaceshot team is currently working on building and launching a thrust vector controlled rocket using BPS Space’s Signal 2 kit. This will be our first launch with a thrust vector controlled rocket, and will serve as a trial run for how this system works and how to create our own based on this kit for larger rockets.",
+
+            "We are also working on creating a video series on how to build a simple L1 kit for our new members, which will allow them to get a feel for basic rocket design and builds, as well as introduce them to the certification levels through the NAR.",
+
+            "This semester will serve as a researched oriented one, with a focus on creating a design for a multi-stage rocket that will be able to launch based on an electric current like a normal launch, and then utilize a built in flight computer to activate stage separation, second stage ignition, and the parachute deployment. This will help us get further towards our goal of launching a rocket to LEO as this will serve as our small test model of a larger rocket to be built after getting the certifications necessary to design our own fuel, as well as launch higher class motors after getting our L3 certifications down the road."
+
+        ]
+}

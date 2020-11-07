@@ -1,5 +1,5 @@
 {
-    "full_title": "BEAM \"Cube Satellite\"",
+    "full_title": "SPICEsat \"Cube Satellite\"",
     "leaders":
         [
             "Connie Liou"
@@ -23,100 +23,5 @@
 
             "Students in the various subteams are developing and utilizing a wide range of skills as they progress through their objectives. These include 3D modeling with Solidworks CAD, Python programming for thermal modeling software, analyzing flight orbits and communication systems, and building electromechanical components. Arduinos, accelerometers, and other devices are also being used. We aim to match up new recruits with sub-teams based on their expertise and interests. If they have no experience like many of the incoming first-year students, we have many opportunities in which they can learn a new skill while still contributing to the team."
 
-        ],
-    "distinguished_nonleaders":
-        [
-            {
-                "name": "Akshat Patki",
-                "link": ""
-            },
-            {
-                "name": "Alexander Cid",
-                "link": ""
-            },
-            {
-                "name": "Alexander Corring",
-                "link": ""
-            },
-            {
-                "name": "Andrew Krynicki",
-                "link": ""
-            },
-            {
-                "name": "Bernie Somers",
-                "link": ""
-            },
-            {
-                "name": "Billy Kundiff",
-                "link": ""
-            },
-            {
-                "name": "Brian Comerford",
-                "link": ""
-            },
-            {
-                "name": "Drew Stirnweis",
-                "link": ""
-            },
-            {
-                "name": "Elizabeth Foster-Krim",
-                "link": ""
-            },
-            {
-                "name": "Jennifer Mead",
-                "link": ""
-            },
-            {
-                "name": "Jonathan Wong",
-                "link": ""
-            },
-            {
-                "name": "Katie Welch",
-                "link": ""
-            },
-            {
-                "name": "Kyle O’Donnell",
-                "link": ""
-            },
-            {
-                "name": "Lara Hirsch",
-                "link": ""
-            },
-            {
-                "name": "Ludwig Randazzo",
-                "link": ""
-            },
-            {
-                "name": "Marissa Navarro",
-                "link": ""
-            },
-            {
-                "name": "Matt Chianese",
-                "link": ""
-            },
-            {
-                "name": "Nick Florio",
-                "link": ""
-            },
-            {
-                "name": "Ray Martin",
-                "link": ""
-            },
-            {
-                "name": "Syed Hyder",
-                "link": ""
-            },
-            {
-                "name": "Trevor Rokosky",
-                "link": ""
-            },
-            {
-                "name": "Vincent Cheng",
-                "link": ""
-            },
-            {
-                "name": "Zack Billingham",
-                "link": ""
-            }
         ]
 }
